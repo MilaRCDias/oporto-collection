@@ -27,7 +27,8 @@ const photos = {
     marquesaFacade: "https://static.wixstatic.com/media/b1e563_f0d39f253a06465e83fcd9751eba02f4~mv2.png/v1/fill/w_392,h_506,al_c,q_85/b1e563_f0d39f253a06465e83fcd9751eba02f4~mv2.webp",
     fervencaFacade: "https://static.wixstatic.com/media/b1e563_9bfa53def2f243d6a8933de50de9ab52~mv2.png/v1/fill/w_1120,h_1520,al_c,q_90,usm_0.66_1.00_0.01/b1e563_9bfa53def2f243d6a8933de50de9ab52~mv2.webp",
     stCatResidenceLiving: "https://static.wixstatic.com/media/b1e563_ff83a24ef5a34ca1bf5447af2b60066f~mv2.png/v1/fill/w_1088,h_564,al_c,q_90/b1e563_ff83a24ef5a34ca1bf5447af2b60066f~mv2.webp",
-    castellos: "https://static.wixstatic.com/media/b1e563_45e5232a1f734a3c915e27738b8bbf79~mv2.jpeg/v1/fill/w_456,h_645,al_c,q_80/b1e563_45e5232a1f734a3c915e27738b8bbf79~mv2.webp"
+    castellos: "https://static.wixstatic.com/media/b1e563_45e5232a1f734a3c915e27738b8bbf79~mv2.jpeg/v1/fill/w_456,h_645,al_c,q_80/b1e563_45e5232a1f734a3c915e27738b8bbf79~mv2.webp",
+    rosario: "https://cf.bstatic.com/xdata/images/hotel/max1280x900/264140528.webp?k=ef84e440afc950ede1935bacc2959adeb353c9da7f361b605a2aaac58a1fdbf9&o="
 }
 const units = [
     {
@@ -52,6 +53,7 @@ const units = [
             photos.poolFitnessReception,
             photos.poolFitnessGym,
         ],
+        url: "https://opc-santacatarinapoolandfitness.com/"
     },
     {
         name: "Mouzinho Apartments",
@@ -66,6 +68,20 @@ const units = [
         features: "Kitnette, Furnished, Housekeeping, Breakfast",
         opening: "open",
         photos: [photos.mouzinho],
+    },
+    {
+        name: "Rosário | Luxury Suites",
+        rating: 8.72,
+        location: "Clerigos Tower . City Center",
+        resume:
+            "Just 300 meters from the riverside, on the charming Rua Mouzinho da Silveira, a short walk from the main tourist spots in the city.",
+        fulltext: [
+            "Located within walking distance of the main tourist attractions of the city of Porto, it presents itself as a superior quality unit, which highlights its outdoor pool, a magnificent garden, large terraces, and a gym.",
+            "Carefully and elegantly decorated where comfort is present in every detail, our apartments are distinguished by their generous areas and brightness."
+        ],
+        features: "Furnished, Housekeeping, Breakfast",
+        opening: "open",
+        photos: [photos.rosario],
     },
     {
         name: "Hotel dos Castelos",
