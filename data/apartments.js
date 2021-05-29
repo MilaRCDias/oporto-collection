@@ -1,3 +1,30 @@
+const attractions = [
+    {
+        id: 1,
+        image: "https://images.unsplash.com/photo-1594157722122-8c8caadef6cb?ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=750&q=80",
+        name: "Clerigos Tower"
+    },
+    {
+        id: 2,
+        image: "https://images.unsplash.com/photo-1574866609688-c2f9ddcdce2f?ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=1567&q=80",
+        name: "Music House"
+    },
+    {
+        id: 3,
+        image: "https://images.unsplash.com/photo-1474692295473-66ba4d54e0d3?ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=1576&q=80",
+        name: "Oporto Coliseum"
+    },
+    {
+        id: 4,
+        image: "https://images.unsplash.com/photo-1513735492246-483525079686?ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=2089&q=80",
+        name: "D. Luís Bridge"
+    },
+    {
+        id: 5,
+        image: "https://images.unsplash.com/photo-1583084004995-8502ab326f8e?ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=3155&q=80",
+        name: "Douro River"
+    }
+]
 
 const photos = {
     book: "https://static.wixstatic.com/media/b1e563_00358c31c0cc4edc945f97e5f1d439d2~mv2.png/v1/fill/w_336,h_120,al_c,q_85,usm_0.66_1.00_0.01/livro_reclamacoes-500x-207-w.webp",
@@ -53,7 +80,16 @@ const units = [
             photos.poolFitnessReception,
             photos.poolFitnessGym,
         ],
-        url: "https://opc-santacatarinapoolandfitness.com/"
+        url: "https://opc-santacatarinapoolandfitness.com/",
+        map: "https://goo.gl/maps/ZNARYNg3Xs4rwJjo6",
+        address: "Rua Santa Catarina 1219, União de Freguesias do Centro, Porto",
+        topAttractions: [
+            { id: 3, distance: 1.1 },
+            { id: 1, distance: 1.5 },
+            { id: 5, distance: 1.9 },
+            { id: 4, distance: 1.9 },
+            { id: 2, distance: 2.2 }
+        ]
     },
     {
         name: "Mouzinho Apartments",
@@ -67,7 +103,16 @@ const units = [
         ],
         features: "Kitnette, Furnished, Housekeeping, Breakfast",
         opening: "open",
+        map: "https://goo.gl/maps/ZNARYNg3Xs4rwJjo6",
         photos: [photos.mouzinho],
+        address: "Rua Mouzinho da Silveira, 157 - 167 , União de Freguesias do Centro, Porto",
+        topAttractions: [
+            { id: 1, distance: 0.3 },
+            { id: 4, distance: 0.5 },
+            { id: 5, distance: 0.6 },
+            { id: 3, distance: 0.7 },
+            { id: 2, distance: 2.2 }
+        ]
     },
     {
         name: "Rosário | Luxury Suites",
@@ -81,7 +126,16 @@ const units = [
         ],
         features: "Furnished, Housekeeping, Breakfast",
         opening: "open",
+        map: "https://goo.gl/maps/ZNARYNg3Xs4rwJjo6",
         photos: [photos.rosario],
+        address: "227 Rua do Rosario, União de Freguesias do Centro, Porto",
+        topAttractions: [
+            { id: 1, distance: 1.1 },
+            { id: 2, distance: 1.5 },
+            { id: 3, distance: 1.9 },
+            { id: 4, distance: 1.9 },
+            { id: 5, distance: 2.2 }
+        ]
     },
     {
         name: "Hotel dos Castelos",
@@ -91,6 +145,7 @@ const units = [
             "Just 300 meters from the riverside, on the charming Rua Mouzinho da Silveira, a short walk from the main tourist spots in the city.",
         features: "Co-working,  Lounge, Kitnette, Breakfast ",
         opening: "August 2021",
+        map: "https://goo.gl/maps/ZNARYNg3Xs4rwJjo6",
         photos: [photos.castellos],
     },
     {
@@ -125,4 +180,4 @@ const units = [
     },
 ]
 
-export default { photos, units };
+export default { photos, units, attractions };
