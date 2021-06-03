@@ -26,6 +26,17 @@ const attractions = [
     }
 ]
 
+const newphotos = [
+    {
+        brand: "opc",
+        unidade: "santacatarina",
+        id: 1,
+        link: "https://static.wixstatic.com/media/b1e563_8bbd15e785dd454993d8f70da2b9a9ad~mv2.png/v1/fill/w_798,h_1322,al_c,q_90,usm_0.66_1.00_0.01/b1e563_8bbd15e785dd454993d8f70da2b9a9ad~mv2.webp",
+        tag: "garden"
+    }
+
+]
+
 const photos = {
     book: "https://static.wixstatic.com/media/b1e563_00358c31c0cc4edc945f97e5f1d439d2~mv2.png/v1/fill/w_336,h_120,al_c,q_85,usm_0.66_1.00_0.01/livro_reclamacoes-500x-207-w.webp",
     cleanSafe:
@@ -180,4 +191,4 @@ const units = [
     },
 ]
 
-export default { photos, units, attractions };
+export default { photos, units, attractions, newphotos };
