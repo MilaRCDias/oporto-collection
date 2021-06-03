@@ -29,7 +29,7 @@ const attractions = [
 const newphotos = [
     {
         brand: "opc",
-        unidade: "santacatarina",
+        unity: "santacatarina",
         id: 1,
         link: "https://static.wixstatic.com/media/b1e563_8bbd15e785dd454993d8f70da2b9a9ad~mv2.png/v1/fill/w_798,h_1322,al_c,q_90,usm_0.66_1.00_0.01/b1e563_8bbd15e785dd454993d8f70da2b9a9ad~mv2.webp",
         tag: "garden"
@@ -81,26 +81,11 @@ const units = [
         ],
         features: "Pool, Gym, Housekeeping, Breakfast",
         opening: "open",
-        photos: [
-            photos.santacatarina,
-            photos.poolFitnessRoom,
-            photos.poolFitnessRoom2,
-            photos.poolFitnessBedroom,
-            photos.poolFitnessPool,
-            photos.poolFitnessLiving,
-            photos.poolFitnessReception,
-            photos.poolFitnessGym,
-        ],
+        photos: newphotos.filter(e => e.unity == "santacatarina"),
         url: "https://opc-santacatarinapoolandfitness.com/",
         map: "https://goo.gl/maps/ZNARYNg3Xs4rwJjo6",
         address: "Rua Santa Catarina 1219, União de Freguesias do Centro, Porto",
-        topAttractions: [
-            { id: 3, distance: 1.1 },
-            { id: 1, distance: 1.5 },
-            { id: 5, distance: 1.9 },
-            { id: 4, distance: 1.9 },
-            { id: 2, distance: 2.2 }
-        ]
+
     },
     {
         name: "Mouzinho Apartments",
@@ -115,15 +100,8 @@ const units = [
         features: "Kitnette, Furnished, Housekeeping, Breakfast",
         opening: "open",
         map: "https://goo.gl/maps/ZNARYNg3Xs4rwJjo6",
-        photos: [photos.mouzinho],
+        photos: newphotos.filter(e => e.unity == "santacatarina"),
         address: "Rua Mouzinho da Silveira, 157 - 167 , União de Freguesias do Centro, Porto",
-        topAttractions: [
-            { id: 1, distance: 0.3 },
-            { id: 4, distance: 0.5 },
-            { id: 5, distance: 0.6 },
-            { id: 3, distance: 0.7 },
-            { id: 2, distance: 2.2 }
-        ]
     },
     {
         name: "Rosário | Luxury Suites",
@@ -138,15 +116,8 @@ const units = [
         features: "Furnished, Housekeeping, Breakfast",
         opening: "open",
         map: "https://goo.gl/maps/ZNARYNg3Xs4rwJjo6",
-        photos: [photos.rosario],
+        photos: newphotos.filter(e => e.unity == "santacatarina"),
         address: "227 Rua do Rosario, União de Freguesias do Centro, Porto",
-        topAttractions: [
-            { id: 1, distance: 1.1 },
-            { id: 2, distance: 1.5 },
-            { id: 3, distance: 1.9 },
-            { id: 4, distance: 1.9 },
-            { id: 5, distance: 2.2 }
-        ]
     },
     {
         name: "Hotel dos Castelos",
