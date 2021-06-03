@@ -1,9 +1,9 @@
 <template>
   <div>
     <img
-      width="200px"
+      width="164px"
       src="https://static.wixstatic.com/media/b1e563_dc5b478a213c48a8a89cee7918c197d5~mv2.png/v1/fill/w_472,h_128,al_c,q_85,usm_0.66_1.00_0.01/b1e563_dc5b478a213c48a8a89cee7918c197d5~mv2.webp"
-      alt=""
+      alt="logotype"
     />
   </div>
 </template>
