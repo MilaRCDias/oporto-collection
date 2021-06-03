@@ -14,61 +14,61 @@
       </v-col>
       <v-col cols="12" sm="6" class="px-4 px-md-12" style="max-width: 540px">
         <div class="mx-auto flex-center">
-          <h1>
-            You need a place to stay in Porto,
-            <span class="font-weight-700">we have multiple</span>
-          </h1>
+          <h1 v-html="$t('heading')"></h1>
           <h3 class="my-3">
-            Premium accommodations located in the historic center of the city.
+            {{ $t("subtitle") }}
           </h3>
-          <v-btn color="accent" class="my-4" to="/about" outlined
-            >explore collection</v-btn
+          <v-btn color="accent" class="my-4" to="/about" outlined>
+            {{ $t("exploreCollection") }}</v-btn
           >
         </div>
       </v-col>
     </v-row>
 
-    <div class="text-center mt-6 my-sm-6">
-      <h1 class="primary--text">Our Collection</h1>
-      <p>Find the best fit for a perfect experience in the heart of Porto</p>
+    <div>
+      <div class="text-center mt-6 my-sm-6">
+        <h1 class="primary--text">{{ $t("ourCollection.title") }}</h1>
+        <p>{{ $t("ourCollection.subtitle") }}</p>
+      </div>
+      <v-row class="px-4 px-sm-12">
+        <v-col
+          v-for="unity in units.slice(0, 3)"
+          :key="unity.name"
+          cols="12"
+          sm="6"
+          lg="4"
+        >
+          <div class="pa-3 pa-sm-5 my-4 card">
+            <v-carousel cycle height="300" hide-delimiters>
+              <v-carousel-item
+                v-for="(item, i) in unity.photos"
+                :key="i"
+                :src="item.link"
+              ></v-carousel-item>
+            </v-carousel>
+            <h3 class="font-weight-700">{{ unity.name }}</h3>
+
+            <h5 style="min-height: 5.5rem" class="pb-4">{{ unity.resume }}</h5>
+            <h5>{{ unity.features }}</h5>
+            <h6 style="font-size: 13px" class="font-weight-400">
+              <v-icon color="secondary" small>mdi-map-marker</v-icon>
+              {{ unity.address }}
+            </h6>
+            <v-btn
+              :disabled="unity.name !== 'Santa Catarina | Pool & Fitness'"
+              @click="bookClicked(unity)"
+              class="my-3"
+              outlined
+              :large="!$vuetify.breakpoint.xsOnly"
+              depressed
+              block
+              color="accent"
+              >{{ $t("book") }}</v-btn
+            >
+          </div>
+        </v-col>
+      </v-row>
     </div>
-
-    <v-row class="px-4 px-sm-12 my-sm-12">
-      <v-col
-        v-for="unity in units.slice(0, 3)"
-        :key="unity.name"
-        cols="12"
-        sm="6"
-        lg="4"
-      >
-        <div class="pa-3 my-4 card">
-          <v-carousel cycle height="300" hide-delimiters>
-            <v-carousel-item
-              v-for="(item, i) in unity.photos"
-              :key="i"
-              :src="item.link"
-            ></v-carousel-item>
-          </v-carousel>
-          <h3 class="font-weight-700">{{ unity.name }}</h3>
-
-          <h5>
-            <v-icon color="secondary" small>mdi-map-marker</v-icon>
-            {{ unity.address }}
-          </h5>
-
-          <h5>{{ unity.features }}</h5>
-          <v-btn
-            @click="bookClicked(unity)"
-            class="my-3"
-            outlined
-            depressed
-            block
-            color="accent"
-            >Book</v-btn
-          >
-        </div>
-      </v-col>
-    </v-row>
 
     <v-row
       class="pb-8 pb-sm-0 pt-0"

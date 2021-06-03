@@ -6,6 +6,8 @@
       :mini-variant="miniVariant"
       :clipped="clipped"
       fixed
+      dark
+      color="primary"
       app
     >
       <v-list>
@@ -28,11 +30,29 @@
     <v-app-bar flat :clipped-left="clipped" fixed app>
       <v-container>
         <v-row no-gutters justify="space-between" align="center">
-          <v-btn icon> <v-icon>mdi-menu</v-icon> </v-btn>
+          <v-btn
+            @click="drawer = !drawer"
+            v-if="$vuetify.breakpoint.xsOnly"
+            icon
+          >
+            <v-icon>mdi-menu</v-icon>
+          </v-btn>
           <div style="cursor: pointer" @click="$router.push('/')">
             <Logo />
           </div>
-          <v-btn depressed outlined> PT </v-btn>
+          <v-select
+            solo
+            background-color="transparent"
+            flat
+            dense
+            style="max-width: 80px; max-height: 28px"
+            :items="$i18n.locales"
+            item-text="name"
+            item-value="code"
+            v-model="language"
+            @change="$router.push(switchLocalePath(language))"
+          ></v-select>
+
           <!--           <div class="d-flex align-center">
             <nuxt-link
               color="primary"
@@ -58,7 +78,7 @@
     <v-main>
       <nuxt />
     </v-main>
-    <v-footer color="primary" :absolute="!fixed" app>
+    <v-footer color="primary" :absolute="true" app padless>
       <v-container>
         <v-row no-gutters class="text-center">
           <v-col cols="12" sm="6" lg="3" class="my-4">
@@ -115,19 +135,18 @@ export default {
   },
   data() {
     return {
+      language: this.$i18n.locale,
       clipped: false,
       drawer: false,
       fixed: false,
       items: [
         {
-          icon: "mdi-apps",
-          title: "Welcome",
+          title: this.$t("home"),
           to: "/",
         },
         {
-          icon: "mdi-chart-bubble",
-          title: "Inspire",
-          to: "/inspire",
+          title: this.$t("about"),
+          to: "/about",
         },
       ],
       miniVariant: false,
