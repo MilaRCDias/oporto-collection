@@ -21,7 +21,7 @@
     >
       <v-icon small>mdi-map-marker</v-icon>
       <span class="location">
-        {{ unity.location }}
+        {{ unity.address }}
       </span>
     </h4>
   </div>
@@ -29,5 +29,18 @@
 <script>
 export default {
   props: { unity: Object },
+  methods: {
+    goToLocation(un) {
+      console.log(un.map);
+      window.open(un.map);
+    },
+  },
 };
 </script>
+<style lang="scss" scoped>
+.location:hover {
+  text-decoration: underline;
+  color: #216cdf;
+  cursor: pointer;
+}
+</style>
