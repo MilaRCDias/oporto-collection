@@ -30,7 +30,7 @@
         <h1 class="primary--text">{{ $t("ourCollection.title") }}</h1>
         <p>{{ $t("ourCollection.subtitle") }}</p>
       </div>
-      <v-row class="px-4 px-sm-12">
+      <v-row :no-gutters="$vuetify.breakpoint.xsOnly" class="px-4 px-sm-12">
         <v-col
           v-for="unity in units.slice(0, 3)"
           :key="unity.name"
@@ -71,6 +71,7 @@
     </div>
 
     <v-row
+      :no-gutters="$vuetify.breakpoint.xsOnly"
       class="pb-8 pb-sm-0 pt-0"
       align="center"
       style="background-color: #f5f6f7"
