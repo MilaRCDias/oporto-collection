@@ -1,57 +1,93 @@
 <template>
   <div>
-    <div class="text-center my-8">
+    <v-row
+      v-if="!$vuetify.breakpoint.xsOnly"
+      no-gutters
+      align="center"
+      class="mb-12"
+    >
+      <v-col cols="12" sm="6">
+        <v-parallax
+          height="800"
+          src="https://static.wixstatic.com/media/b1e563_39dcc02a8f304177a3613e05f6440750~mv2.jpg/v1/fill/w_1440,h_1014,al_c,q_85/b1e563_39dcc02a8f304177a3613e05f6440750~mv2.webp"
+        ></v-parallax>
+      </v-col>
+      <v-col cols="12" sm="6" class="px-4 px-md-12" style="max-width: 540px">
+        <div class="mx-auto flex-center">
+          <h1>
+            You need a place to stay in Porto,
+            <span class="font-weight-700">we have multiple</span>
+          </h1>
+          <h3 class="my-3">
+            Premium accommodations located in the historic center of the city.
+          </h3>
+          <v-btn color="accent" class="my-4" to="/about" outlined
+            >explore collection</v-btn
+          >
+        </div>
+      </v-col>
+    </v-row>
+
+    <div class="text-center mt-6 my-sm-6">
       <h1 class="primary--text">Our Collection</h1>
       <p>Find the best fit for a perfect experience in the heart of Porto</p>
     </div>
 
-    <div>
-      <div
+    <v-row class="px-4 px-sm-12 my-sm-12">
+      <v-col
         v-for="unity in units.slice(0, 3)"
         :key="unity.name"
-        class="pa-3 my-4 card"
+        cols="12"
+        sm="6"
+        lg="4"
       >
-        <v-carousel height="300" hide-delimiters>
-          <v-carousel-item
-            v-for="(item, i) in unity.photos"
-            :key="i"
-            :src="item.link"
-          ></v-carousel-item>
-        </v-carousel>
-        <h3 class="font-weight-700">{{ unity.name }}</h3>
+        <div class="pa-3 my-4 card">
+          <v-carousel cycle height="300" hide-delimiters>
+            <v-carousel-item
+              v-for="(item, i) in unity.photos"
+              :key="i"
+              :src="item.link"
+            ></v-carousel-item>
+          </v-carousel>
+          <h3 class="font-weight-700">{{ unity.name }}</h3>
 
-        <h5>
-          <v-icon color="secondary" small>mdi-map-marker</v-icon>
-          {{ unity.address }}
-        </h5>
+          <h5>
+            <v-icon color="secondary" small>mdi-map-marker</v-icon>
+            {{ unity.address }}
+          </h5>
 
-        <h5>{{ unity.features }}</h5>
-        <v-btn
-          @click="bookClicked(unity)"
-          class="my-3"
-          outlined
-          depressed
-          block
-          color="accent"
-          >Book</v-btn
-        >
-      </div>
-    </div>
+          <h5>{{ unity.features }}</h5>
+          <v-btn
+            @click="bookClicked(unity)"
+            class="my-3"
+            outlined
+            depressed
+            block
+            color="accent"
+            >Book</v-btn
+          >
+        </div>
+      </v-col>
+    </v-row>
 
-    <v-row class="pb-8 pt-0" style="background-color: #f5f6f7">
+    <v-row
+      class="pb-8 pb-sm-0 pt-0"
+      align="center"
+      style="background-color: #f5f6f7"
+    >
       <v-col cols="12" md="6" class="pt-0">
         <img
           width="100%"
-          height="240px"
+          :height="$vuetify.breakpoint.xsOnly ? '240px' : '340px'"
           style="object-fit: cover"
-          src="https://static.wixstatic.com/media/b1e563_b3ba25afc8ef47ddbb59cf8a6b85874f~mv2.jpg/v1/fill/w_800,h_352,al_c,q_80/b1e563_b3ba25afc8ef47ddbb59cf8a6b85874f~mv2.webp"
+          src="https://static.wixstatic.com/media/b1e563_103084a0a344464bae3ed73d117d7ed4~mv2.png/v1/fill/w_1800,h_764,al_c,q_90/b1e563_103084a0a344464bae3ed73d117d7ed4~mv2.webp"
           alt=""
         />
       </v-col>
       <v-col cols="12" md="6" class="text-center pt-0">
         <p>Reserve também em nossas unidades</p>
         <img
-          width="160px"
+          :width="$vuetify.breakpoint.xsOnly ? '160px' : '260px'"
           src="https://static.wixstatic.com/media/b1e563_a2ed9f0c32b44d9ea53630035e89af7d~mv2.png/v1/crop/x_0,y_163,w_1251,h_242/fill/w_486,h_90,al_c,q_85,usm_0.66_1.00_0.01/LOGO-OPORTO-STREET-Group.webp"
           alt="Porto Street Logo"
         />
