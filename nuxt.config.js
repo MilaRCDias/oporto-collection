@@ -6,8 +6,8 @@ export default {
 
   // Global page headers: https://go.nuxtjs.dev/config-head
   head: {
-    titleTemplate: "%s - oporto-collection",
-    title: "oporto-collection",
+    titleTemplate: "Oporto Collection",
+    title: "Oporto Collection",
     htmlAttrs: {
       lang: "en",
     },
@@ -16,7 +16,7 @@ export default {
       { name: "viewport", content: "width=device-width, initial-scale=1" },
       { hid: "description", name: "description", content: "" },
     ],
-    link: [{ rel: "icon", type: "image/x-icon", href: "/favicon.ico" }],
+    link: [{ rel: "icon", type: "image/jpeg", href: "/favicon.jpg" }],
   },
 
   // Global CSS: https://go.nuxtjs.dev/config-css

@@ -36,7 +36,7 @@ const photos = [
         brand: "opc",
         unity: "santacatarina",
         id: 1,
-        link: "https://res.cloudinary.com/oporto-/image/upload/c_scale,w_600//v1622726881/Oporto%20Collection/Sta%20Catarina%20Pool/DSC_8918trat_hem6kz.jpg",
+        link: "https://res.cloudinary.com/oporto-/image/upload/c_scale,w_600/v1622726881/Oporto%20Collection/Sta%20Catarina%20Pool/DSC_8918trat_hem6kz.jpg",
         tag: "garden",
     },
     {
@@ -308,7 +308,7 @@ const photos = [
 
 const units = [
     {
-        name: "Santa Catarina | Pool & Fitness",
+        name: "Santa Catarina <br/> Pool & Fitness",
         rating: 9.37,
         location: "Clerigos Tower . City Center",
         resume:
@@ -317,7 +317,7 @@ const units = [
             "Located within walking distance of the main tourist attractions of the city of Porto, it presents itself as a superior quality unit, which highlights its outdoor pool, a magnificent garden, large terraces, and a gym.",
             "Carefully and elegantly decorated where comfort is present in every detail, our apartments are distinguished by their generous areas and brightness."
         ],
-        features: "Pool, Gym, Housekeeping, Breakfast",
+        amenities: ['pool', 'gym', 'cleaning', 'breakfast'],
         opening: "open",
         photos: photos.filter(e => e.unity == "santacatarina"),
         url: "https://opc-santacatarinapoolandfitness.com/",
@@ -332,10 +332,12 @@ const units = [
         resume:
             "Just 300 meters from the riverside, on the charming Rua Mouzinho da Silveira, a short walk from the main tourist spots in the city.",
         fulltext: [
-            "Located within walking distance of the main tourist attractions of the city of Porto, it presents itself as a superior quality unit, which highlights its outdoor pool, a magnificent garden, large terraces, and a gym.",
-            "Carefully and elegantly decorated where comfort is present in every detail, our apartments are distinguished by their generous areas and brightness."
+            "The Oporto Collection - Mouzinho da Silveira Apartments is located in the city center of Porto, a few meters walk from the riverside area and the main tourist attractions, such as Torre dos Clérigos, Palácio da Bolsa, and the iconic Livraria Lello. The traditional Rua das Flores, Avenida dos Aliados is within walking distance.",
+            "All apartments have city views, air conditioning, a living room, 4K TV, Bluetooth speaker with Google Assistant, free Wi-Fi, and a mobile phone for free use during your stay.",
+            "They also have a kitchenette where guests can prepare their meals. They also have the possibility to enjoy a pleasant continental breakfast in the apartment.",
+            "The property offers a reception service during the day, daily cleaning, luggage storage, and a lift."
         ],
-        features: "Kitnette, Furnished, Housekeeping, Breakfast",
+        amenities: ['kitnette', 'furnished', 'cleaning', 'breakfast'],
         opening: "open",
         map: "https://goo.gl/maps/ZNARYNg3Xs4rwJjo6",
         photos: photos.filter(e => e.unity == "mouzinho"),
@@ -348,10 +350,11 @@ const units = [
         resume:
             "Just 300 meters from the riverside, on the charming Rua Mouzinho da Silveira, a short walk from the main tourist spots in the city.",
         fulltext: [
-            "Located within walking distance of the main tourist attractions of the city of Porto, it presents itself as a superior quality unit, which highlights its outdoor pool, a magnificent garden, large terraces, and a gym.",
-            "Carefully and elegantly decorated where comfort is present in every detail, our apartments are distinguished by their generous areas and brightness."
+            "Oporto Collection Rosário is a typical 19th century bourgeois house, located in the artistic zone of the city, with art galleries, creative studios, restaurants and alternative shops.",
+            "The Family that originally built it was undoubtedly sensitive to its architectural shape and a keen sense of solidity and elegance, which can still be seen today in the original granite walls, high ceilings, riga staircase and wild pine wood floors. It is the natural light that guides our guests to the garden of camellias. In this green, secret oasis, with ancient trees and birds, life unfolds peacefully.",
+            "The fact that we only have six rooms, makes Oporto Collection Rosário an exclusive, peaceful and intimate place."
         ],
-        features: "Furnished, Housekeeping, Breakfast",
+        amenities: ['lounge', 'furnished', 'cleaning', 'breakfast'],
         opening: "open",
         map: "https://goo.gl/maps/ZNARYNg3Xs4rwJjo6",
         photos: photos.filter(e => e.unity == "rosario"),

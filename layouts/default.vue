@@ -96,17 +96,28 @@
 
           <v-col cols="12" sm="6" lg="3" class="my-4">
             <h6 class="white--text">SIGA-NOS</h6>
-            <v-btn color="white" icon><v-icon>mdi-instagram</v-icon></v-btn>
-            <v-btn color="white" icon><v-icon>mdi-facebook</v-icon></v-btn>
+            <v-btn
+              @click="navigate('https://www.instagram.com/oporto.collection/')"
+              color="white"
+              icon
+              ><v-icon>mdi-instagram</v-icon></v-btn
+            >
+            <v-btn
+              @click="navigate('https://www.facebook.com/oporto.collection')"
+              color="white"
+              icon
+              ><v-icon>mdi-facebook</v-icon></v-btn
+            >
           </v-col>
 
           <v-col cols="12" sm="6" lg="3" class="my-4">
             <v-row no-gutters>
               <v-col cols="6">
-                <h5 class="white--text">Registro AL</h5>
+                <h5 @click="navigate()" class="white--text">Registro AL</h5>
               </v-col>
               <v-col cols="6">
                 <img
+                  @click="navigate('https://www.livroreclamacoes.pt/inicio')"
                   width="75%"
                   src="https://www.livroreclamacoes.pt/image/layout_set_logo?img_id=21079&t=1622658535434"
                   alt=""
@@ -132,6 +143,11 @@ import Logo from "~/components/Logo.vue";
 export default {
   components: {
     Logo,
+  },
+  methods: {
+    navigate(url) {
+      window.open(url);
+    },
   },
   data() {
     return {

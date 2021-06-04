@@ -26,13 +26,100 @@
     </v-row>
 
     <div>
-      <div class="text-center mt-6 my-sm-6">
+      <div class="text-center mt-6">
         <h1 class="primary--text">{{ $t("ourCollection.title") }}</h1>
         <p>{{ $t("ourCollection.subtitle") }}</p>
       </div>
-      <v-row :no-gutters="$vuetify.breakpoint.xsOnly" class="px-4 px-sm-12">
+
+      <div>
+        <v-container v-if="$vuetify.breakpoint.mdAndUp">
+          <v-row
+            class="mb-12 pb-6"
+            no-gutters
+            v-for="unity in units.filter((e) => e.opening == 'open')"
+            :key="unity.name"
+          >
+            <v-col cols="6">
+              <v-carousel cycle height="100%" hide-delimiters>
+                <v-carousel-item
+                  v-for="(item, i) in unity.photos"
+                  :key="i"
+                  :src="item.link"
+                ></v-carousel-item>
+              </v-carousel>
+            </v-col>
+            <v-col cols="6" class="px-6">
+              <h2 v-html="unity.name" style="font-size: 3rem"></h2>
+              <h6 style="font-size: 13px" class="font-weight-400 my-4">
+                <v-icon color="grey" small>mdi-map-marker</v-icon>
+                {{ unity.address }}
+              </h6>
+
+              <div class="mb-8">
+                <p v-for="(p, i) in unity.fulltext" :key="i">{{ p }}</p>
+              </div>
+              <v-row no-gutters>
+                <div
+                  class="d-flex align-center mr-6"
+                  v-for="(amenity, i) in unity.amenities"
+                  :key="i"
+                >
+                  <AmenitiesIcon :size="30" :icon="amenity" />
+                  <h5 class="ml-2 pb-1 text-capitalize">{{ amenity }}</h5>
+                </div>
+              </v-row>
+
+              <v-btn
+                :disabled="unity.name !== 'Santa Catarina | Pool & Fitness'"
+                @click="bookClicked(unity)"
+                class="my-3"
+                :large="!$vuetify.breakpoint.xsOnly"
+                depressed
+                color="accent"
+                >{{ $t("book") }}</v-btn
+              >
+            </v-col>
+          </v-row>
+        </v-container>
+        <v-container fluid class="py-0">
+          <v-row no-gutters class="mt-12" align="center">
+            <v-col cols="6">
+              <v-parallax
+                height="700"
+                src="https://images.unsplash.com/photo-1585329701918-89e49c29ef27?ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=934&q=80"
+              ></v-parallax>
+            </v-col>
+            <v-col cols="4" class="px-sm-12">
+              <div style="max-width: 400px" class="mx-auto">
+                <h1>Best Location and Extreme Confort</h1>
+                <h3>
+                  All our units are served with breakfast and concierge 24h
+                </h3>
+              </div>
+            </v-col>
+          </v-row>
+        </v-container>
+        <v-container fluid>
+          <v-row no-gutters align="center">
+            <v-col cols="6" class="px-sm-12">
+              <div style="max-width: 400px" class="mx-auto">
+                <h1>A reason to wake up</h1>
+                <h3>All our units are served with breakfast</h3>
+              </div>
+            </v-col>
+            <v-col cols="6">
+              <v-parallax
+                height="700"
+                src="https://images.unsplash.com/photo-1530841492851-efc37c5f629c?ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=1633&q=80"
+              ></v-parallax>
+            </v-col>
+          </v-row>
+        </v-container>
+      </div>
+
+      <v-row v-if="$vuetify.breakpoint.smAndDown" class="px-4 px-sm-12">
         <v-col
-          v-for="unity in units.slice(0, 3)"
+          v-for="unity in units.filter((e) => e.opening == 'open')"
           :key="unity.name"
           cols="12"
           sm="6"
@@ -54,6 +141,7 @@
               <v-icon color="secondary" small>mdi-map-marker</v-icon>
               {{ unity.address }}
             </h6>
+
             <v-btn
               :disabled="unity.name !== 'Santa Catarina | Pool & Fitness'"
               @click="bookClicked(unity)"
@@ -102,9 +190,11 @@
 
 <script>
 import data from "@/data/apartments";
+import AmenitiesIcon from "@/components/AmenitiesIcon";
 /* import RatingLocation from "@/components/RatingLocation";
 import UnityCard from "@/components/UnityCard"; */
 export default {
+  components: { AmenitiesIcon },
   methods: {
     bookClicked(unity) {
       window.open(unity.url);
