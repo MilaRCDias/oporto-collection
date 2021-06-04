@@ -31,8 +31,8 @@
         <p>{{ $t("ourCollection.subtitle") }}</p>
       </div>
 
-      <div>
-        <v-container v-if="$vuetify.breakpoint.mdAndUp">
+      <div v-if="$vuetify.breakpoint.mdAndUp">
+        <v-container>
           <v-row
             class="mb-12 pb-6"
             no-gutters
