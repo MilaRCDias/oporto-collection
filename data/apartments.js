@@ -309,13 +309,12 @@ const photos = [
 const units = [
     {
         name: "Santa Catarina Pool & Fitness",
-        rating: 9.37,
+        key: "stacatarinapool",
         location: "Clerigos Tower . City Center",
-        resume:
-            "Located within walking distance of the main tourist attractions, it presents itself as a superior quality unit, which highlights its outdoor pool, a magnificent garden, large terraces, and a gym.",
         fulltext: 'descriptions.santacatarina',
-        amenities: ['pool', 'gym', 'cleaning', 'breakfast'],
+        amenities: ['pool', 'gym', 'cleaning', 'breakfast', 'kitchenette'],
         opening: "open",
+        status: "open",
         photos: photos.filter(e => e.unity == "santacatarina"),
         url: "https://opc-santacatarinapoolandfitness.com/",
         map: "https://goo.gl/maps/ZNARYNg3Xs4rwJjo6",
@@ -324,26 +323,24 @@ const units = [
     },
     {
         name: "Mouzinho Apartments",
-        rating: 8.72,
+        key: "mouzinho",
         location: "Clerigos Tower . City Center",
-        resume:
-            "Just 300 meters from the riverside, on the charming Rua Mouzinho da Silveira, a short walk from the main tourist spots in the city.",
         fulltext: 'descriptions.mouzinho',
-        amenities: ['kitnette', 'furnished', 'cleaning', 'breakfast'],
+        amenities: ['kitchenette', 'furnished', 'cleaning', 'breakfast'],
         opening: "open",
+        status: "site",
         map: "https://goo.gl/maps/ZNARYNg3Xs4rwJjo6",
         photos: photos.filter(e => e.unity == "mouzinho"),
         address: "Rua Mouzinho da Silveira, 157 - 167 , União de Freguesias do Centro, Porto",
     },
     {
         name: "Rosário | Luxury Suites",
-        rating: 8.72,
         location: "Clerigos Tower . City Center",
-        resume:
-            "Just 300 meters from the riverside, on the charming Rua Mouzinho da Silveira, a short walk from the main tourist spots in the city.",
+        key: "rosario",
         fulltext: 'descriptions.rosario',
         amenities: ['lounge', 'furnished', 'cleaning', 'breakfast'],
         opening: "open",
+        status: "site",
         map: "https://goo.gl/maps/ZNARYNg3Xs4rwJjo6",
         photos: photos.filter(e => e.unity == "rosario"),
         address: "227 Rua do Rosario, União de Freguesias do Centro, Porto",

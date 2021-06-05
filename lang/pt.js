@@ -2,9 +2,19 @@ export default {
     book: "reserve",
     exploreCollection: "Explore nossa Coleção",
     about: "Sobre",
+    soon: "soon",
     home: "Home",
     heading: "Precisas de um lugar no Porto,  <span class='font-weight-700'>nós temos muitos</span>",
     subtitle: "Acomodações premium no coração da cidade",
+    amenities: {
+        lounge: "lounge",
+        furnished: "mobilado",
+        cleaning: "limpeza",
+        breakfast: "pequeno almoço",
+        gym: "ginásio",
+        pool: "piscina",
+        kitchenette: "kitchenette",
+    },
     ops: {
         title: "Reserve também em nossas unidades",
         btn: "Veja mais"

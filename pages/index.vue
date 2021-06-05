@@ -18,7 +18,12 @@
           <h3 class="my-3">
             {{ $t("subtitle") }}
           </h3>
-          <v-btn color="accent" class="my-4" to="/about" outlined>
+          <v-btn
+            color="accent"
+            class="my-4"
+            @click="navigateSection('ourCollection')"
+            outlined
+          >
             {{ $t("exploreCollection") }}</v-btn
           >
         </div>
@@ -26,7 +31,7 @@
     </v-row>
 
     <div>
-      <div class="text-center mt-6">
+      <div class="text-center mt-6" id="ourCollection">
         <h1 class="primary--text">{{ $t("ourCollection.title") }}</h1>
         <p>{{ $t("ourCollection.subtitle") }}</p>
       </div>
@@ -68,18 +73,21 @@
                   :key="i"
                 >
                   <AmenitiesIcon :size="30" :icon="amenity" />
-                  <h5 class="ml-2 pb-1 text-capitalize">{{ amenity }}</h5>
+                  <h5 class="ml-2 pb-1 text-capitalize">
+                    {{ $t(`amenities.${amenity}`) }}
+                  </h5>
                 </div>
               </v-row>
 
               <v-btn
-                :disabled="unity.status !== 'opened'"
-                @click="navigateTo(unity)"
+                :disabled="unity.status !== 'open'"
+                :outlined="unity.status !== 'open'"
+                @click="navigateTo(unity.url)"
                 class="my-3"
                 :large="!$vuetify.breakpoint.xsOnly"
                 depressed
                 color="accent"
-                >{{ $t("book") }}</v-btn
+                >{{ unity.status !== "open" ? $t("soon") : $t("book") }}</v-btn
               >
             </v-col>
           </v-row>
@@ -100,11 +108,11 @@
             </v-col>
           </v-row>
         </v-container>
-        <v-container fluid>
+        <v-container fluid class="py-0">
           <v-row no-gutters align="center">
             <v-col cols="6" class="px-sm-12">
               <div style="max-width: 400px" class="mx-auto">
-                <h1>A reason to wake up</h1>
+                <h1>Continental Breakfast</h1>
                 <h3>All our units are served with breakfast</h3>
               </div>
             </v-col>
@@ -134,21 +142,68 @@
                 :src="item.link"
               ></v-carousel-item>
             </v-carousel>
-            <h3 v-html="unity.name" class="font-weight-700"></h3>
+            <h3 v-html="unity.name" class="font-weight-700 mt-4"></h3>
 
-            <h5 style="min-height: 5.5rem" class="pb-4">{{ unity.resume }}</h5>
-            <h5>{{ unity.features }}</h5>
+            <div
+              :style="$vuetify.breakpoint.xsOnly ? ' ' : 'min-height: 14rem'"
+            >
+              <p>{{ $t(unity.fulltext)[0] }}</p>
+              <v-expand-transition mode="in-out">
+                <div v-if="showReadMore && selectedUnity == unity.key">
+                  <p
+                    v-for="text in $t(unity.fulltext).slice(1, -1)"
+                    :key="text"
+                  >
+                    {{ text }}
+                  </p>
+                </div>
+              </v-expand-transition>
+              <v-btn
+                class="px-0"
+                color="accent"
+                @click="readMoreClicked(unity)"
+                text
+              >
+                {{
+                  showReadMore && selectedUnity == unity.key
+                    ? "read less"
+                    : "Read More"
+                }}</v-btn
+              >
+            </div>
+            <v-row no-gutters class="my-4">
+              <div v-for="amenity in unity.amenities" :key="amenity">
+                <v-tooltip
+                  v-if="amenity"
+                  bottom
+                  :position-x="-150"
+                  :position-y="150"
+                  color="primary"
+                  max-width="260"
+                >
+                  <template v-slot:activator="{ on, attrs }">
+                    <div v-bind="attrs" v-on="on">
+                      <AmenitiesIcon :size="36" :icon="amenity" class="px-2" />
+                    </div>
+                  </template>
+                  <span class="text-capitalize">
+                    {{ $t(`amenities.${amenity}`) }}
+                  </span>
+                </v-tooltip>
+              </div>
+            </v-row>
+
             <h6 style="font-size: 13px" class="font-weight-400">
               <v-icon color="secondary" small>mdi-map-marker</v-icon>
               {{ unity.address }}
             </h6>
 
             <v-btn
-              :disabled="unity.name !== 'Santa Catarina | Pool & Fitness'"
-              @click="navigateTo(unity)"
+              :disabled="unity.status !== 'open'"
+              @click="navigateTo(unity.url)"
               class="my-3"
               outlined
-              :large="!$vuetify.breakpoint.xsOnly"
+              large
               depressed
               block
               color="accent"
@@ -164,7 +219,7 @@
       align="center"
       style="background-color: #f5f6f7"
     >
-      <v-col cols="12" md="6" class="pt-0">
+      <v-col cols="12" sm="6" class="pt-0">
         <img
           width="100%"
           :height="$vuetify.breakpoint.xsOnly ? '240px' : '340px'"
@@ -173,7 +228,7 @@
           alt=""
         />
       </v-col>
-      <v-col cols="12" md="6" class="text-center pt-0">
+      <v-col cols="12" sm="6" class="text-center pt-0">
         <p>{{ $t("ops.title") }}</p>
         <img
           :width="$vuetify.breakpoint.xsOnly ? '160px' : '260px'"
@@ -205,11 +260,20 @@
 <script>
 import data from "@/data/apartments";
 import AmenitiesIcon from "@/components/AmenitiesIcon";
-/* import RatingLocation from "@/components/RatingLocation";
-import UnityCard from "@/components/UnityCard"; */
 export default {
   components: { AmenitiesIcon },
   methods: {
+    readMoreClicked(unity) {
+      if (unity.key == this.selectedUnity) {
+        this.showReadMore = !this.showReadMore;
+      } else {
+        this.selectedUnity = unity.key;
+        if (!this.showReadMore) {
+          this.showReadMore = true;
+        }
+      }
+    },
+
     navigateSection(section) {
       this.$nextTick(() =>
         window.document
@@ -218,8 +282,8 @@ export default {
       );
     },
 
-    navigateTo(unity) {
-      window.open(unity.url);
+    navigateTo(url) {
+      window.open(url);
     },
     selectUnity(unity) {
       console.log(unity);
@@ -230,6 +294,7 @@ export default {
     return {
       selectedPhoto: 0,
       showLocation: false,
+      showReadMore: false,
       showPhotos: false,
       selectedUnity: data.units[0],
       units: data.units,
