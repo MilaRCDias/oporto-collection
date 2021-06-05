@@ -49,14 +49,17 @@
               </v-carousel>
             </v-col>
             <v-col cols="6" class="px-6">
-              <h2 v-html="unity.name" style="font-size: 3rem"></h2>
+              <h2
+                v-html="unity.name"
+                style="font-size: 3rem; line-height: 110%; max-width: 20rem"
+              ></h2>
               <h6 style="font-size: 13px" class="font-weight-400 my-4">
                 <v-icon color="grey" small>mdi-map-marker</v-icon>
                 {{ unity.address }}
               </h6>
 
               <div class="mb-8">
-                <p v-for="(p, i) in unity.fulltext" :key="i">{{ p }}</p>
+                <p v-for="(p, i) in $t(unity.fulltext)" :key="i">{{ p }}</p>
               </div>
               <v-row no-gutters>
                 <div
@@ -70,8 +73,8 @@
               </v-row>
 
               <v-btn
-                :disabled="unity.name !== 'Santa Catarina | Pool & Fitness'"
-                @click="bookClicked(unity)"
+                :disabled="unity.status !== 'opened'"
+                @click="navigateTo(unity)"
                 class="my-3"
                 :large="!$vuetify.breakpoint.xsOnly"
                 depressed
@@ -92,9 +95,7 @@
             <v-col cols="4" class="px-sm-12">
               <div style="max-width: 400px" class="mx-auto">
                 <h1>Best Location and Extreme Confort</h1>
-                <h3>
-                  All our units are served with breakfast and concierge 24h
-                </h3>
+                <h3>All our units offer concierge 24h</h3>
               </div>
             </v-col>
           </v-row>
@@ -133,7 +134,7 @@
                 :src="item.link"
               ></v-carousel-item>
             </v-carousel>
-            <h3 class="font-weight-700">{{ unity.name }}</h3>
+            <h3 v-html="unity.name" class="font-weight-700"></h3>
 
             <h5 style="min-height: 5.5rem" class="pb-4">{{ unity.resume }}</h5>
             <h5>{{ unity.features }}</h5>
@@ -144,7 +145,7 @@
 
             <v-btn
               :disabled="unity.name !== 'Santa Catarina | Pool & Fitness'"
-              @click="bookClicked(unity)"
+              @click="navigateTo(unity)"
               class="my-3"
               outlined
               :large="!$vuetify.breakpoint.xsOnly"
@@ -159,8 +160,7 @@
     </div>
 
     <v-row
-      :no-gutters="$vuetify.breakpoint.xsOnly"
-      class="pb-8 pb-sm-0 pt-0"
+      class="pb-0 pb-sm-0 pt-0"
       align="center"
       style="background-color: #f5f6f7"
     >
@@ -174,15 +174,29 @@
         />
       </v-col>
       <v-col cols="12" md="6" class="text-center pt-0">
-        <p>Reserve também em nossas unidades</p>
+        <p>{{ $t("ops.title") }}</p>
         <img
           :width="$vuetify.breakpoint.xsOnly ? '160px' : '260px'"
           src="https://static.wixstatic.com/media/b1e563_a2ed9f0c32b44d9ea53630035e89af7d~mv2.png/v1/crop/x_0,y_163,w_1251,h_242/fill/w_486,h_90,al_c,q_85,usm_0.66_1.00_0.01/LOGO-OPORTO-STREET-Group.webp"
           alt="Porto Street Logo"
         />
-        <v-btn class="d-block my-3 mx-auto" outlined color="secondary" depressed
-          >Veja mais</v-btn
+        <v-btn
+          class="d-block my-3 mx-auto"
+          outlined
+          @click="navigateTo('https://www.oportostreet.com/')"
+          color="secondary"
+          depressed
+          >{{ $t("ops.btn") }}</v-btn
         >
+      </v-col>
+    </v-row>
+    <v-row no-gutters class="pt-0">
+      <v-col cols="12" class="pt-0">
+        <iframe
+          src="https://www.google.com/maps/d/u/0/embed?mid=1EhE80jxNLU26lZ8sW7T5sxEZ9JB_9XVe"
+          width="100%"
+          height="480"
+        ></iframe>
       </v-col>
     </v-row>
   </div>
@@ -196,7 +210,15 @@ import UnityCard from "@/components/UnityCard"; */
 export default {
   components: { AmenitiesIcon },
   methods: {
-    bookClicked(unity) {
+    navigateSection(section) {
+      this.$nextTick(() =>
+        window.document
+          .getElementById(section)
+          .scrollIntoView({ behavior: "smooth" })
+      );
+    },
+
+    navigateTo(unity) {
       window.open(unity.url);
     },
     selectUnity(unity) {
