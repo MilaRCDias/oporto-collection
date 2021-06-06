@@ -4,8 +4,8 @@ export default {
     about: "Sobre",
     soon: "soon",
     home: "Home",
-    heading: "Precisas de um lugar no Porto,  <span class='font-weight-700'>nós temos muitos</span>",
-    subtitle: "Acomodações premium no coração da cidade",
+    heading: "Descubra o <span class='font-weight-700'>inesperado</span>",
+    subtitle: "Criado por Originais®",
     amenities: {
         lounge: "lounge",
         furnished: "mobilado",

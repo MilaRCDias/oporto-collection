@@ -7,14 +7,15 @@
       class="mb-12"
     >
       <v-col cols="12" sm="6">
-        <v-parallax
-          height="800"
+        <div class="hero">.</div>
+        <!--         <v-parallax
+          :height="heroHeight"
           src="https://static.wixstatic.com/media/b1e563_39dcc02a8f304177a3613e05f6440750~mv2.jpg/v1/fill/w_1440,h_1014,al_c,q_85/b1e563_39dcc02a8f304177a3613e05f6440750~mv2.webp"
-        ></v-parallax>
+        ></v-parallax> -->
       </v-col>
-      <v-col cols="12" sm="6" class="px-4 px-md-12" style="max-width: 540px">
+      <v-col cols="12" sm="6" class="px-4 px-md-8" style="max-width: 540px">
         <div class="mx-auto flex-center">
-          <h1 v-html="$t('heading')"></h1>
+          <h1 style="font-size: 3rem" v-html="$t('heading')"></h1>
           <h3 class="my-3">
             {{ $t("subtitle") }}
           </h3>
@@ -35,68 +36,27 @@
         <h1 class="primary--text">{{ $t("ourCollection.title") }}</h1>
         <p>{{ $t("ourCollection.subtitle") }}</p>
       </div>
-
       <div v-if="$vuetify.breakpoint.mdAndUp">
         <v-container>
-          <v-row
+          <div
             class="mb-12 pb-6"
             no-gutters
             v-for="unity in units.filter((e) => e.opening == 'open')"
             :key="unity.name"
           >
-            <v-col cols="6">
-              <v-carousel cycle height="100%" hide-delimiters>
-                <v-carousel-item
-                  v-for="(item, i) in unity.photos"
-                  :key="i"
-                  :src="item.link"
-                ></v-carousel-item>
-              </v-carousel>
-            </v-col>
-            <v-col cols="6" class="px-6">
-              <h2
-                v-html="unity.name"
-                style="font-size: 3rem; line-height: 110%; max-width: 20rem"
-              ></h2>
-              <h6 style="font-size: 13px" class="font-weight-400 my-4">
-                <v-icon color="grey" small>mdi-map-marker</v-icon>
-                {{ unity.address }}
-              </h6>
-
-              <div class="mb-8">
-                <p v-for="(p, i) in $t(unity.fulltext)" :key="i">{{ p }}</p>
-              </div>
-              <v-row no-gutters>
-                <div
-                  class="d-flex align-center mr-6"
-                  v-for="(amenity, i) in unity.amenities"
-                  :key="i"
-                >
-                  <AmenitiesIcon :size="30" :icon="amenity" />
-                  <h5 class="ml-2 pb-1 text-capitalize">
-                    {{ $t(`amenities.${amenity}`) }}
-                  </h5>
-                </div>
-              </v-row>
-
-              <v-btn
-                :disabled="unity.status !== 'open'"
-                :outlined="unity.status !== 'open'"
-                @click="navigateTo(unity.url)"
-                class="my-3"
-                :large="!$vuetify.breakpoint.xsOnly"
-                depressed
-                color="accent"
-                >{{ unity.status !== "open" ? $t("soon") : $t("book") }}</v-btn
-              >
-            </v-col>
-          </v-row>
+            <DesktopCard
+              @show-form="showForm"
+              @navigate-to="navigateTo"
+              :selectedUnity="selectedUnity"
+              :unity="unity"
+            />
+          </div>
         </v-container>
         <v-container fluid class="py-0">
           <v-row no-gutters class="mt-12" align="center">
             <v-col cols="6">
               <v-parallax
-                height="700"
+                height="500"
                 src="https://images.unsplash.com/photo-1585329701918-89e49c29ef27?ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=934&q=80"
               ></v-parallax>
             </v-col>
@@ -118,13 +78,116 @@
             </v-col>
             <v-col cols="6">
               <v-parallax
-                height="700"
+                height="500"
                 src="https://images.unsplash.com/photo-1530841492851-efc37c5f629c?ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=1633&q=80"
               ></v-parallax>
             </v-col>
           </v-row>
         </v-container>
       </div>
+
+      <v-dialog
+        max-width="700"
+        :value="formDialog"
+        persistent
+        @click:outside="confirmClose()"
+      >
+        <v-card>
+          <v-card-title>
+            <h4>
+              Please fill out the form, email us or get in touch by telephone to
+              make your reservation. Wait for our confirmation
+            </h4>
+          </v-card-title>
+          <v-card-text>
+            <v-form
+              class="px-12"
+              action="https://formsubmit.co/patterndevotion@gmail.com"
+              method="POST"
+            >
+              <v-row no-gutters>
+                <v-col cols="12" sm="6">
+                  <v-text-field
+                    class="pb-4"
+                    hide-details
+                    aria-required
+                    v-model="form.name"
+                    outlined
+                    type="text"
+                    name="fullname"
+                    label="Full Name"
+                  ></v-text-field>
+                  <v-text-field
+                    class="pb-4"
+                    hide-details
+                    aria-required
+                    v-model="form.email"
+                    outlined
+                    type="email"
+                    name="email"
+                    label="Email"
+                  ></v-text-field>
+                  <v-text-field
+                    class="pb-4"
+                    hide-details
+                    aria-required
+                    v-model="form.phone"
+                    outlined
+                    name="phone"
+                    type="number"
+                    label="Phone"
+                  ></v-text-field>
+                  <v-text-field
+                    class="pb-4"
+                    hide-details
+                    aria-required
+                    v-model="form.guests"
+                    outlined
+                    name="guests"
+                    type="number"
+                    label="Number of Guests"
+                  ></v-text-field>
+                  <v-btn
+                    v-if="!addMoreInfo"
+                    small
+                    text
+                    color="accent"
+                    @click="addMoreInfo = true"
+                    >+ Add additional information</v-btn
+                  >
+                  <v-textarea
+                    v-if="addMoreInfo"
+                    outlined
+                    name="moreinfo"
+                    type="text"
+                    label="Aditional Information"
+                  ></v-textarea>
+                </v-col>
+                <v-col cols="12" sm="6" class="text-center">
+                  <h5>Select desired dates:</h5>
+                  <v-date-picker
+                    v-model="form.dates"
+                    :value="form.dates"
+                    range
+                    name="dates"
+                    no-title
+                    label="Choose dates"
+                  ></v-date-picker>
+                </v-col>
+              </v-row>
+
+              <v-btn
+                type="submit"
+                depressed
+                color="primary"
+                @click="submitForm"
+              >
+                Submit</v-btn
+              >
+            </v-form>
+          </v-card-text>
+        </v-card>
+      </v-dialog>
 
       <v-row v-if="$vuetify.breakpoint.smAndDown" class="px-4 px-sm-12">
         <v-col
@@ -134,117 +197,16 @@
           sm="6"
           lg="4"
         >
-          <div class="pa-3 pa-sm-5 my-4 card">
-            <v-carousel cycle height="300" hide-delimiters>
-              <v-carousel-item
-                v-for="(item, i) in unity.photos"
-                :key="i"
-                :src="item.link"
-              ></v-carousel-item>
-            </v-carousel>
-            <h3 v-html="unity.name" class="font-weight-700 mt-4"></h3>
-
-            <div
-              :style="$vuetify.breakpoint.xsOnly ? ' ' : 'min-height: 14rem'"
-            >
-              <p>{{ $t(unity.fulltext)[0] }}</p>
-              <v-expand-transition mode="in-out">
-                <div v-if="showReadMore && selectedUnity == unity.key">
-                  <p
-                    v-for="text in $t(unity.fulltext).slice(1, -1)"
-                    :key="text"
-                  >
-                    {{ text }}
-                  </p>
-                </div>
-              </v-expand-transition>
-              <v-btn
-                class="px-0"
-                color="accent"
-                @click="readMoreClicked(unity)"
-                text
-              >
-                {{
-                  showReadMore && selectedUnity == unity.key
-                    ? "read less"
-                    : "Read More"
-                }}</v-btn
-              >
-            </div>
-            <v-row no-gutters class="my-4">
-              <div v-for="amenity in unity.amenities" :key="amenity">
-                <v-tooltip
-                  v-if="amenity"
-                  bottom
-                  :position-x="-150"
-                  :position-y="150"
-                  color="primary"
-                  max-width="260"
-                >
-                  <template v-slot:activator="{ on, attrs }">
-                    <div v-bind="attrs" v-on="on">
-                      <AmenitiesIcon :size="36" :icon="amenity" class="px-2" />
-                    </div>
-                  </template>
-                  <span class="text-capitalize">
-                    {{ $t(`amenities.${amenity}`) }}
-                  </span>
-                </v-tooltip>
-              </div>
-            </v-row>
-
-            <h6 style="font-size: 13px" class="font-weight-400">
-              <v-icon color="secondary" small>mdi-map-marker</v-icon>
-              {{ unity.address }}
-            </h6>
-
-            <v-btn
-              :disabled="unity.status !== 'open'"
-              @click="navigateTo(unity.url)"
-              class="my-3"
-              outlined
-              large
-              depressed
-              block
-              color="accent"
-              >{{ $t("book") }}</v-btn
-            >
-          </div>
+          <MobileCard
+            :selectedUnity="selectedUnity"
+            :showReadMore="showReadMore"
+            :unity="unity"
+          />
         </v-col>
       </v-row>
     </div>
 
-    <v-row
-      class="pb-0 pb-sm-0 pt-0"
-      align="center"
-      style="background-color: #f5f6f7"
-    >
-      <v-col cols="12" sm="6" class="pt-0">
-        <img
-          width="100%"
-          :height="$vuetify.breakpoint.xsOnly ? '240px' : '340px'"
-          style="object-fit: cover"
-          src="https://static.wixstatic.com/media/b1e563_103084a0a344464bae3ed73d117d7ed4~mv2.png/v1/fill/w_1800,h_764,al_c,q_90/b1e563_103084a0a344464bae3ed73d117d7ed4~mv2.webp"
-          alt=""
-        />
-      </v-col>
-      <v-col cols="12" sm="6" class="text-center pt-0">
-        <p>{{ $t("ops.title") }}</p>
-        <img
-          :width="$vuetify.breakpoint.xsOnly ? '160px' : '260px'"
-          src="https://static.wixstatic.com/media/b1e563_a2ed9f0c32b44d9ea53630035e89af7d~mv2.png/v1/crop/x_0,y_163,w_1251,h_242/fill/w_486,h_90,al_c,q_85,usm_0.66_1.00_0.01/LOGO-OPORTO-STREET-Group.webp"
-          alt="Porto Street Logo"
-        />
-        <v-btn
-          class="d-block my-3 mx-auto"
-          outlined
-          @click="navigateTo('https://www.oportostreet.com/')"
-          color="secondary"
-          depressed
-          >{{ $t("ops.btn") }}</v-btn
-        >
-      </v-col>
-    </v-row>
+    <BannerOps @navigate-to="navigateTo" />
     <v-row no-gutters class="pt-0">
       <v-col cols="12" class="pt-0">
         <iframe
@@ -258,11 +220,49 @@
 </template>
 
 <script>
+import Swal from "sweetalert2";
 import data from "@/data/apartments";
-import AmenitiesIcon from "@/components/AmenitiesIcon";
+import BannerOps from "@/components/BannerOps";
+import MobileCard from "@/components/MobileCard";
+import DesktopCard from "@/components/DesktopCard";
 export default {
-  components: { AmenitiesIcon },
+  components: { BannerOps, MobileCard, DesktopCard },
+  computed: {
+    sooource() {
+      return this.$cloudinary.image.url(
+        "Oporto%20Collection/Mouzinho/DSC_0040And8moreTRAT_pk8dqo.jpg"
+      );
+    },
+
+    heroHeight() {
+      if (this.$vuetify.breakpoint.smOnly) {
+        return 360;
+      }
+      if (this.$vuetify.breakpoint.mdOnly) {
+        return 480;
+      }
+      if (this.$vuetify.breakpoint.lgOnly) {
+        return 580;
+      } else return 640;
+    },
+  },
   methods: {
+    confirmClose() {
+      Swal.fire({
+        title: "Close form?",
+        text: "You will lose the information inputed",
+        icon: "question",
+        showCancelButton: true,
+        confirmButtonText: "Yes, close form",
+      }).then((result) => {
+        if (result.isConfirmed) {
+          this.formDialog = false;
+        }
+      });
+    },
+
+    submitForm() {},
+
     readMoreClicked(unity) {
       if (unity.key == this.selectedUnity) {
         this.showReadMore = !this.showReadMore;
@@ -283,15 +283,25 @@ export default {
     },
 
     navigateTo(url) {
+      console.log(url);
       window.open(url);
     },
+
     selectUnity(unity) {
       console.log(unity);
       this.selectedUnity = unity;
     },
+
+    showForm(unity) {
+      this.formDialog = true;
+      console.log(unity);
+    },
   },
   data() {
     return {
+      addMoreInfo: false,
+      form: { name: "", email: "", phone: null, dates: [], additional: "" },
+      formDialog: false,
       selectedPhoto: 0,
       showLocation: false,
       showReadMore: false,
@@ -305,4 +315,25 @@ export default {
 };
 </script>
 
-<style lang="scss" scoped></style>
+<style lang="scss" scoped>
+/* Chrome, Safari, Edge, Opera */
+
+::v-deep input::-webkit-outer-spin-button,
+::v-deep input::-webkit-inner-spin-button {
+  -webkit-appearance: none;
+  margin: 0;
+}
+
+/* Firefox */
+input[type="number"] {
+  -moz-appearance: textfield;
+}
+
+.hero {
+  background-image: url("https://static.wixstatic.com/media/b1e563_39dcc02a8f304177a3613e05f6440750~mv2.jpg/v1/fill/w_1440,h_1014,al_c,q_85/b1e563_39dcc02a8f304177a3613e05f6440750~mv2.webp");
+  background-size: contain;
+  background-position: center center;
+  object-fit: scale-down;
+  height: 500px;
+}
+</style>

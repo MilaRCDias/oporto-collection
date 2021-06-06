@@ -37,7 +37,12 @@ export default {
   ],
 
   // Modules: https://go.nuxtjs.dev/config-modules
-  modules: ["nuxt-i18n"],
+  modules: ["nuxt-i18n", '@nuxtjs/cloudinary'],
+
+  cloudinary: {
+    cloudName: process.env.CLOUDNAME,
+  },
+
   i18n: {
     locales: [
       {
