@@ -1,60 +1,80 @@
 <template>
-  <v-row no-gutters>
-    <v-col cols="6">
-      <v-carousel cycle height="100%" hide-delimiters>
-        <v-carousel-item
-          v-for="(item, i) in unity.photos"
-          :key="i"
-          :src="item.link"
-        ></v-carousel-item>
-      </v-carousel>
-    </v-col>
-    <v-col cols="6" class="px-6">
-      <h2
-        v-html="unity.name"
-        style="font-size: 3rem; line-height: 110%; max-width: 20rem"
-      ></h2>
-      <h6 style="font-size: 13px" class="font-weight-400 my-4">
-        <v-icon color="grey" small>mdi-map-marker</v-icon>
-        {{ unity.address }}
-      </h6>
+  <div style="max-width: 50rem; position: relative" class="mx-auto p-relative">
+    <h2
+      class="mb-8 pl-4"
+      v-html="unity.name"
+      style="
+        font-size: 2.5rem;
+        line-height: 110%;
+        max-width: 20rem;
+        border-left: 2px solid #6f7681;
+      "
+    ></h2>
 
-      <div class="mb-8">
-        <p v-for="(p, i) in $t(unity.fulltext)" :key="i">{{ p }}</p>
-      </div>
-      <v-row no-gutters>
-        <div
-          class="d-flex align-center mr-6"
-          v-for="(amenity, i) in unity.amenities"
-          :key="i"
-        >
-          <AmenitiesIcon :size="30" :icon="amenity" />
-          <h5 class="ml-2 pb-1 text-capitalize">
-            {{ $t(`amenities.${amenity}`) }}
-          </h5>
-        </div>
-      </v-row>
+    <v-carousel
+      style="max-width: 544px; z-index: 1"
+      cycle
+      height="350px"
+      hide-delimiters
+    >
+      <v-carousel-item
+        v-for="(item, i) in unity.photos"
+        :key="i"
+        :src="item.link"
+      ></v-carousel-item>
+    </v-carousel>
 
-      <v-btn
-        :outlined="unity.status !== 'open'"
-        @click="
-          unity.status !== 'open'
-            ? $emit('show-form', unity)
-            : $emit('navigate-to', unity.url)
-        "
-        class="my-3"
-        :large="!$vuetify.breakpoint.xsOnly"
-        depressed
-        color="accent"
-        >{{ unity.status !== "open" ? $t("pre-book") : $t("book") }}</v-btn
-      >
-    </v-col>
-  </v-row>
+    <p class="mt-4" style="max-width: 25rem">{{ $t(unity.fulltext)[0] }}</p>
+    <v-btn
+      :outlined="unity.status !== 'open'"
+      @click="
+        unity.status !== 'open'
+          ? $emit('show-form', unity)
+          : $emit('navigate-to', unity.url)
+      "
+      class="mb-3"
+      :large="!$vuetify.breakpoint.xsOnly"
+      depressed
+      color="accent"
+      >{{ unity.status !== "open" ? $t("pre-book") : $t("book") }}</v-btn
+    >
+
+    <img
+      v-if="unity.cityImage.vertical"
+      height="500px"
+      width="330px"
+      style="
+        object-fit: cover;
+        position: absolute;
+        right: 0rem;
+        z-index: 0;
+        top: 0;
+      "
+      :src="unity.cityImage.address"
+      alt=""
+    />
+    <img
+      v-if="!unity.cityImage.vertical"
+      height="330px"
+      width="484px"
+      style="
+        object-fit: cover;
+        position: absolute;
+        right: 0rem;
+        z-index: 0;
+        top: 0;
+      "
+      :src="unity.cityImage.address"
+      alt=""
+    />
+  </div>
 </template>
 <script>
-import AmenitiesIcon from "@/components/AmenitiesIcon";
+/* import AmenitiesIcon from "@/components/AmenitiesIcon"; */
 export default {
   props: { unity: Object, selectedUnity: Object },
-  components: { AmenitiesIcon },
+  components: {
+    /* AmenitiesIcon */
+  },
 };
 </script>

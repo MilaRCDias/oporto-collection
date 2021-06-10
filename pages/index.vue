@@ -1,39 +1,43 @@
 <template>
   <div>
-    <v-row
-      v-if="!$vuetify.breakpoint.xsOnly"
-      no-gutters
-      align="center"
-      class="mb-12"
-    >
-      <v-col cols="12" sm="6">
-        <div class="hero">.</div>
-        <!--         <v-parallax
-          :height="heroHeight"
-          src="https://static.wixstatic.com/media/b1e563_39dcc02a8f304177a3613e05f6440750~mv2.jpg/v1/fill/w_1440,h_1014,al_c,q_85/b1e563_39dcc02a8f304177a3613e05f6440750~mv2.webp"
-        ></v-parallax> -->
-      </v-col>
-      <v-col cols="12" sm="6" class="px-4 px-md-8" style="max-width: 540px">
-        <div class="mx-auto flex-center">
-          <h1 style="font-size: 3rem" v-html="$t('heading')"></h1>
-          <h3 class="my-3">
-            {{ $t("subtitle") }}
-          </h3>
-          <v-btn
-            color="accent"
-            class="my-4"
-            @click="navigateSection('ourCollection')"
-            outlined
-          >
-            {{ $t("exploreCollection") }}</v-btn
-          >
-        </div>
-      </v-col>
-    </v-row>
+    <v-container fluid class="hero mb-12">
+      <v-row
+        style="height: 680px; max-width: 50rem"
+        no-gutters
+        align="center"
+        class="mx-auto"
+      >
+        <!--         <v-col cols="6">
+          <h1 class="white--text">Discover the Unexpected</h1>
+          <v-btn outlined color="white" class="btn">explore collection</v-btn>
+        </v-col> -->
+      </v-row>
+    </v-container>
+    <v-container style="max-width: 50rem" class="my-12">
+      <h2>Discover the Unexpected</h2>
+      <v-row class="mx-auto" justify="space-between">
+        <v-col
+          cols="4"
+          v-for="unity in units.filter((e) => e.opening == 'open')"
+          :key="unity.name"
+        >
+          <img
+            style="object-fit: cover"
+            height="200px"
+            width="100%"
+            :src="unity.photos[0].link"
+            alt=""
+          />
+          <h5>{{ unity.name }}</h5>
+        </v-col>
+      </v-row>
+    </v-container>
 
     <div>
       <div class="text-center mt-6" id="ourCollection">
-        <h1 class="primary--text">{{ $t("ourCollection.title") }}</h1>
+        <h1 class="primary--text">
+          {{ $t("ourCollection.title") }}
+        </h1>
         <p>{{ $t("ourCollection.subtitle") }}</p>
       </div>
       <div v-if="$vuetify.breakpoint.mdAndUp">
@@ -56,12 +60,12 @@
           <v-row no-gutters class="mt-12" align="center">
             <v-col cols="6">
               <v-parallax
-                height="500"
+                height="400"
                 src="https://images.unsplash.com/photo-1585329701918-89e49c29ef27?ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=934&q=80"
               ></v-parallax>
             </v-col>
-            <v-col cols="4" class="px-sm-12">
-              <div style="max-width: 400px" class="mx-auto">
+            <v-col cols="6" class="px-sm-12">
+              <div style="max-width: 500px" class="mx-auto">
                 <h1>Best Location and Extreme Confort</h1>
                 <h3>All our units offer concierge 24h</h3>
               </div>
@@ -76,10 +80,10 @@
                 <h3>All our units are served with breakfast</h3>
               </div>
             </v-col>
-            <v-col cols="6">
+            <v-col cols="">
               <v-parallax
-                height="500"
-                src="https://images.unsplash.com/photo-1530841492851-efc37c5f629c?ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=1633&q=80"
+                height="400"
+                :src="require('@/assets/images/facilities/300983555.jpg')"
               ></v-parallax>
             </v-col>
           </v-row>
@@ -330,10 +334,14 @@ input[type="number"] {
 }
 
 .hero {
-  background-image: url("https://static.wixstatic.com/media/b1e563_39dcc02a8f304177a3613e05f6440750~mv2.jpg/v1/fill/w_1440,h_1014,al_c,q_85/b1e563_39dcc02a8f304177a3613e05f6440750~mv2.webp");
-  background-size: contain;
-  background-position: center center;
-  object-fit: scale-down;
-  height: 500px;
+  background-blend-mode: multiply;
+  background-size: cover;
+  background-position: center center !important;
+  background-image: linear-gradient(
+      90deg,
+      #083c6a 0%,
+      rgba(202, 205, 185, 0) 90%
+    ),
+    url("https://static.wixstatic.com/media/b1e563_39dcc02a8f304177a3613e05f6440750~mv2.jpg/v1/fill/w_1440,h_1014,al_c,q_85/b1e563_39dcc02a8f304177a3613e05f6440750~mv2.webp") !important;
 }
 </style>

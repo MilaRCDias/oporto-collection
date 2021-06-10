@@ -319,6 +319,10 @@ const units = [
         url: "https://opc-santacatarinapoolandfitness.com/",
         map: "https://goo.gl/maps/ZNARYNg3Xs4rwJjo6",
         address: "Rua Santa Catarina 1219, União de Freguesias do Centro, Porto",
+        cityImage: {
+            vertical: false,
+            address: "https://images.unsplash.com/photo-1581371945115-efd84739c065?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=750&q=80"
+        }
 
     },
     {
@@ -332,9 +336,13 @@ const units = [
         map: "https://goo.gl/maps/ZNARYNg3Xs4rwJjo6",
         photos: photos.filter(e => e.unity == "mouzinho"),
         address: "Rua Mouzinho da Silveira, 157 - 167 , União de Freguesias do Centro, Porto",
+        cityImage: {
+            vertical: true,
+            address: "https://images.unsplash.com/photo-1588505910760-a8e9a240dc95?ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=1300&q=80"
+        }
     },
     {
-        name: "Rosário | Luxury Suites",
+        name: "Rosário Luxury Suites",
         location: "Clerigos Tower . City Center",
         key: "rosario",
         fulltext: 'descriptions.rosario',
@@ -344,6 +352,10 @@ const units = [
         map: "https://goo.gl/maps/ZNARYNg3Xs4rwJjo6",
         photos: photos.filter(e => e.unity == "rosario"),
         address: "227 Rua do Rosario, União de Freguesias do Centro, Porto",
+        cityImage: {
+            vertical: false,
+            address: "https://images.unsplash.com/photo-1606851809718-d0ab589a9468?ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=975&q=80"
+        }
     },
     {
         name: "Hotel dos Castelos",
