@@ -45,7 +45,7 @@ export default {
       "Carefully and elegantly decorated where comfort is present in every detail, our apartments are distinguished by their generous areas and brightness.",
       "This unit is for adults only."
     ],
-    santacatarinaresidence: [
+    stacatarinaresidence: [
       "Oporto Collection Santa Catarina Residence, received the name of Rua de Santa Catarina. The first records found date from this street in 1662 and over time it was recognized as the main commercial area of the city.",
       "OPC Santa Catarina Residence is just a few steps from the traditional Bolhão municipal market and the famous Avenida dos Aliados.",
       "Oporto Collection Santa Catarina Residence (adults only) consists of 18 apartments (16 T1 and 2 T2), elegantly decorated with all the features for a stay that you will surely seek to repeat."

@@ -1,18 +1,18 @@
 
 import { carousel } from './carousel.js'
-import { photos } from './photos.js'
+/* import { photos } from './photos.js' */
 
 const units = [
     {
         name: "Santa Catarina Pool & Fitness",
         key: "stacatarinapool",
-        location: "Clerigos Tower . City Center",
+        fullname: { title: 'Santa Catarina', subtitle: 'Pool & Fitness' },
         fulltext: 'descriptions.santacatarina',
         amenities: ['pool', 'gym', 'cleaning', 'breakfast', 'kitchenette'],
         opening: "open",
         status: "open",
-        thumbnail: carousel.filter(e => e.unity == "santacatarina")[14],
-        photos: carousel.filter(e => e.unity == "santacatarina"),
+        thumbnail: carousel.filter(e => e.unity == "stacatarinapool")[14],
+        photos: carousel.filter(e => e.unity == "stacatarinapool"),
         url: "https://opc-santacatarinapoolandfitness.com/",
         map: "https://goo.gl/maps/ZNARYNg3Xs4rwJjo6",
         address: "Rua Santa Catarina 1219, União de Freguesias do Centro, Porto",
@@ -25,7 +25,7 @@ const units = [
     {
         name: "Mouzinho Apartments",
         key: "mouzinho",
-        location: "Clerigos Tower . City Center",
+        fullname: { title: 'Mouzinho', subtitle: 'Apartments' },
         fulltext: 'descriptions.mouzinho',
         amenities: ['kitchenette', 'furnished', 'cleaning', 'breakfast'],
         opening: "open",
@@ -45,7 +45,7 @@ const units = [
     },
     {
         name: "Rosário Luxury Suites",
-        location: "Clerigos Tower . City Center",
+        fullname: { title: 'Rosário', subtitle: 'Luxury Suites' },
         key: "rosario",
         fulltext: 'descriptions.rosario',
         amenities: ['lounge', 'furnished', 'cleaning', 'breakfast'],
@@ -58,20 +58,20 @@ const units = [
         address: "227 Rua do Rosario, União de Freguesias do Centro, Porto",
         cityImage: {
             vertical: false,
-            address: "https://images.unsplash.com/photo-1606851809718-d0ab589a9468?ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=975&q=80"
+            address: "city/jardins-palacio-de-cristal.jpg"
         }
     },
     {
         name: "Hotel dos Castelos",
-        location: "Clerigos Tower . City Center",
+        fullname: { title: 'Hotel dos Castelos', subtitle: 'Live . Work . Sports' },
         key: 'castelos',
         fulltext: 'descriptions.castelos',
         features: ['co-working', 'lounge', 'kitchenette', 'breakfast'],
         opening: "August 2021",
         status: false,
         map: "https://goo.gl/maps/ZNARYNg3Xs4rwJjo6",
-        thumbnail: photos.filter(e => e.unity == "hotelcastelolive")[0],
-        photos: photos.filter(e => e.unity == "hotelcastelolive"),
+        thumbnail: carousel.filter(e => e.unity == "castelos")[0],
+        photos: carousel.filter(e => e.unity == "castelos"),
         cityImage: {
             vertical: false,
             address: "https://images.unsplash.com/photo-1581371945115-efd84739c065?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=750&q=80"
@@ -79,39 +79,54 @@ const units = [
     },
     {
         name: "Santa Catarina Residence",
-        key: 'santacatarinaresidence',
-        fulltext: 'descriptions.santacatarinaresidence',
-        location: "Clerigos Tower . City Center",
+        fullname: { title: 'Santa Catarina', subtitle: 'Residence' },
+        key: 'stacatarinaresidence',
+        fulltext: 'descriptions.stacatarinaresidence',
         features: ['breakfast', 'furnished', 'kitchenette', 'clenaning'],
         opening: "August 2021",
         status: false,
-        thumbnail: photos.filter(e => e.unity == "santacatarinaresidence")[0],
-        photos: photos.filter(e => e.unity == "santacatarinaresidence"),
+        thumbnail: carousel.filter(e => e.unity == "stacatarinaresidence")[0],
+        photos: carousel.filter(e => e.unity == "stacatarinaresidence"),
         cityImage: {
             vertical: false,
             address: "https://images.unsplash.com/photo-1606851809718-d0ab589a9468?ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=975&q=80"
         }
     },
     {
-        name: "Fervença Palace Gaia",
+        name: "Casa da Marechal",
+        fullname: { title: 'Casa da Marechal', subtitle: 'Boutique Hotel' },
+        key: 'marechal',
+        fulltext: 'descriptions.marechal',
+        features: ['breakfast', 'furnished', 'kitchenette', 'clenaning'],
+        opening: "January 2022",
+        status: false,
+        thumbnail: carousel.filter(e => e.unity == "marechal")[0],
+        photos: carousel.filter(e => e.unity == "marechal"),
+        cityImage: {
+            vertical: false,
+            address: "https://images.unsplash.com/photo-1606851809718-d0ab589a9468?ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=975&q=80"
+        }
+    },
+    {
+        name: "Palácio da Fervença",
+        fullname: { title: 'Palácio da Fervença', subtitle: 'Gaia' },
         key: 'fervenca',
         fulltext: 'descriptions.fervenca',
-        location: "Clerigos Tower . City Center",
         features: ['breakfast', 'furnished', 'kitchenette', 'clenaning'],
         opening: "June 2022",
         status: false,
-        thumbnail: carousel.filter(e => e.unity == "fervencapalace")[0],
-        photos: carousel.filter(e => e.unity == "fervencapalace"),
+        thumbnail: carousel.filter(e => e.unity == "fervenca")[0],
+        photos: carousel.filter(e => e.unity == "fervenca"),
         cityImage: {
             vertical: false,
             address: "https://images.unsplash.com/photo-1606851809718-d0ab589a9468?ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=975&q=80"
         }
     },
     {
-        name: "Marquesa Palace Lux Apartmnets",
-        key: 'Marquesa',
+        name: "Marquesa Palace Luxury Apartments",
+        fullname: { title: 'Marquesa Palace', subtitle: 'Luxury Apartments' },
+        key: 'marquesa',
         fulltext: 'descriptions.marquesa',
-        location: "Clerigos Tower . City Center",
         features: ['breakfast', 'furnished', 'kitchenette', 'clenaning'],
         opening: "2023",
         status: false,
@@ -121,7 +136,7 @@ const units = [
             vertical: false,
             address: "https://images.unsplash.com/photo-1606851809718-d0ab589a9468?ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=975&q=80"
         }
-    },
+    }
 ]
 
 export default { units };

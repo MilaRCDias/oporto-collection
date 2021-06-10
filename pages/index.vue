@@ -1,23 +1,14 @@
 <template>
   <div>
     <v-container v-if="$vuetify.breakpoint.mdAndUp" fluid class="hero mb-12">
-      <v-row
-        style="height: 534px; max-width: 50rem"
-        no-gutters
-        align="center"
-        class="mx-auto"
-      >
-        <!--         <v-col cols="6">
-          <h1 class="white--text">Discover the Unexpected</h1>
-          <v-btn outlined color="white" class="btn">explore collection</v-btn>
-        </v-col> -->
+      <v-row style="height: 534px" no-gutters align="center" class="mx-auto">
       </v-row>
     </v-container>
-    <v-container style="max-width: 50rem" class="my-12">
+    <v-container style="max-width: 54rem" class="my-12">
       <h2>Discover the Unexpected</h2>
       <div
         class="mb-6"
-        style="border-top: 2px solid grey; max-width: 140px"
+        style="border-top: 2px solid #858e9c; max-width: 5rem"
       ></div>
       <v-row no-gutters class="mx-auto" justify="space-between">
         <v-col
@@ -41,94 +32,26 @@
       </v-row>
     </v-container>
 
-    <div v-if="$vuetify.breakpoint.mdAndUp">
-      <v-container>
-        <div
-          :id="unity.key"
-          class="mb-12 pb-6"
-          no-gutters
-          v-for="unity in units.filter((e) => e.opening == 'open')"
-          :key="unity.name"
-        >
-          <DesktopCard
-            @show-form="showForm"
-            @navigate-to="navigateTo"
-            :selectedUnity="selectedUnity"
-            :unity="unity"
-          />
-        </div>
-
-        <div class="text-center">
-          <h4
-            style="font-size: 4rem"
-            class="mt-12 text-center font-weight-light grey--text"
-          >
-            Summer Opennings
-          </h4>
-          <h4
-            style="background-color: #f4f4f4"
-            class="text-center d-inline-block grey--text mx-auto px-4 py-2"
-          >
-            August 2021
-          </h4>
-        </div>
-        <div
-          :id="unity.key"
-          class="my-12 pb-6"
-          no-gutters
-          v-for="unity in units.filter((e) => e.opening == 'August 2021')"
-          :key="unity.name"
-        >
-          <DesktopCard
-            @show-form="showForm"
-            @navigate-to="navigateTo"
-            :selectedUnity="selectedUnity"
-            :unity="unity"
-          />
-        </div>
-      </v-container>
-      <v-container fluid class="py-0">
-        <v-row no-gutters class="mt-12" align="center">
-          <v-col cols="6">
-            <v-parallax
-              height="400"
-              src="https://images.unsplash.com/photo-1569959220744-ff553533f492?ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=1645&q=80"
-            ></v-parallax>
-          </v-col>
-          <v-col cols="6" class="px-sm-12">
-            <div style="max-width: 400px" class="mx-auto">
-              <h1>Best Location and Extreme Confort</h1>
-              <h3>All our units offer Concierge 24h and Daily Cleaning</h3>
-            </div>
-          </v-col>
-        </v-row>
-      </v-container>
-      <v-container fluid class="py-0">
-        <v-row no-gutters align="center">
-          <v-col cols="6" class="px-sm-12">
-            <div style="max-width: 460px" class="mx-auto">
-              <h1>Continental Breakfast</h1>
-              <h3>All our units are served with breakfast</h3>
-            </div>
-          </v-col>
-          <v-col cols="6">
-            <img
-              height="400px"
-              width="100%"
-              style="object-fit: cover"
-              :src="require('@/assets/images/facilities/breakfast.jpg')"
-              alt=""
-            /><!-- 
-            <v-parallax
-              height="400"
-              :src="require('@/assets/images/facilities/breakfast.jpg')"
-            ></v-parallax> -->
-          </v-col>
-        </v-row>
-      </v-container>
-    </div>
-
-    <FormDialog :formDialog="formDialog" @confirm-close="confirmClose()" />
+    <v-container
+      v-if="$vuetify.breakpoint.mdAndUp"
+      style="max-width: 56rem"
+      class="mx-auto"
+    >
+      <div
+        :id="unity.key"
+        class="mb-12 pb-6"
+        no-gutters
+        v-for="unity in units.filter((e) => e.opening == 'open')"
+        :key="unity.name"
+      >
+        <DesktopCard
+          @show-form="showForm"
+          @navigate-to="navigateTo"
+          :selectedUnity="selectedUnity"
+          :unity="unity"
+        />
+      </div>
+    </v-container>
 
     <v-row v-if="$vuetify.breakpoint.smAndDown" class="px-4 px-sm-12">
       <v-col
@@ -148,6 +71,69 @@
         />
       </v-col>
     </v-row>
+
+    <v-container>
+      <div>
+        <h2
+          style="font-size: 3rem"
+          class="mt-12 font-weight-light secondary--text"
+        >
+          Next Opennings
+        </h2>
+        <div
+          class="mb-6"
+          style="border-top: 2px solid #858e9c; max-width: 5rem"
+        ></div>
+      </div>
+      <v-row no-gutters>
+        <v-col
+          :id="unity.key"
+          class="my-sm-12 pb-6"
+          no-gutters
+          v-for="(unity, i) in units.filter((e) => e.opening !== 'open')"
+          :class="$vuetify.breakpoint.xsOnly ? 'col-12' : ''"
+          :key="unity.name"
+        >
+          <NextOpenings
+            :class="i !== 4 ? 'pr-3' : 'pr-0'"
+            @show-form="showForm"
+            @navigate-to="navigateTo"
+            :selectedUnity="selectedUnity"
+            :unity="unity"
+          />
+        </v-col>
+      </v-row>
+    </v-container>
+
+    <v-container v-if="$vuetify.breakpoint.mdAndUp" fluid class="py-0">
+      <v-row no-gutters class="mt-12" align="center">
+        <v-col cols="6">
+          <v-parallax
+            height="400"
+            src="https://images.unsplash.com/photo-1569959220744-ff553533f492?ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=1645&q=80"
+          ></v-parallax>
+        </v-col>
+        <v-col cols="6" class="px-sm-12">
+          <div style="max-width: 400px" class="mx-auto">
+            <h1>Best Location and Extreme Confort</h1>
+            <h3>All our units offer Concierge 24h and Daily Cleaning</h3>
+          </div>
+        </v-col>
+      </v-row>
+    </v-container>
+    <v-container v-if="$vuetify.breakpoint.mdAndUp" fluid class="py-0">
+      <v-row no-gutters align="center">
+        <v-col cols="6" class="px-sm-12">
+          <div style="max-width: 460px" class="mx-auto">
+            <h1>Continental Breakfast</h1>
+            <h3>All our units are served with breakfast</h3>
+          </div>
+        </v-col>
+        <v-col cols="6" class="breakfast"> </v-col>
+      </v-row>
+    </v-container>
+
+    <FormDialog :formDialog="formDialog" @confirm-close="confirmClose()" />
 
     <BannerOps style="background-color: #595e67" @navigate-to="navigateTo" />
     <v-row no-gutters class="pt-0">
@@ -170,8 +156,9 @@ import BannerOps from "@/components/BannerOps";
 import FormDialog from "@/components/FormDialog";
 import MobileCard from "@/components/MobileCard";
 import DesktopCard from "@/components/DesktopCard";
+import NextOpenings from "@/components/NextOpenings";
 export default {
-  components: { BannerOps, MobileCard, DesktopCard, FormDialog },
+  components: { BannerOps, MobileCard, DesktopCard, FormDialog, NextOpenings },
   computed: {
     sooource() {
       return this.$cloudinary.image.url(
@@ -275,6 +262,14 @@ input[type="number"] {
 
 .main-list:hover {
   box-shadow: 0px 4px 42px rgba(188, 207, 225, 0.4);
+}
+
+.breakfast {
+  height: 400px;
+  width: 100%;
+  background-position: center center;
+  background-size: cover;
+  background-image: url("@/assets/images/facilities/breakfast.jpg");
 }
 /* linear-gradient(
       90deg,

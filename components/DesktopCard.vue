@@ -1,5 +1,5 @@
 <template>
-  <div style="max-width: 50rem; position: relative" class="mx-auto p-relative">
+  <div style="max-width: 54rem; position: relative" class="mx-auto p-relative">
     <h2
       class="mb-8 pl-4"
       v-html="unity.name"
@@ -74,7 +74,11 @@
         z-index: 0;
         top: 0;
       "
-      :src="unity.cityImage.address"
+      :src="
+        unity.cityImage.address.includes('ht')
+          ? unity.cityImage.address
+          : require(`~/assets/images/${unity.cityImage.address}`)
+      "
       alt=""
     />
   </div>

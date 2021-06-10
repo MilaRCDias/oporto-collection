@@ -131,100 +131,120 @@ export const carousel = [
   },
 
   {
-    unity: "santacatarina",
+    unity: "stacatarinapool",
     link: "sta-catarina/212865356.jpg",
   },
   {
-    unity: "santacatarina",
+    unity: "stacatarinapool",
     link: "sta-catarina/292672385.jpg",
   },
   {
-    unity: "santacatarina",
+    unity: "stacatarinapool",
     link: "sta-catarina/183338377.jpg",
   },
   {
-    unity: "santacatarina",
+    unity: "stacatarinapool",
     link: "sta-catarina/183338398.jpg",
   },
   {
-    unity: "santacatarina",
+    unity: "stacatarinapool",
     link: "sta-catarina/184074503.jpg",
   },
   {
-    unity: "santacatarina",
+    unity: "stacatarinapool",
     link: "sta-catarina/184236270.jpg",
   },
   {
-    unity: "santacatarina",
+    unity: "stacatarinapool",
     link: "sta-catarina/184236283.jpg",
   },
   {
-    unity: "santacatarina",
+    unity: "stacatarinapool",
     link: "sta-catarina/184236857.jpg",
   },
   {
-    unity: "santacatarina",
+    unity: "stacatarinapool",
     link: "sta-catarina/184237154.jpg",
   },
   {
-    unity: "santacatarina",
+    unity: "stacatarinapool",
     link: "sta-catarina/184237155.jpg",
   },
   {
-    unity: "santacatarina",
+    unity: "stacatarinapool",
     link: "sta-catarina/184386838.jpg",
   },
   {
-    unity: "santacatarina",
+    unity: "stacatarinapool",
     link: "sta-catarina/184489031.jpg",
   },
   {
-    unity: "santacatarina",
+    unity: "stacatarinapool",
     link: "sta-catarina/184489043.jpg",
   },
   {
-    unity: "santacatarina",
+    unity: "stacatarinapool",
     link: "sta-catarina/184964523.jpg",
   },
   {
-    unity: "santacatarina",
+    unity: "stacatarinapool",
     link: "sta-catarina/212868524.jpg",
   },
   {
-    unity: "santacatarina",
+    unity: "stacatarinapool",
     link: "sta-catarina/276187936.jpg",
   },
   {
-    unity: "santacatarina",
+    unity: "stacatarinapool",
     link: "sta-catarina/278280029.jpg",
   },
 
   {
-    unity: "santacatarina",
+    unity: "stacatarinapool",
     link: "sta-catarina/292413819.jpg",
   },
   {
-    unity: "santacatarina",
+    unity: "stacatarinapool",
     link: "sta-catarina/292414289.jpg",
   },
   {
-    unity: "santacatarina",
+    unity: "stacatarinapool",
     link: "sta-catarina/292415778.jpg",
   },
   {
-    unity: "santacatarina",
+    unity: "stacatarinapool",
     link: "sta-catarina/294142046.jpg",
   },
   {
-    unity: "santacatarina",
+    unity: "stacatarinapool",
     link: "sta-catarina/300982148.jpg",
   },
   {
-    unity: "santacatarina",
+    unity: "stacatarinapool",
     link: "sta-catarina/301613370.jpg",
   },
   {
-    unity: "santacatarina",
+    unity: "stacatarinapool",
     link: "sta-catarina/DSC_8317a.jpg",
+  },
+  {
+    unity: "castelos",
+    link: "other/castelos.jpg",
+  },
+  {
+    unity: "fervenca",
+    link: "other/fervenca.jpg",
+  },
+  {
+    unity: "marechal",
+    link: "other/marechal.jpg",
+  },
+  {
+    unity: "stacatarinaresidence",
+    link: "other/stacatarinaresidence.jpg",
+  },
+  {
+    unity: "marquesa",
+    link: "other/marquesa.jpg",
   },
 ];

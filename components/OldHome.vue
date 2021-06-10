@@ -47,7 +47,7 @@
       </v-row>
     </v-container>
     <v-container class="my-12">
-      <h1 class="text-center">Summer Openings</h1>
+      <h1 class="text-center">Next Openings</h1>
       <h3 class="mt-3 mb-12 text-center">
         Find the best fit for a perfect experience in the heart of Porto
       </h3>

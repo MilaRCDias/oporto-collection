@@ -32,20 +32,21 @@
         <v-row no-gutters justify="space-between" align="center">
           <v-btn
             @click="drawer = !drawer"
-            v-if="$vuetify.breakpoint.xsOnly"
+            :style="$vuetify.breakpoint.xsOnly ? '' : 'visibility: hidden'"
             icon
           >
             <v-icon>mdi-menu</v-icon>
           </v-btn>
           <div style="cursor: pointer" @click="$router.push('/')">
-            <Logo :light="false" />
+            <Logo class="mt-1" :light="false" />
           </div>
           <v-select
             solo
+            hide-details
+            class="my-0 py-0"
             background-color="transparent"
             flat
-            dense
-            style="max-width: 80px; max-height: 28px"
+            style="max-width: 80px"
             :items="$i18n.locales"
             item-text="name"
             item-value="code"
