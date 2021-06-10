@@ -78,7 +78,7 @@
           style="font-size: 3rem"
           class="mt-12 font-weight-light secondary--text"
         >
-          Next Opennings
+         {{$t("nextOpenings")}}
         </h2>
         <div
           class="mb-6"
@@ -115,8 +115,8 @@
         </v-col>
         <v-col cols="6" class="px-sm-12">
           <div style="max-width: 400px" class="mx-auto">
-            <h1>Best Location and Extreme Confort</h1>
-            <h3>All our units offer Concierge 24h and Daily Cleaning</h3>
+            <h1> {{$t("homeInfo.conciergeTitle")}}</h1>
+            <h3>{{$t("homeInfo.conciergeSubTitle")}}</h3>
           </div>
         </v-col>
       </v-row>
@@ -125,8 +125,8 @@
       <v-row no-gutters align="center">
         <v-col cols="6" class="px-sm-12">
           <div style="max-width: 460px" class="mx-auto">
-            <h1>Continental Breakfast</h1>
-            <h3>All our units are served with breakfast</h3>
+            <h1>{{$t("homeInfo.breakfastTitle")}}</h1>
+            <h3>{{$t("homeInfo.breakfastSubTitle")}}</h3>
           </div>
         </v-col>
         <v-col cols="6" class="breakfast"> </v-col>

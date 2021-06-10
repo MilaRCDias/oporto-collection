@@ -10,17 +10,10 @@
         </v-col>
         <v-col cols="12" sm="5">
           <p>
-            We look for new concepts of accommodation offering a variety of
-            services to our guests, the main differentiating factors that we
-            seek to establish in our tourist units.
+           {{$t("aboutPage.aboutParaph1")}}
           </p>
           <p>
-            The criterion of geographical location is a priority in the concept
-            that we initially developed for each unit, and all of our tourist
-            accommodations are located in the historic center of the city, close
-            to the main tourist attractions, allowing our guests the opportunity
-            to know and experience the daily life of the city. urban and
-            cultural life of the city in its most varied aspects.
+            {{$t("aboutPage.aboutParaph2")}}
           </p>
 
           <v-btn color="accent" class="my-4" to="/" outlined
@@ -30,11 +23,11 @@
       </v-row>
 
       <div>
-        <h1>Registro Nacional de Turismo</h1>
+        <h1>{{$t("aboutPage.turismRegistry")}}</h1>
 
-        <li>Unidade: Santa Catarina Pool & Fitness</li>
+        <li>{{$t("aboutPage.unity")}} Santa Catarina Pool & Fitness</li>
         <li>
-          Localização: Rua de Santa Catarina, 1219. 4000-457 Porto, Porto.
+          {{$t("aboutPage.address")}} Rua de Santa Catarina, 1219. 4000-457 Porto, Porto.
         </li>
         <li>90131/AL – Rua de Santa Catarina, 1219. Apartamento: 3° 3H</li>
         <li>90130/AL – Rua de Santa Catarina, 1219. Apartamento: 3º 3L</li>
