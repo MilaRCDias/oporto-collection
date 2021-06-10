@@ -11,7 +11,7 @@ const units = [
         amenities: ['pool', 'gym', 'cleaning', 'breakfast', 'kitchenette'],
         opening: "open",
         status: "open",
-        thumbnail: carousel.filter(e => e.unity == "santacatarina")[0],
+        thumbnail: carousel.filter(e => e.unity == "santacatarina")[14],
         photos: carousel.filter(e => e.unity == "santacatarina"),
         url: "https://opc-santacatarinapoolandfitness.com/",
         map: "https://goo.gl/maps/ZNARYNg3Xs4rwJjo6",

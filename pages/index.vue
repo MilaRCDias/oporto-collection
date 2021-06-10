@@ -2,7 +2,7 @@
   <div>
     <v-container v-if="$vuetify.breakpoint.mdAndUp" fluid class="hero mb-12">
       <v-row
-        style="height: 680px; max-width: 50rem"
+        style="height: 534px; max-width: 50rem"
         no-gutters
         align="center"
         class="mx-auto"
