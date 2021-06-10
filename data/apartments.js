@@ -55,44 +55,56 @@ const units = [
     },
     {
         name: "Hotel dos Castelos",
-        rating: false,
         location: "Clerigos Tower . City Center",
-        resume:
-            "Just 300 meters from the riverside, on the charming Rua Mouzinho da Silveira, a short walk from the main tourist spots in the city.",
-        features: "Co-working,  Lounge, Kitnette, Breakfast ",
+        key: 'castelos',
+        fulltext: 'descriptions.castelos',
+        features: ['co-working', 'lounge', 'kitchenette', 'breakfast'],
         opening: "August 2021",
         map: "https://goo.gl/maps/ZNARYNg3Xs4rwJjo6",
         photos: photos.filter(e => e.unity == "hotelcastelolive"),
+        cityImage: {
+            vertical: false,
+            address: "https://images.unsplash.com/photo-1581371945115-efd84739c065?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=750&q=80"
+        }
     },
     {
         name: "Santa Catarina Residence",
-        rating: false,
+        key: 'santacatarinaresidence',
+        fulltext: 'descriptions.santacatarinaresidence',
         location: "Clerigos Tower . City Center",
-        resume:
-            "Just 300 meters from the riverside, on the charming Rua Mouzinho da Silveira, a short walk from the main tourist spots in the city.",
-        features: "Kitnette, Furnished, Housekeeping, Breakfast",
+        features: ['breakfast', 'furnished', 'kitchenette', 'clenaning'],
         opening: "August 2021",
         photos: photos.filter(e => e.unity == "stacatarinaresidence"),
+        cityImage: {
+            vertical: false,
+            address: "https://images.unsplash.com/photo-1606851809718-d0ab589a9468?ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=975&q=80"
+        }
     },
     {
         name: "Fervença Palace Gaia",
-        rating: false,
+        key: 'fervenca',
+        fulltext: 'descriptions.fervenca',
         location: "Clerigos Tower . City Center",
-        resume:
-            "Just 300 meters from the riverside, on the charming Rua Mouzinho da Silveira, a short walk from the main tourist spots in the city.",
-        features: "Kitnette, Furnished, Housekeeping, Breakfast",
+        features: ['breakfast', 'furnished', 'kitchenette', 'clenaning'],
         opening: "June 2022",
         photos: photos.filter(e => e.unity == "fervencapalace"),
+        cityImage: {
+            vertical: false,
+            address: "https://images.unsplash.com/photo-1606851809718-d0ab589a9468?ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=975&q=80"
+        }
     },
     {
         name: "Marquesa Palace Lux Apartmnets",
-        rating: false,
+        key: 'Marquesa',
+        fulltext: 'descriptions.marquesa',
         location: "Clerigos Tower . City Center",
-        resume:
-            "Just 300 meters from the riverside, on the charming Rua Mouzinho da Silveira, a short walk from the main tourist spots in the city.",
-        features: "Kitnette, Furnished, Housekeeping, Breakfast",
+        features: ['breakfast', 'furnished', 'kitchenette', 'clenaning'],
         opening: "2023",
         photos: photos.filter(e => e.unity == "marquesa"),
+        cityImage: {
+            vertical: false,
+            address: "https://images.unsplash.com/photo-1606851809718-d0ab589a9468?ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=975&q=80"
+        }
     },
 ]
 

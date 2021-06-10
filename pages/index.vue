@@ -41,183 +41,91 @@
       </v-row>
     </v-container>
 
-    <div>
-      <!--       <div class="text-center mt-6" id="ourCollection">
-        <h1 class="primary--text">
-          {{ $t("ourCollection.title") }}
-        </h1>
-        <p>{{ $t("ourCollection.subtitle") }}</p>
-      </div> -->
-      <div v-if="$vuetify.breakpoint.mdAndUp">
-        <v-container>
-          <div
-            :id="unity.key"
-            class="mb-12 pb-6"
-            no-gutters
-            v-for="unity in units.filter((e) => e.opening == 'open')"
-            :key="unity.name"
-          >
-            <DesktopCard
-              @show-form="showForm"
-              @navigate-to="navigateTo"
-              :selectedUnity="selectedUnity"
-              :unity="unity"
-            />
-          </div>
-        </v-container>
-        <v-container fluid class="py-0">
-          <v-row no-gutters class="mt-12" align="center">
-            <v-col cols="6">
-              <v-parallax
-                height="400"
-                src="https://images.unsplash.com/photo-1585329701918-89e49c29ef27?ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=934&q=80"
-              ></v-parallax>
-            </v-col>
-            <v-col cols="6" class="px-sm-12">
-              <div style="max-width: 500px" class="mx-auto">
-                <h1>Best Location and Extreme Confort</h1>
-                <h3>All our units offer concierge 24h</h3>
-              </div>
-            </v-col>
-          </v-row>
-        </v-container>
-        <v-container fluid class="py-0">
-          <v-row no-gutters align="center">
-            <v-col cols="6" class="px-sm-12">
-              <div style="max-width: 400px" class="mx-auto">
-                <h1>Continental Breakfast</h1>
-                <h3>All our units are served with breakfast</h3>
-              </div>
-            </v-col>
-            <v-col cols="">
-              <v-parallax
-                height="400"
-                :src="require('@/assets/images/facilities/300983555.jpg')"
-              ></v-parallax>
-            </v-col>
-          </v-row>
-        </v-container>
-      </div>
-
-      <v-dialog
-        max-width="700"
-        :value="formDialog"
-        persistent
-        @click:outside="confirmClose()"
-      >
-        <v-card>
-          <v-card-title>
-            <h4>
-              Please fill out the form, email us or get in touch by telephone to
-              make your reservation. Wait for our confirmation
-            </h4>
-          </v-card-title>
-          <v-card-text>
-            <v-form
-              class="px-12"
-              action="https://formsubmit.co/patterndevotion@gmail.com"
-              method="POST"
-            >
-              <v-row no-gutters>
-                <v-col cols="12" sm="6">
-                  <v-text-field
-                    class="pb-4"
-                    hide-details
-                    aria-required
-                    v-model="form.name"
-                    outlined
-                    type="text"
-                    name="fullname"
-                    label="Full Name"
-                  ></v-text-field>
-                  <v-text-field
-                    class="pb-4"
-                    hide-details
-                    aria-required
-                    v-model="form.email"
-                    outlined
-                    type="email"
-                    name="email"
-                    label="Email"
-                  ></v-text-field>
-                  <v-text-field
-                    class="pb-4"
-                    hide-details
-                    aria-required
-                    v-model="form.phone"
-                    outlined
-                    name="phone"
-                    type="number"
-                    label="Phone"
-                  ></v-text-field>
-                  <v-text-field
-                    class="pb-4"
-                    hide-details
-                    aria-required
-                    v-model="form.guests"
-                    outlined
-                    name="guests"
-                    type="number"
-                    label="Number of Guests"
-                  ></v-text-field>
-                  <v-btn
-                    v-if="!addMoreInfo"
-                    small
-                    text
-                    color="accent"
-                    @click="addMoreInfo = true"
-                    >+ Add additional information</v-btn
-                  >
-                  <v-textarea
-                    v-if="addMoreInfo"
-                    outlined
-                    name="moreinfo"
-                    type="text"
-                    label="Aditional Information"
-                  ></v-textarea>
-                </v-col>
-                <v-col cols="12" sm="6" class="text-center">
-                  <h5>Select desired dates:</h5>
-                  <v-date-picker
-                    v-model="form.dates"
-                    :value="form.dates"
-                    range
-                    name="dates"
-                    no-title
-                    label="Choose dates"
-                  ></v-date-picker>
-                </v-col>
-              </v-row>
-
-              <v-btn
-                type="submit"
-                depressed
-                color="primary"
-                @click="submitForm"
-              >
-                Submit</v-btn
-              >
-            </v-form>
-          </v-card-text>
-        </v-card>
-      </v-dialog>
-
-      <v-row v-if="$vuetify.breakpoint.smAndDown" class="px-4 px-sm-12">
-        <v-col
+    <div v-if="$vuetify.breakpoint.mdAndUp">
+      <v-container>
+        <div
+          :id="unity.key"
+          class="mb-12 pb-6"
+          no-gutters
           v-for="unity in units.filter((e) => e.opening == 'open')"
           :key="unity.name"
-          cols="12"
-          sm="6"
-          lg="4"
         >
-          <MobileCard
+          <DesktopCard
+            @show-form="showForm"
+            @navigate-to="navigateTo"
             :selectedUnity="selectedUnity"
-            :showReadMore="showReadMore"
             :unity="unity"
           />
-        </v-col>
-      </v-row>
+        </div>
+      </v-container>
+      <v-container fluid class="py-0">
+        <v-row no-gutters class="mt-12" align="center">
+          <v-col cols="6">
+            <v-parallax
+              height="400"
+              src="https://images.unsplash.com/photo-1564644929137-34b018daf461?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=2689&q=80"
+            ></v-parallax>
+          </v-col>
+          <v-col cols="6" class="px-sm-12">
+            <div style="max-width: 500px" class="mx-auto">
+              <h1>Best Location and Extreme Confort</h1>
+              <h3>All our units offer concierge 24h</h3>
+            </div>
+          </v-col>
+        </v-row>
+      </v-container>
+      <v-container fluid class="py-0">
+        <v-row no-gutters align="center">
+          <v-col cols="6" class="px-sm-12">
+            <div style="max-width: 400px" class="mx-auto">
+              <h1>Continental Breakfast</h1>
+              <h3>All our units are served with breakfast</h3>
+            </div>
+          </v-col>
+          <v-col cols="">
+            <v-parallax
+              height="400"
+              :src="require('@/assets/images/facilities/300983555.jpg')"
+            ></v-parallax>
+          </v-col>
+        </v-row>
+      </v-container>
     </div>
+
+    <FormDialog :value="formDialog" @confirm-close="confirmClose()" />
+
+    <v-row v-if="$vuetify.breakpoint.smAndDown" class="px-4 px-sm-12">
+      <v-col
+        v-for="unity in units.filter((e) => e.opening == 'open')"
+        :key="unity.name"
+        cols="12"
+        sm="6"
+        lg="4"
+      >
+        <MobileCard
+          :selectedUnity="selectedUnity"
+          :showReadMore="showReadMore"
+          :unity="unity"
+        />
+      </v-col>
+    </v-row>
+
+    <v-container>
+      <div
+        :id="unity.key"
+        class="mb-12 pb-6"
+        no-gutters
+        v-for="unity in units.filter((e) => e.opening !== 'open')"
+        :key="unity.name"
+      >
+        <DesktopCard
+          @show-form="showForm"
+          @navigate-to="navigateTo"
+          :selectedUnity="selectedUnity"
+          :unity="unity"
+        />
+      </div>
+    </v-container>
 
     <BannerOps @navigate-to="navigateTo" />
     <v-row no-gutters class="pt-0">
@@ -237,10 +145,11 @@ import Swal from "sweetalert2";
 import data from "@/data/apartments";
 import { attractions } from "@/data/attractions.js";
 import BannerOps from "@/components/BannerOps";
+import FormDialog from "@/components/FormDialog";
 import MobileCard from "@/components/MobileCard";
 import DesktopCard from "@/components/DesktopCard";
 export default {
-  components: { BannerOps, MobileCard, DesktopCard },
+  components: { BannerOps, MobileCard, DesktopCard, FormDialog },
   computed: {
     sooource() {
       return this.$cloudinary.image.url(

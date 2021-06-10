@@ -25,6 +25,7 @@
     </v-carousel>
 
     <p class="mt-4" style="max-width: 25rem">{{ $t(unity.fulltext)[0] }}</p>
+
     <v-btn
       :outlined="unity.status !== 'open'"
       @click="
@@ -36,7 +37,7 @@
       :large="!$vuetify.breakpoint.xsOnly"
       depressed
       color="accent"
-      >{{ unity.status !== "open" ? $t("pre-book") : $t("book") }}</v-btn
+      >{{ unity.status !== "open" ? $t("preBook") : $t("book") }}</v-btn
     >
 
     <img
