@@ -1,6 +1,6 @@
 <template>
   <div>
-    <v-container fluid class="hero mb-12">
+    <v-container v-if="$vuetify.breakpoint.mdAndUp" fluid class="hero mb-12">
       <v-row
         style="height: 680px; max-width: 50rem"
         no-gutters
@@ -15,10 +15,18 @@
     </v-container>
     <v-container style="max-width: 50rem" class="my-12">
       <h2>Discover the Unexpected</h2>
-      <v-row class="mx-auto" justify="space-between">
+      <div
+        class="mb-6"
+        style="border-top: 2px solid grey; max-width: 140px"
+      ></div>
+      <v-row no-gutters class="mx-auto" justify="space-between">
         <v-col
+          style="cursor: pointer"
+          @click="navigateSection(unity.key)"
+          :class="i == 1 ? 'px-3' : ''"
+          class="main-list"
           cols="4"
-          v-for="unity in units.filter((e) => e.opening == 'open')"
+          v-for="(unity, i) in units.filter((e) => e.opening == 'open')"
           :key="unity.name"
         >
           <img
@@ -43,6 +51,7 @@
       <div v-if="$vuetify.breakpoint.mdAndUp">
         <v-container>
           <div
+            :id="unity.key"
             class="mb-12 pb-6"
             no-gutters
             v-for="unity in units.filter((e) => e.opening == 'open')"
@@ -226,6 +235,7 @@
 <script>
 import Swal from "sweetalert2";
 import data from "@/data/apartments";
+import { attractions } from "@/data/attractions.js";
 import BannerOps from "@/components/BannerOps";
 import MobileCard from "@/components/MobileCard";
 import DesktopCard from "@/components/DesktopCard";
@@ -265,8 +275,6 @@ export default {
       });
     },
 
-    submitForm() {},
-
     readMoreClicked(unity) {
       if (unity.key == this.selectedUnity) {
         this.showReadMore = !this.showReadMore;
@@ -282,7 +290,7 @@ export default {
       this.$nextTick(() =>
         window.document
           .getElementById(section)
-          .scrollIntoView({ behavior: "smooth" })
+          .scrollIntoView({ block: "center", behavior: "smooth" })
       );
     },
 
@@ -312,7 +320,7 @@ export default {
       showPhotos: false,
       selectedUnity: data.units[0],
       units: data.units,
-      attractions: data.attractions,
+      attractions,
       data,
     };
   },
@@ -338,6 +346,10 @@ input[type="number"] {
   background-size: cover;
   background-position: center center !important;
   background-image: url("https://static.wixstatic.com/media/b1e563_39dcc02a8f304177a3613e05f6440750~mv2.jpg/v1/fill/w_1440,h_1014,al_c,q_85/b1e563_39dcc02a8f304177a3613e05f6440750~mv2.webp") !important;
+}
+
+.main-list:hover {
+  box-shadow: 0px 4px 42px rgba(188, 207, 225, 0.4);
 }
 /* linear-gradient(
       90deg,
