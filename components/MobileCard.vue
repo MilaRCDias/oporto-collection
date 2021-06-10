@@ -27,7 +27,12 @@
           </p>
         </div>
       </v-expand-transition>
-      <v-btn class="px-0" color="accent" @click="readMoreClicked(unity)" text>
+      <v-btn
+        class="px-0"
+        color="accent"
+        @click="$emit('read-more-clicked', unity)"
+        text
+      >
         {{
           showReadMore && selectedUnity == unity.key ? "read less" : "Read More"
         }}</v-btn
@@ -76,7 +81,7 @@
 <script>
 import AmenitiesIcon from "@/components/AmenitiesIcon";
 export default {
-  props: { unity: Object, showReadMore: Boolean, selectedUnity: Object },
+  props: { unity: Object, showReadMore: Boolean, selectedUnity: String },
   components: { AmenitiesIcon },
 };
 </script>

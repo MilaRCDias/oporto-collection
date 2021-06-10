@@ -125,6 +125,7 @@
 
     <v-row v-if="$vuetify.breakpoint.smAndDown" class="px-4 px-sm-12">
       <v-col
+        :id="unity.key"
         v-for="unity in units.filter((e) => e.opening == 'open')"
         :key="unity.name"
         cols="12"
@@ -132,6 +133,8 @@
         lg="4"
       >
         <MobileCard
+          @navigate-to="navigateTo"
+          @read-more-clicked="readMoreClicked"
           :selectedUnity="selectedUnity"
           :showReadMore="showReadMore"
           :unity="unity"
@@ -216,13 +219,7 @@ export default {
     },
 
     navigateTo(url) {
-      console.log(url);
       window.open(url);
-    },
-
-    selectUnity(unity) {
-      console.log(unity);
-      this.selectedUnity = unity;
     },
 
     showForm(unity) {
