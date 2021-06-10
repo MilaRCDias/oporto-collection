@@ -128,6 +128,38 @@
           </v-col>
         </v-row>
       </v-container>
+
+      <div
+        class="white text-center pt-6"
+        style="width: 100%"
+        v-if="$vuetify.breakpoint.xsOnly"
+      >
+        <h4 class="mb-4">Download our App</h4>
+        <div>
+          <img
+            @click="
+              navigateTo(
+                'https://play.google.com/store/apps/details?id=com.guestu.oportocollection&hl=en_US&gl=US'
+              )
+            "
+            width="140px"
+            src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQ1sXm0Q5e8heOHZsrOh-kVlPkcZNmwytCQtlESwXTPrP8dlpHVFU-5CrKeAxoSMvdu1g&usqp=CAU"
+            alt=""
+          />
+        </div>
+        <div>
+          <img
+            @click="
+              navigateTo(
+                'https://apps.apple.com/br/app/oporto-collection/id1548928973'
+              )
+            "
+            width="144px"
+            src="https://www.greenqueen.com.hk/wp-content/uploads/2020/02/Apple-App-Store-Icon.png"
+            alt=""
+          />
+        </div>
+      </div>
     </v-footer>
   </v-app>
 </template>

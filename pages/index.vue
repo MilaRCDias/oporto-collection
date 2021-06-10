@@ -140,6 +140,30 @@
           <div style="max-width: 400px" class="mx-auto">
             <h1>{{ $t("homeInfo.phoneTitle") }}</h1>
             <h3>{{ $t("homeInfo.phoneSubTitle") }}</h3>
+            <v-row no-gutters align="center">
+              <img
+                @click="
+                  navigateTo(
+                    'https://play.google.com/store/apps/details?id=com.guestu.oportocollection&hl=en_US&gl=US'
+                  )
+                "
+                height="40px"
+                class="mb-1 cursor-pointer"
+                src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQ1sXm0Q5e8heOHZsrOh-kVlPkcZNmwytCQtlESwXTPrP8dlpHVFU-5CrKeAxoSMvdu1g&usqp=CAU"
+                alt=""
+              />
+              <img
+                @click="
+                  navigateTo(
+                    'https://apps.apple.com/br/app/oporto-collection/id1548928973'
+                  )
+                "
+                height="44px"
+                class="ml-4 cursor-pointer"
+                src="https://www.greenqueen.com.hk/wp-content/uploads/2020/02/Apple-App-Store-Icon.png"
+                alt=""
+              />
+            </v-row>
           </div>
         </v-col>
       </v-row>
