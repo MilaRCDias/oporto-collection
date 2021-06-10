@@ -1,11 +1,20 @@
 <template>
   <div class="pa-3 pa-sm-5 my-4 card">
     <v-carousel cycle height="300" hide-delimiters>
-      <v-carousel-item
-        v-for="(item, i) in unity.photos"
-        :key="i"
-        :src="item.link"
-      ></v-carousel-item>
+      <template v-if="unity.status == 'open'">
+        <v-carousel-item
+          v-for="(item, i) in unity.photos"
+          :key="i"
+          :src="require(`~/assets/images/${item.link}`)"
+        ></v-carousel-item>
+      </template>
+      <template v-else>
+        <v-carousel-item
+          v-for="(item, i) in unity.photos"
+          :key="i"
+          :src="item.link"
+        ></v-carousel-item>
+      </template>
     </v-carousel>
     <h3 v-html="unity.name" class="font-weight-700 mt-4"></h3>
 

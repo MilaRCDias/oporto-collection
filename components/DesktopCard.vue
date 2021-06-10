@@ -17,11 +17,20 @@
       height="350px"
       hide-delimiters
     >
-      <v-carousel-item
-        v-for="(item, i) in unity.photos"
-        :key="i"
-        :src="item.link"
-      ></v-carousel-item>
+      <template v-if="unity.status == 'open'">
+        <v-carousel-item
+          v-for="(item, i) in unity.photos"
+          :key="i"
+          :src="require(`~/assets/images/${item.link}`)"
+        ></v-carousel-item>
+      </template>
+      <template v-else>
+        <v-carousel-item
+          v-for="(item, i) in unity.photos"
+          :key="i"
+          :src="item.link"
+        ></v-carousel-item>
+      </template>
     </v-carousel>
 
     <p class="mt-4" style="max-width: 25rem">{{ $t(unity.fulltext)[0] }}</p>

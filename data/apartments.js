@@ -1,3 +1,5 @@
+
+import { carousel } from './carousel.js'
 import { photos } from './photos.js'
 
 const units = [
@@ -9,7 +11,8 @@ const units = [
         amenities: ['pool', 'gym', 'cleaning', 'breakfast', 'kitchenette'],
         opening: "open",
         status: "open",
-        photos: photos.filter(e => e.unity == "santacatarina"),
+        thumbnail: carousel.filter(e => e.unity == "santacatarina")[0],
+        photos: carousel.filter(e => e.unity == "santacatarina"),
         url: "https://opc-santacatarinapoolandfitness.com/",
         map: "https://goo.gl/maps/ZNARYNg3Xs4rwJjo6",
         address: "Rua Santa Catarina 1219, União de Freguesias do Centro, Porto",
@@ -27,7 +30,8 @@ const units = [
         amenities: ['kitchenette', 'furnished', 'cleaning', 'breakfast'],
         opening: "open",
         status: "open",
-        photos: photos.filter(e => e.unity == "mouzinho"),
+        thumbnail: carousel.filter(e => e.unity == "mouzinho")[8],
+        photos: carousel.filter(e => e.unity == "mouzinho"),
         url: "https://opc-mouzinhodasilveira.com/",
         map: "https://goo.gl/maps/ZNARYNg3Xs4rwJjo6",
         address: "Rua Mouzinho da Silveira, 157 - 167 , União de Freguesias do Centro, Porto",
@@ -44,7 +48,8 @@ const units = [
         amenities: ['lounge', 'furnished', 'cleaning', 'breakfast'],
         opening: "open",
         status: "open",
-        photos: photos.filter(e => e.unity == "rosario"),
+        thumbnail: carousel.filter(e => e.unity == "rosario")[8],
+        photos: carousel.filter(e => e.unity == "rosario"),
         url: "https://opc-rosario.com/",
         map: "https://goo.gl/maps/ZNARYNg3Xs4rwJjo6",
         address: "227 Rua do Rosario, União de Freguesias do Centro, Porto",
@@ -60,7 +65,9 @@ const units = [
         fulltext: 'descriptions.castelos',
         features: ['co-working', 'lounge', 'kitchenette', 'breakfast'],
         opening: "August 2021",
+        status: false,
         map: "https://goo.gl/maps/ZNARYNg3Xs4rwJjo6",
+        thumbnail: photos.filter(e => e.unity == "hotelcastelolive")[0],
         photos: photos.filter(e => e.unity == "hotelcastelolive"),
         cityImage: {
             vertical: false,
@@ -74,7 +81,9 @@ const units = [
         location: "Clerigos Tower . City Center",
         features: ['breakfast', 'furnished', 'kitchenette', 'clenaning'],
         opening: "August 2021",
-        photos: photos.filter(e => e.unity == "stacatarinaresidence"),
+        status: false,
+        thumbnail: photos.filter(e => e.unity == "santacatarinaresidence")[0],
+        photos: photos.filter(e => e.unity == "santacatarinaresidence"),
         cityImage: {
             vertical: false,
             address: "https://images.unsplash.com/photo-1606851809718-d0ab589a9468?ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=975&q=80"
@@ -87,7 +96,9 @@ const units = [
         location: "Clerigos Tower . City Center",
         features: ['breakfast', 'furnished', 'kitchenette', 'clenaning'],
         opening: "June 2022",
-        photos: photos.filter(e => e.unity == "fervencapalace"),
+        status: false,
+        thumbnail: carousel.filter(e => e.unity == "fervencapalace")[0],
+        photos: carousel.filter(e => e.unity == "fervencapalace"),
         cityImage: {
             vertical: false,
             address: "https://images.unsplash.com/photo-1606851809718-d0ab589a9468?ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=975&q=80"
@@ -100,7 +111,9 @@ const units = [
         location: "Clerigos Tower . City Center",
         features: ['breakfast', 'furnished', 'kitchenette', 'clenaning'],
         opening: "2023",
-        photos: photos.filter(e => e.unity == "marquesa"),
+        status: false,
+        thumbnail: carousel.filter(e => e.unity == "marquesa")[0],
+        photos: carousel.filter(e => e.unity == "marquesa"),
         cityImage: {
             vertical: false,
             address: "https://images.unsplash.com/photo-1606851809718-d0ab589a9468?ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=975&q=80"

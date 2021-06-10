@@ -31,9 +31,9 @@
         >
           <img
             style="object-fit: cover"
-            height="200px"
+            height="180px"
             width="100%"
-            :src="unity.photos[0].link"
+            :src="require(`~/assets/images/${unity.thumbnail.link}`)"
             alt=""
           />
           <h4>{{ unity.name }}</h4>

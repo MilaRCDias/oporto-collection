@@ -251,8 +251,8 @@ export const photos = [
     },
     {
         brand: "opc",
-        unity: "stacatarinaresidence",
-        link: "https://res.cloudinary.com/oporto-/image/upload/c_scale,w_1200/v1622734678/Oporto%20Collection/Sta%20Catarina%20Residence/residence_qsjdad.jpg",
+        unity: "santacatarinaresidence",
+        link: "https://res.cloudinary.com/oporto-/image/upload/v1622734678/Oporto%20Collection/Sta%20Catarina%20Residence/room.jpg",
         tag: "apartment",
     },
     {
