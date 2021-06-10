@@ -82,16 +82,13 @@
     <v-footer color="primary" absolute app padless>
       <v-container>
         <v-row no-gutters class="text-center">
-          <v-col cols="12" sm="6" lg="3" class="my-4">
-            <Logo light />
-          </v-col>
-          <v-col cols="12" sm="6" lg="3" class="my-4">
+          <v-col cols="12" sm="6" lg="4" class="my-4">
             <h6 class="white--text">Contacto</h6>
             <h5 class="white--text">geral@oportocollection.com</h5>
             <h5 class="white--text">+351 224 092 829</h5>
           </v-col>
 
-          <v-col cols="12" sm="6" lg="3" class="my-4">
+          <v-col cols="12" sm="6" lg="4" class="my-4">
             <h6 class="white--text">SIGA-NOS</h6>
             <v-btn
               @click="navigate('https://www.instagram.com/oporto.collection/')"
@@ -107,10 +104,15 @@
             >
           </v-col>
 
-          <v-col cols="12" sm="6" lg="3" class="my-4">
+          <v-col cols="12" sm="6" lg="4" class="my-4">
             <v-row no-gutters>
               <v-col cols="6">
-                <h5 @click="navigate()" class="white--text">Registro AL</h5>
+                <h5
+                  @click="$router.push('/register')"
+                  class="white--text cursor-pointer"
+                >
+                  Registro AL
+                </h5>
               </v-col>
               <v-col cols="6">
                 <img
