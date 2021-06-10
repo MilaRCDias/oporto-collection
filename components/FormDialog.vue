@@ -13,11 +13,8 @@
         </h4>
       </v-card-title>
       <v-card-text>
-        <v-form
-          class="px-12"
-          action="https://formsubmit.co/patterndevotion@gmail.com"
-          method="POST"
-        >
+        <!-- action="https://formsubmit.co/patterndevotion@gmail.com" -->
+        <v-form class="px-12" @submit.prevent="sendForm">
           <v-row no-gutters>
             <v-col cols="12" sm="6">
               <v-text-field
@@ -89,25 +86,41 @@
             </v-col>
           </v-row>
 
-          <v-btn type="submit" depressed color="primary" @click="submitForm">
-            Submit</v-btn
-          >
+          <v-btn type="submit" depressed color="primary"> Submit</v-btn>
         </v-form>
       </v-card-text>
     </v-card>
   </v-dialog>
 </template>
 <script>
+import { fireDb } from "~/plugins/firebase.js";
 export default {
   props: { formDialog: Boolean },
   data() {
     return {
-      form: {},
+      form: { name: "", email: "", phone: null, dates: [], additional: "" },
       addMoreInfo: false,
     };
   },
   methods: {
-    submitForm() {},
+    clearFields() {
+      console.log("Clear Fields");
+    },
+    async sendForm() {
+      const ref = fireDb.collection("leads").doc();
+      const document = this.form;
+      try {
+        await ref.set(document).then(this.clearFields());
+        this.formSent = true;
+        let self = this;
+        setTimeout(function () {
+          self.formSent = false;
+        }, 2000);
+      } catch (e) {
+        // TODO: error handling
+        console.error(e);
+      }
+    },
   },
 };
 </script>

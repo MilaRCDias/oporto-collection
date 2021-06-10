@@ -57,13 +57,42 @@
             :unity="unity"
           />
         </div>
+
+        <div class="text-center">
+          <h4
+            style="font-size: 4rem"
+            class="mt-12 text-center font-weight-light grey--text"
+          >
+            Summer Opennings
+          </h4>
+          <h4
+            style="background-color: #f4f4f4"
+            class="text-center d-inline-block grey--text mx-auto px-4 py-2"
+          >
+            August 2021
+          </h4>
+        </div>
+        <div
+          :id="unity.key"
+          class="my-12 pb-6"
+          no-gutters
+          v-for="unity in units.filter((e) => e.opening == 'August 2021')"
+          :key="unity.name"
+        >
+          <DesktopCard
+            @show-form="showForm"
+            @navigate-to="navigateTo"
+            :selectedUnity="selectedUnity"
+            :unity="unity"
+          />
+        </div>
       </v-container>
       <v-container fluid class="py-0">
         <v-row no-gutters class="mt-12" align="center">
           <v-col cols="6">
             <v-parallax
               height="400"
-              src="https://images.unsplash.com/photo-1564644929137-34b018daf461?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=2689&q=80"
+              src="https://images.unsplash.com/photo-1569959220744-ff553533f492?ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=1645&q=80"
             ></v-parallax>
           </v-col>
           <v-col cols="6" class="px-sm-12">
@@ -92,7 +121,7 @@
       </v-container>
     </div>
 
-    <FormDialog :value="formDialog" @confirm-close="confirmClose()" />
+    <FormDialog :formDialog="formDialog" @confirm-close="confirmClose()" />
 
     <v-row v-if="$vuetify.breakpoint.smAndDown" class="px-4 px-sm-12">
       <v-col
@@ -109,23 +138,6 @@
         />
       </v-col>
     </v-row>
-
-    <v-container>
-      <div
-        :id="unity.key"
-        class="mb-12 pb-6"
-        no-gutters
-        v-for="unity in units.filter((e) => e.opening !== 'open')"
-        :key="unity.name"
-      >
-        <DesktopCard
-          @show-form="showForm"
-          @navigate-to="navigateTo"
-          :selectedUnity="selectedUnity"
-          :unity="unity"
-        />
-      </div>
-    </v-container>
 
     <BannerOps @navigate-to="navigateTo" />
     <v-row no-gutters class="pt-0">
@@ -221,7 +233,7 @@ export default {
   data() {
     return {
       addMoreInfo: false,
-      form: { name: "", email: "", phone: null, dates: [], additional: "" },
+
       formDialog: false,
       selectedPhoto: 0,
       showLocation: false,
