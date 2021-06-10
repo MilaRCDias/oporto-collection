@@ -25,6 +25,8 @@ export default {
     breakfastTitle: "Pequeno Almoço Continental",
     breakfastSubTitle:
       "Todas as nossas unidades oferecem opçao de pequeno almoço",
+    phoneTitle: "App Guia e Telemóvel",
+    phoneSubTitle: "Aplicação gratuita e telemóvel para uso exclusivo de nossos hóspedes.",
   },
   ops: {
     title: "Reserve também em nossas unidades",
