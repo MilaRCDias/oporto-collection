@@ -28,18 +28,18 @@
             :src="unity.photos[0].link"
             alt=""
           />
-          <h5>{{ unity.name }}</h5>
+          <h4>{{ unity.name }}</h4>
         </v-col>
       </v-row>
     </v-container>
 
     <div>
-      <div class="text-center mt-6" id="ourCollection">
+      <!--       <div class="text-center mt-6" id="ourCollection">
         <h1 class="primary--text">
           {{ $t("ourCollection.title") }}
         </h1>
         <p>{{ $t("ourCollection.subtitle") }}</p>
-      </div>
+      </div> -->
       <div v-if="$vuetify.breakpoint.mdAndUp">
         <v-container>
           <div
@@ -337,11 +337,11 @@ input[type="number"] {
   background-blend-mode: multiply;
   background-size: cover;
   background-position: center center !important;
-  background-image: linear-gradient(
+  background-image: url("https://static.wixstatic.com/media/b1e563_39dcc02a8f304177a3613e05f6440750~mv2.jpg/v1/fill/w_1440,h_1014,al_c,q_85/b1e563_39dcc02a8f304177a3613e05f6440750~mv2.webp") !important;
+}
+/* linear-gradient(
       90deg,
       #083c6a 0%,
       rgba(202, 205, 185, 0) 90%
-    ),
-    url("https://static.wixstatic.com/media/b1e563_39dcc02a8f304177a3613e05f6440750~mv2.jpg/v1/fill/w_1440,h_1014,al_c,q_85/b1e563_39dcc02a8f304177a3613e05f6440750~mv2.webp") !important;
-}
+    ), */
 </style>
