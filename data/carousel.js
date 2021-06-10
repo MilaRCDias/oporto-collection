@@ -1,8 +1,5 @@
 export const carousel = [
-  {
-    unity: "mouzinho",
-    link: "mouzinho/299245266.jpg",
-  },
+
   {
     unity: "mouzinho",
     link: "mouzinho/299328105.jpg",
@@ -67,13 +64,10 @@ export const carousel = [
     unity: "mouzinho",
     link: "mouzinho/300051781.jpg",
   },
+
   {
     unity: "mouzinho",
-    link: "mouzinho/300983220.jpg",
-  },
-  {
-    unity: "mouzinho",
-    link: "mouzinho/300983555.jpg",
+    link: "mouzinho/main.jpg",
   },
   {
     unity: "rosario",
@@ -135,10 +129,7 @@ export const carousel = [
     unity: "rosario",
     link: "rosario/264642868.jpg",
   },
-  {
-    unity: "rosario",
-    link: "rosario/301976124.jpg",
-  },
+
   {
     unity: "santacatarina",
     link: "sta-catarina/212865356.jpg",
@@ -207,10 +198,7 @@ export const carousel = [
     unity: "santacatarina",
     link: "sta-catarina/278280029.jpg",
   },
-  {
-    unity: "santacatarina",
-    link: "sta-catarina/278280032.jpg",
-  },
+
   {
     unity: "santacatarina",
     link: "sta-catarina/292413819.jpg",

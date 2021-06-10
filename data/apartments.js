@@ -30,7 +30,10 @@ const units = [
         amenities: ['kitchenette', 'furnished', 'cleaning', 'breakfast'],
         opening: "open",
         status: "open",
-        thumbnail: carousel.filter(e => e.unity == "mouzinho")[8],
+        thumbnail: {
+            unity: "mouzinho",
+            link: "mouzinho/main.jpg",
+        },
         photos: carousel.filter(e => e.unity == "mouzinho"),
         url: "https://opc-mouzinhodasilveira.com/",
         map: "https://goo.gl/maps/ZNARYNg3Xs4rwJjo6",

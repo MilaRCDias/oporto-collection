@@ -96,9 +96,9 @@
             ></v-parallax>
           </v-col>
           <v-col cols="6" class="px-sm-12">
-            <div style="max-width: 500px" class="mx-auto">
+            <div style="max-width: 400px" class="mx-auto">
               <h1>Best Location and Extreme Confort</h1>
-              <h3>All our units offer concierge 24h</h3>
+              <h3>All our units offer Concierge 24h and Daily Cleaning</h3>
             </div>
           </v-col>
         </v-row>
@@ -106,16 +106,23 @@
       <v-container fluid class="py-0">
         <v-row no-gutters align="center">
           <v-col cols="6" class="px-sm-12">
-            <div style="max-width: 400px" class="mx-auto">
+            <div style="max-width: 460px" class="mx-auto">
               <h1>Continental Breakfast</h1>
               <h3>All our units are served with breakfast</h3>
             </div>
           </v-col>
-          <v-col cols="">
+          <v-col cols="6">
+            <img
+              height="400px"
+              width="100%"
+              style="object-fit: cover"
+              :src="require('@/assets/images/facilities/breakfast.jpg')"
+              alt=""
+            /><!-- 
             <v-parallax
               height="400"
-              :src="require('@/assets/images/facilities/300983555.jpg')"
-            ></v-parallax>
+              :src="require('@/assets/images/facilities/breakfast.jpg')"
+            ></v-parallax> -->
           </v-col>
         </v-row>
       </v-container>
@@ -142,7 +149,7 @@
       </v-col>
     </v-row>
 
-    <BannerOps @navigate-to="navigateTo" />
+    <BannerOps style="background-color: #595e67" @navigate-to="navigateTo" />
     <v-row no-gutters class="pt-0">
       <v-col cols="12" class="pt-0">
         <iframe
@@ -236,7 +243,7 @@ export default {
       showLocation: false,
       showReadMore: false,
       showPhotos: false,
-      selectedUnity: data.units[0],
+      selectedUnity: data.units[0].key,
       units: data.units,
       attractions,
       data,
@@ -263,7 +270,7 @@ input[type="number"] {
   background-blend-mode: multiply;
   background-size: cover;
   background-position: center center !important;
-  background-image: url("https://static.wixstatic.com/media/b1e563_39dcc02a8f304177a3613e05f6440750~mv2.jpg/v1/fill/w_1440,h_1014,al_c,q_85/b1e563_39dcc02a8f304177a3613e05f6440750~mv2.webp") !important;
+  background-image: url("~/assets/images/sta-catarina/212865356.jpg") !important;
 }
 
 .main-list:hover {

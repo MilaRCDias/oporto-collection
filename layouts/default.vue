@@ -38,7 +38,7 @@
             <v-icon>mdi-menu</v-icon>
           </v-btn>
           <div style="cursor: pointer" @click="$router.push('/')">
-            <Logo />
+            <Logo :light="false" />
           </div>
           <v-select
             solo
@@ -78,15 +78,11 @@
     <v-main>
       <nuxt />
     </v-main>
-    <v-footer color="primary" :absolute="true" app padless>
+    <v-footer color="primary" absolute app padless>
       <v-container>
         <v-row no-gutters class="text-center">
           <v-col cols="12" sm="6" lg="3" class="my-4">
-            <img
-              width="160px"
-              src="https://static.wixstatic.com/media/b1e563_9f0677f9daee4db390d1ae762f0d6b17~mv2.png/v1/fill/w_400,h_136,al_c,q_85,usm_0.66_1.00_0.01/logo-OPC-01.webp"
-              alt=""
-            />
+            <Logo light />
           </v-col>
           <v-col cols="12" sm="6" lg="3" class="my-4">
             <h6 class="white--text">Contacto</h6>
@@ -140,6 +136,7 @@
 
 <script>
 import Logo from "~/components/Logo.vue";
+
 export default {
   components: {
     Logo,

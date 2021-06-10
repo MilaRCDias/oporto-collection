@@ -82,7 +82,7 @@
 <script>
 /* import AmenitiesIcon from "@/components/AmenitiesIcon"; */
 export default {
-  props: { unity: Object, selectedUnity: Object },
+  props: { unity: Object, selectedUnity: String },
   components: {
     /* AmenitiesIcon */
   },
