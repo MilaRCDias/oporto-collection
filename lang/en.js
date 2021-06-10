@@ -1,17 +1,21 @@
 export default {
+
   book: "book now",
   preBook: "pre-book",
   exploreCollection: "explore collection",
   about: "About",
   soon: "soon",
   home: "Home",
+  links: "Links",
   heading: "Discover the <span class='font-weight-700'>Unexpected</span>",
   subtitle: "Created By Originais®",
   homeInfo: {
     conciergeTitle: "Best Location and Extreme Confort",
-    conciergeSubTitle: "All our units offer Concierge 24h and Daily Cleaning",
+    conciergeSubTitle: "Concierge 24h, Daily Cleaning and Marshal® bluetooth sound columns",
     breakfastTitle: "Continental Breakfast",
     breakfastSubTitle: "All our units are served with breakfast",
+    phoneTitle: "App Guide and Mobile Phone",
+    phoneSubTitle: "Free app and phone for exclusive use of our guests",
   },
   ourCollection: {
     title: "Our Collection",
@@ -36,6 +40,7 @@ export default {
     august21: "August 2021",
     june22: "June 2022",
     january22: "January 2022",
+    start2023: "2023",
   },
   descriptions: {
     santacatarina: [

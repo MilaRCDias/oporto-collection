@@ -1,9 +1,11 @@
 export default {
+
   book: "reserve",
   exploreCollection: "Explore nossa Coleção",
   about: "Sobre",
   soon: "soon",
   home: "Home",
+  links: "Links",
   heading: "Descubra o <span class='font-weight-700'>inesperado</span>",
   subtitle: "Criado por Originais®",
   nextOpenings: "Próximas Inaugurações",

@@ -53,45 +53,29 @@
             v-model="language"
             @change="$router.push(switchLocalePath(language))"
           ></v-select>
-
-          <!--           <div class="d-flex align-center">
-            <nuxt-link
-              color="primary"
-              text
-              to="/about"
-              class="mx-4 font-weight-700"
-              style="text-decoration: none; font-size: 13px"
-              >About</nuxt-link
-            >
-            <nuxt-link
-              color="primary"
-              text
-              to="/about"
-              class="mx-4 font-weight-700"
-              style="text-decoration: none; font-size: 13px"
-              >Contact</nuxt-link
-            >
-          </div> -->
         </v-row>
       </v-container>
-      <!-- <v-app-bar-nav-icon @click.stop="drawer = !drawer" /> -->
     </v-app-bar>
     <v-main>
       <nuxt />
     </v-main>
     <v-footer color="primary" absolute app padless>
       <v-container>
-        <v-row no-gutters class="text-center">
-          <v-col cols="12" sm="6" lg="3" class="my-4">
+        <v-row
+          style="max-width: 44rem !important"
+          no-gutters
+          class="text-center text-sm-left mx-auto"
+        >
+          <!--         <v-col cols="12" sm="6" lg="3" class="my-4">
             <Logo light />
-          </v-col>
-          <v-col cols="12" sm="6" lg="3" class="my-4">
+          </v-col> -->
+          <v-col cols="12" sm="6" lg="4" class="my-4">
             <h6 class="white--text">{{ $t("footer.contact") }}</h6>
             <h5 class="white--text">geral@oportocollection.com</h5>
             <h5 class="white--text">+351 224 092 829</h5>
           </v-col>
 
-          <v-col cols="12" sm="6" lg="3" class="my-4">
+          <v-col cols="12" sm="6" lg="2" class="my-4">
             <h6 class="white--text">{{ $t("footer.follow") }}</h6>
             <v-btn
               @click="navigate('https://www.instagram.com/oporto.collection/')"
@@ -107,17 +91,28 @@
             >
           </v-col>
 
-          <v-col cols="12" sm="6" lg="4" class="my-4">
+          <v-col cols="12" sm="6" lg="6" class="my-4">
             <v-row no-gutters>
-              <v-col cols="6">
-                <h5 @click="navigate()" class="white--text">
+              <v-col cols="12" sm="6">
+                <h6 class="white--text">{{ $t("links") }}</h6>
+                <h5
+                  @click="$router.push('/register')"
+                  class="white--text cursor-pointer link"
+                >
                   {{ $t("footer.registAL") }}
                 </h5>
+                <h5
+                  @click="$router.push('/about')"
+                  class="white--text cursor-pointer link"
+                >
+                  {{ $t("about") }}
+                </h5>
               </v-col>
-              <v-col cols="6">
+              <v-col cols="12" sm="6">
                 <img
+                  class="cursor-pointer mt-4 mt-sm-0"
                   @click="navigate('https://www.livroreclamacoes.pt/inicio')"
-                  width="75%"
+                  width="150px"
                   src="https://www.livroreclamacoes.pt/image/layout_set_logo?img_id=21079&t=1622658535434"
                   alt=""
                 />
@@ -172,4 +167,8 @@ export default {
   },
 };
 </script>
-<style scoped></style>
+<style scoped>
+.link:hover {
+  font-weight: 700 !important;
+}
+</style>

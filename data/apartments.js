@@ -133,7 +133,7 @@ const units = [
     key: "marquesa",
     fulltext: "descriptions.marquesa",
     features: ["breakfast", "furnished", "kitchenette", "clenaning"],
-    opening: "2023",
+    opening: "openings.start2023",
     status: false,
     thumbnail: carousel.filter((e) => e.unity == "marquesa")[0],
     photos: carousel.filter((e) => e.unity == "marquesa"),

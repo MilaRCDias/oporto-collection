@@ -78,7 +78,7 @@
           style="font-size: 3rem"
           class="mt-12 font-weight-light secondary--text"
         >
-         {{$t("nextOpenings")}}
+          {{ $t("nextOpenings") }}
         </h2>
         <div
           class="mb-6"
@@ -105,7 +105,7 @@
       </v-row>
     </v-container>
 
-    <v-container v-if="$vuetify.breakpoint.mdAndUp" fluid class="py-0">
+    <v-container v-if="$vuetify.breakpoint.mdAndUp" fluid class="pa-0">
       <v-row no-gutters class="mt-12" align="center">
         <v-col cols="6">
           <v-parallax
@@ -115,8 +115,8 @@
         </v-col>
         <v-col cols="6" class="px-sm-12">
           <div style="max-width: 400px" class="mx-auto">
-            <h1> {{$t("homeInfo.conciergeTitle")}}</h1>
-            <h3>{{$t("homeInfo.conciergeSubTitle")}}</h3>
+            <h1>{{ $t("homeInfo.conciergeTitle") }}</h1>
+            <h3>{{ $t("homeInfo.conciergeSubTitle") }}</h3>
           </div>
         </v-col>
       </v-row>
@@ -125,11 +125,23 @@
       <v-row no-gutters align="center">
         <v-col cols="6" class="px-sm-12">
           <div style="max-width: 460px" class="mx-auto">
-            <h1>{{$t("homeInfo.breakfastTitle")}}</h1>
-            <h3>{{$t("homeInfo.breakfastSubTitle")}}</h3>
+            <h1>{{ $t("homeInfo.breakfastTitle") }}</h1>
+            <h3>{{ $t("homeInfo.breakfastSubTitle") }}</h3>
           </div>
         </v-col>
         <v-col cols="6" class="breakfast"> </v-col>
+      </v-row>
+    </v-container>
+
+    <v-container v-if="$vuetify.breakpoint.mdAndUp" fluid class="pa-0">
+      <v-row no-gutters align="center" class="pa-0">
+        <v-col cols="6" class="phone"> </v-col>
+        <v-col cols="6" class="px-sm-12">
+          <div style="max-width: 400px" class="mx-auto">
+            <h1>{{ $t("homeInfo.phoneTitle") }}</h1>
+            <h3>{{ $t("homeInfo.phoneSubTitle") }}</h3>
+          </div>
+        </v-col>
       </v-row>
     </v-container>
 
@@ -270,6 +282,13 @@ input[type="number"] {
   background-position: center center;
   background-size: cover;
   background-image: url("@/assets/images/facilities/breakfast.jpg");
+}
+.phone {
+  height: 400px;
+  width: 100%;
+  background-position: center center;
+  background-size: cover;
+  background-image: url("@/assets/images/facilities/299245266.jpg");
 }
 /* linear-gradient(
       90deg,

@@ -22,7 +22,10 @@
       <p>{{ $t(unity.fulltext)[0] }}</p>
       <v-expand-transition mode="in-out">
         <div v-if="showReadMore && selectedUnity == unity.key">
-          <p v-for="text in $t(unity.fulltext).slice(1, -1)" :key="text">
+          <p
+            v-for="text in $t(unity.fulltext).slice(1, unity.fulltext.length)"
+            :key="text"
+          >
             {{ text }}
           </p>
         </div>
