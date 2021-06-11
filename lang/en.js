@@ -11,7 +11,7 @@ export default {
   subtitle: "Created By Originais®",
   homeInfo: {
     conciergeTitle: "Best location and exclusive facilities",
-    conciergeSubTitle: "Concierge 24h, Daily Cleaning, Nespresso Cofee and Castelbel Amenities",
+    conciergeSubTitle: "Concierge 24h, Daily Cleaning, Nespresso Cofee, Castelbel portuguese brand Amenities and Marshall Voice speakers",
     breakfastTitle: "Continental Breakfast",
     breakfastSubTitle: "All our units are served with breakfast",
     phoneTitle: "App Guide and Mobile Phone",

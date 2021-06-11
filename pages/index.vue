@@ -14,20 +14,41 @@
         <v-col
           style="cursor: pointer"
           @click="navigateSection(unity.key)"
-          :class="i == 1 ? 'px-3' : ''"
+          :class="i == 1 ? 'px-sm-3' : ''"
           class="main-list"
-          cols="4"
+          cols="12"
+          sm="4"
           v-for="(unity, i) in units.filter((e) => e.opening == 'open')"
           :key="unity.name"
         >
-          <img
-            style="object-fit: cover"
-            height="180px"
-            width="100%"
-            :src="require(`~/assets/images/${unity.thumbnail.link}`)"
-            alt=""
-          />
-          <h4>{{ unity.name }}</h4>
+          <template v-if="$vuetify.breakpoint.xsOnly">
+            <v-row no-gutters align="center" class="my-1">
+              <v-col cols="6" class="pb-0">
+                <img
+                  class="pb-0"
+                  style="object-fit: cover"
+                  height="88px"
+                  width="100%"
+                  :src="require(`~/assets/images/${unity.thumbnail.link}`)"
+                  alt=""
+                />
+              </v-col>
+              <v-col cols="6" class="pl-4">
+                <h4>{{ unity.name }}</h4>
+              </v-col>
+            </v-row>
+          </template>
+
+          <template v-if="!$vuetify.breakpoint.xsOnly">
+            <img
+              style="object-fit: cover"
+              height="180px"
+              width="100%"
+              :src="require(`~/assets/images/${unity.thumbnail.link}`)"
+              alt=""
+            />
+            <h4>{{ unity.name }}</h4>
+          </template>
         </v-col>
       </v-row>
     </v-container>

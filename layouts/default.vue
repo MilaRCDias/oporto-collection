@@ -28,7 +28,7 @@
       </v-list>
     </v-navigation-drawer>
     <v-app-bar flat :clipped-left="clipped" fixed app>
-      <v-container>
+      <v-container class="px-0">
         <v-row no-gutters justify="space-between" align="center">
           <v-btn
             @click="drawer = !drawer"
