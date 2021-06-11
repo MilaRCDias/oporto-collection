@@ -32,7 +32,7 @@
       </v-expand-transition>
       <v-btn
         class="px-0"
-        color="accent"
+        color="primary"
         @click="$emit('read-more-clicked', unity)"
         text
       >
@@ -72,11 +72,10 @@
       :disabled="unity.status !== 'open'"
       @click="$emit('navigate-to', unity.url)"
       class="my-3"
-      outlined
       large
       depressed
       block
-      color="accent"
+      color="primary"
       >{{ $t("book") }}</v-btn
     >
   </div>

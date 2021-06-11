@@ -49,7 +49,7 @@ const units = [
     fullname: { title: "Rosário", subtitle: "Luxury Suites" },
     key: "rosario",
     fulltext: "descriptions.rosario",
-    amenities: ["lounge", "furnished", "cleaning", "breakfast"],
+    amenities: ["furnished", "cleaning", "breakfast"],
     opening: "open",
     status: "open",
     thumbnail: carousel.filter((e) => e.unity == "rosario")[8],
