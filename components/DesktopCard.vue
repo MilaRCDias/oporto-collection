@@ -45,7 +45,7 @@
       class="mb-3"
       :large="!$vuetify.breakpoint.xsOnly"
       depressed
-      color="accent"
+      color="primary"
       >{{ unity.status !== "open" ? $t("preBook") : $t("book") }}</v-btn
     >
 

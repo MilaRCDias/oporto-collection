@@ -138,7 +138,7 @@
         <div>
           <img
             @click="
-              navigateTo(
+              navigate(
                 'https://play.google.com/store/apps/details?id=com.guestu.oportocollection&hl=en_US&gl=US'
               )
             "
@@ -150,7 +150,7 @@
         <div>
           <img
             @click="
-              navigateTo(
+              navigate(
                 'https://apps.apple.com/br/app/oporto-collection/id1548928973'
               )
             "

@@ -10,12 +10,12 @@ export default {
   heading: "Discover the <span class='font-weight-700'>Unexpected</span>",
   subtitle: "Created By Originais®",
   homeInfo: {
-    conciergeTitle: "Best Location and Extreme Confort",
-    conciergeSubTitle: "Concierge 24h, Daily Cleaning and Marshal® bluetooth sound columns",
+    conciergeTitle: "Best location and exclusive facilities",
+    conciergeSubTitle: "Concierge 24h, Daily Cleaning, Nespresso Cofee and Castelbel Amenities",
     breakfastTitle: "Continental Breakfast",
     breakfastSubTitle: "All our units are served with breakfast",
     phoneTitle: "App Guide and Mobile Phone",
-    phoneSubTitle: "Free app and phone for exclusive use of our guests",
+    phoneSubTitle: "App and free phone for exclusive use of our guests",
   },
   ourCollection: {
     title: "Our Collection",
