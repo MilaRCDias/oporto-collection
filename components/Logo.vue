@@ -339,6 +339,10 @@ export default {
       default: false,
       type: Boolean,
     },
+    shortLogo: {
+      default: false,
+      type: Boolean,
+    },
   },
 };
 </script>
