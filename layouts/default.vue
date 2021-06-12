@@ -27,18 +27,23 @@
         </v-list-item>
       </v-list>
     </v-navigation-drawer>
-    <v-app-bar flat :clipped-left="clipped" fixed app>
+    <v-app-bar flat :clipped-left="clipped" height="88" fixed app>
       <v-container class="px-0">
         <v-row no-gutters justify="space-between" align="center">
           <v-btn
             @click="drawer = !drawer"
-            :style="$vuetify.breakpoint.xsOnly ? '' : 'visibility: hidden'"
+            v-if="$vuetify.breakpoint.xsOnly"
             icon
           >
+            <!-- :style="$vuetify.breakpoint.xsOnly ? '' : 'visibility: hidden'" -->
             <v-icon>mdi-menu</v-icon>
           </v-btn>
           <div style="cursor: pointer" @click="$router.push('/')">
-            <Logo class="mt-1" :light="false" />
+            <Logo
+              :vertical="$vuetify.breakpoint.xsOnly"
+              class="mt-1"
+              :light="false"
+            />
           </div>
           <v-select
             solo
@@ -59,7 +64,7 @@
     <v-main>
       <nuxt />
     </v-main>
-    <v-footer color="primary" absolute app padless>
+    <v-footer color="primary" :absolute="true" app padless>
       <v-container>
         <v-row
           style="max-width: 44rem !important"

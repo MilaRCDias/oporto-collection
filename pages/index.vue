@@ -194,7 +194,7 @@
 
     <BannerOps style="background-color: #595e67" @navigate-to="navigateTo" />
     <v-row no-gutters class="pt-0">
-      <v-col cols="12" class="pt-0">
+      <v-col cols="6" class="pt-0">
         <iframe
           src="https://www.google.com/maps/d/u/0/embed?mid=1EhE80jxNLU26lZ8sW7T5sxEZ9JB_9XVe"
           width="100%"
