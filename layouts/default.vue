@@ -64,7 +64,7 @@
     <v-main>
       <nuxt />
     </v-main>
-    <v-footer color="primary" :absolute="true" app padless>
+    <v-footer color="primary" :absolute="true" app>
       <v-container>
         <v-row
           style="max-width: 44rem !important"

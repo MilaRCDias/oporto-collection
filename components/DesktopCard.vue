@@ -36,11 +36,12 @@
     <p class="mt-4" style="max-width: 25rem">{{ $t(unity.fulltext)[0] }}</p>
 
     <v-btn
+      :id="unity.key"
       :outlined="unity.status !== 'open'"
       @click="
         unity.status !== 'open'
           ? $emit('show-form', unity)
-          : $emit('navigate-to', unity.url)
+          : ($emit('navigate-to', unity.url), unityClicked())
       "
       class="mb-3"
       :large="!$vuetify.breakpoint.xsOnly"
@@ -87,8 +88,19 @@
 /* import AmenitiesIcon from "@/components/AmenitiesIcon"; */
 export default {
   props: { unity: Object, selectedUnity: String },
-  components: {
-    /* AmenitiesIcon */
+  methods: {
+    /* https://www.youtube.com/watch?v=1dwk_erXAko */
+    unityClicked() {
+      let event = [
+        { event: `${this.unity.key}` },
+        { clickUrl: `${this.unity.url}` },
+      ];
+      console.log(event);
+      this.$gtm.push({
+        event: this.unity.key,
+        clickUrl: this.unity.url,
+      });
+    },
   },
 };
 </script>

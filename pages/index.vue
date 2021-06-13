@@ -193,7 +193,20 @@
     <FormDialog :formDialog="formDialog" @confirm-close="confirmClose()" />
 
     <BannerOps style="background-color: #595e67" @navigate-to="navigateTo" />
-    <v-row no-gutters class="pt-0">
+    <v-container>
+      <v-row no-gutters align="center" class="text-center">
+        <v-col cols="12" sm="6"> Partner </v-col>
+        <v-col cols="12" sm="6">
+          <a target="_blank" href="https://impactocapital.com/">
+            <img
+              width="260px"
+              :src="require(`~/assets/images/other/logo-ic.png`)"
+              alt=""
+          /></a>
+        </v-col>
+      </v-row>
+    </v-container>
+    <!--     <v-row no-gutters class="pt-0">
       <v-col cols="6" class="pt-0">
         <iframe
           src="https://www.google.com/maps/d/u/0/embed?mid=1EhE80jxNLU26lZ8sW7T5sxEZ9JB_9XVe"
@@ -201,7 +214,7 @@
           height="480"
         ></iframe>
       </v-col>
-    </v-row>
+    </v-row> -->
   </div>
 </template>
 
@@ -216,6 +229,7 @@ import DesktopCard from "@/components/DesktopCard";
 import NextOpenings from "@/components/NextOpenings";
 export default {
   components: { BannerOps, MobileCard, DesktopCard, FormDialog, NextOpenings },
+
   computed: {
     sooource() {
       return this.$cloudinary.image.url(

@@ -1,5 +1,6 @@
 import colors from "vuetify/es5/util/colors";
 
+
 export default {
   // Target: https://go.nuxtjs.dev/config-target
   target: "static",
@@ -23,21 +24,45 @@ export default {
   css: ["~/assets/components.scss"],
 
   // Plugins to run before rendering page: https://go.nuxtjs.dev/config-plugins
-  plugins: [],
+  plugins: ['~/plugins/firebase.js'],
 
   // Auto import components: https://go.nuxtjs.dev/config-components
   components: true,
 
   // Modules for dev and build (recommended): https://go.nuxtjs.dev/config-modules
   buildModules: [
-    // https://go.nuxtjs.dev/eslint
     "@nuxtjs/eslint-module",
-    // https://go.nuxtjs.dev/vuetify
     "@nuxtjs/vuetify",
   ],
 
   // Modules: https://go.nuxtjs.dev/config-modules
-  modules: ["nuxt-i18n", '@nuxtjs/cloudinary'],
+  modules: ["nuxt-i18n", '@nuxtjs/cloudinary', '@nuxtjs/gtm'],
+
+
+
+  gtm: {
+    id: 'GTM-TWVZLND',
+    // Set to false to disable module in development mode
+    enabled: true,
+
+    layer: "dataLayer",
+    variables: {},
+
+    pageTracking: true,
+    pageViewEventName: "nuxtRoute",
+
+    autoInit: true,
+    respectDoNotTrack: true,
+
+    scriptId: "gtm-script",
+    scriptDefer: false,
+    scriptURL: "https://www.googletagmanager.com/gtm.js",
+
+    noscript: true,
+    noscriptId: "gtm-noscript",
+    noscriptURL: "https://www.googletagmanager.com/ns.html"
+  },
+
 
   cloudinary: {
     cloudName: process.env.CLOUDNAME,

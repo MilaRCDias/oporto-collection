@@ -113,7 +113,7 @@ const units = [
   },
   {
     name: "Palácio da Fervença",
-    fullname: { title: "Palácio da Fervença", subtitle: "Gaia" },
+    fullname: { title: "Palácio da Fervença", subtitle: "" },
     key: "fervenca",
     fulltext: "descriptions.fervenca",
     features: ["breakfast", "furnished", "kitchenette", "clenaning"],

@@ -21,7 +21,7 @@ export default {
   homeInfo: {
     conciergeTitle: "Melhor localização e comodidades exclusivas",
     conciergeSubTitle:
-      "Concierge 24h, limpeza diária, café Nespresso, amenities Castelbel e colunas Marshal",
+      "Concierge 24h, Limpeza Diária, Café Nespresso, Amenities Castelbel e Colunas Marshal",
     breakfastTitle: "Pequeno Almoço Continental",
     breakfastSubTitle:
       "Todas as nossas unidades oferecem opçao de pequeno almoço",
