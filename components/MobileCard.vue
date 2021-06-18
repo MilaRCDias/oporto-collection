@@ -41,7 +41,7 @@
         }}</v-btn
       >
     </div>
-    <v-row no-gutters class="my-4">
+    <!--     <v-row no-gutters class="my-4">
       <div v-for="amenity in unity.amenities" :key="amenity">
         <v-tooltip
           v-if="amenity"
@@ -62,7 +62,7 @@
         </v-tooltip>
       </div>
     </v-row>
-
+ -->
     <h6 style="font-size: 13px" class="font-weight-400">
       <v-icon color="secondary" small>mdi-map-marker</v-icon>
       {{ unity.address }}

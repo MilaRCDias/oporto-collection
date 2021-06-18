@@ -9,7 +9,7 @@
         alt=""
       />
     </v-container>
-    <v-container style="max-width: 54rem" class="mx-auto">
+    <v-container class="mx-auto outer-container">
       <v-btn text to="/" color="accent">Home</v-btn>
       <v-row no-gutters justify="space-between" class="mt-12">
         <v-col cols="12" sm="4">

@@ -2,28 +2,40 @@
   <div>
     <div class="text-sm-center" v-if="$vuetify.breakpoint.xsOnly">
       <v-row no-gutters align="center">
-        <img
-          width="25%"
-          height="100px"
-          style="object-fit: cover"
-          :src="require(`~/assets/images/${unity.thumbnail.link}`)"
-        />
-
-        <div class="pl-4">
-          <h3>{{ unity.fullname.title }}</h3>
-          <h5>{{ unity.fullname.subtitle }}</h5>
-          <h6
-            class="font-weight-700 px-2 py-1"
-            style="
-              display: inline-block;
-              color: white;
-              background-color: #083c6a;
-              text-transform: uppercase;
-              letter-spacing: 2px !important;
-            "
+        <div style="position: relative; max-width: 32%">
+          <img
+            width="100%"
+            height="100px"
+            style="object-fit: cover"
+            :src="require(`~/assets/images/${unity.thumbnail.link}`)"
+          />
+          <div style="width: 100%; left: 0px; position: absolute; bottom: -1px">
+            <h6
+              class="text-center font-weight-700 px-2 py-1"
+              style="
+                display: inline-block;
+                color: white;
+                font-size: 8px;
+                background-color: #083c6a;
+                text-transform: uppercase;
+                letter-spacing: 2px !important;
+              "
+            >
+              {{ $t(unity.opening) }}
+            </h6>
+          </div>
+        </div>
+        <div class="pl-3">
+          <h3
+            class="primary--text font-weight-400 text-uppercase text-left"
+            style="font-size: 22px; line-height: 100%; max-width: 9rem"
           >
-        {{ $t(unity.opening) }}
-          </h6>
+            {{ unity.fullname.title }}
+          </h3>
+          <h5 style="font-size: 12px; line-height: 100%">
+            {{ unity.fullname.subtitle }}
+          </h5>
+          <h5 style="font-size: 9px; line-height: 100%">OPORTO COLLECTION</h5>
         </div>
       </v-row>
     </div>
@@ -47,23 +59,28 @@
               letter-spacing: 2px !important;
             "
           >
-           {{ $t(unity.opening) }}
+            {{ $t(unity.opening) }}
           </h6>
         </div>
       </div>
 
-      <h3>{{ unity.fullname.title }}</h3>
-      <h5>{{ unity.fullname.subtitle }}</h5>
+      <h3
+        class="primary--text font-weight-400 text-uppercase mx-auto"
+        style="font-size: 24px; line-height: 100%; max-width: 12rem"
+      >
+        {{ unity.fullname.title }}
+      </h3>
+      <h5 style="font-size: 12px; line-height: 100%">
+        {{ unity.fullname.subtitle }}
+      </h5>
+      <h5 style="font-size: 9px; line-height: 100%">OPORTO COLLECTION</h5>
     </div>
   </div>
 </template>
 <script>
-/* import AmenitiesIcon from "@/components/AmenitiesIcon"; */
 export default {
   props: { unity: Object, selectedUnity: String },
-  components: {
-    /* AmenitiesIcon */
-  },
+  components: {},
 };
 </script>
 <style lang="scss" scoped>

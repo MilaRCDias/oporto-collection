@@ -55,8 +55,7 @@
 
     <v-container
       v-if="$vuetify.breakpoint.mdAndUp"
-      style="max-width: 56rem"
-      class="mx-auto"
+      class="mx-auto outer-container"
     >
       <div
         :id="unity.key"
@@ -147,7 +146,6 @@
         <v-col cols="6" class="px-sm-12">
           <div style="max-width: 460px" class="mx-auto">
             <h1>{{ $t("homeInfo.breakfastTitle") }}</h1>
-            <!-- <h3>{{ $t("homeInfo.breakfastSubTitle") }}</h3> -->
           </div>
         </v-col>
         <v-col cols="6" class="breakfast"> </v-col>
@@ -191,21 +189,8 @@
     </v-container>
 
     <FormDialog :formDialog="formDialog" @confirm-close="confirmClose()" />
-
     <BannerOps style="background-color: #595e67" @navigate-to="navigateTo" />
-    <v-container>
-      <v-row no-gutters align="center" class="text-center">
-        <v-col cols="12" sm="6"> Partner </v-col>
-        <v-col cols="12" sm="6">
-          <a target="_blank" href="https://impactocapital.com/">
-            <img
-              width="260px"
-              :src="require(`~/assets/images/other/logo-ic.png`)"
-              alt=""
-          /></a>
-        </v-col>
-      </v-row>
-    </v-container>
+
     <!--     <v-row no-gutters class="pt-0">
       <v-col cols="6" class="pt-0">
         <iframe

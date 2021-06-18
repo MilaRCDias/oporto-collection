@@ -64,23 +64,21 @@
     <v-main>
       <nuxt />
     </v-main>
-    <v-footer color="primary" :absolute="true" app>
+    <v-footer color="primary">
       <v-container>
         <v-row
-          style="max-width: 44rem !important"
+          style="max-width: 54rem !important"
           no-gutters
           class="text-center text-sm-left mx-auto"
         >
-          <!--         <v-col cols="12" sm="6" lg="3" class="my-4">
-            <Logo light />
-          </v-col> -->
-          <v-col cols="12" sm="6" lg="4" class="my-4">
+          <!-- CONTACTS -->
+          <v-col cols="12" sm="4" md="4" class="my-4">
             <h6 class="white--text">{{ $t("footer.contact") }}</h6>
             <h5 class="white--text">geral@oportocollection.com</h5>
             <h5 class="white--text">+351 224 092 829</h5>
           </v-col>
-
-          <v-col cols="12" sm="6" lg="2" class="my-4">
+          <!-- SOCIAL MEDIA -->
+          <v-col cols="12" sm="2" md="2" class="my-4">
             <h6 class="white--text">{{ $t("footer.follow") }}</h6>
             <v-btn
               @click="navigate('https://www.instagram.com/oporto.collection/')"
@@ -96,37 +94,58 @@
             >
           </v-col>
 
-          <v-col cols="12" sm="6" lg="6" class="my-4">
-            <v-row no-gutters>
-              <v-col cols="12" sm="6">
-                <h6 class="white--text">{{ $t("links") }}</h6>
-                <h5
-                  @click="$router.push('/register')"
-                  class="white--text cursor-pointer link"
-                >
-                  {{ $t("footer.registAL") }}
-                </h5>
-                <h5
-                  @click="$router.push('/about')"
-                  class="white--text cursor-pointer link"
-                >
-                  {{ $t("about") }}
-                </h5>
-              </v-col>
-              <v-col cols="12" sm="6">
-                <img
-                  class="cursor-pointer mt-4 mt-sm-0"
-                  @click="navigate('https://www.livroreclamacoes.pt/inicio')"
-                  width="150px"
-                  src="https://www.livroreclamacoes.pt/image/layout_set_logo?img_id=21079&t=1622658535434"
-                  alt=""
-                />
-              </v-col>
-            </v-row>
+          <v-col cols="12" sm="3" class="my-4">
+            <h6 class="white--text">{{ $t("links") }}</h6>
+            <h5
+              @click="$router.push('/register')"
+              class="white--text cursor-pointer link"
+            >
+              {{ $t("footer.registAL") }}
+            </h5>
+            <h5
+              @click="$router.push('/about')"
+              class="white--text cursor-pointer link"
+            >
+              {{ $t("about") }}
+            </h5>
           </v-col>
-
-          <v-col cols="12" class="pt-6">
-            <h6 class="white--text text-center" style="opacity: 0.3">
+          <v-col cols="12" sm="3" class="d-flex align-center">
+            <div class="text-center mx-auto">
+              <img
+                class="cursor-pointer mt-4 mt-sm-0"
+                @click="navigate('https://www.livroreclamacoes.pt/inicio')"
+                width="150px"
+                src="https://www.livroreclamacoes.pt/image/layout_set_logo?img_id=21079&t=1622658535434"
+                alt=""
+              />
+            </div>
+          </v-col>
+        </v-row>
+        <v-row
+          no-gutters
+          class="text-sm-left"
+          style="max-width: 54rem !important"
+          justify="center"
+          align="center"
+        >
+          <v-col cols="12" sm="4">
+            <div
+              style="max-width: 240px"
+              class="mx-auto d-flex pl-6 pl-sm-0 text-center align-center"
+            >
+              <h6 class="white--text">Partner</h6>
+              <a target="_blank" href="https://impactocapital.com/">
+                <img
+                  height="100px"
+                  style="object-fit: cover"
+                  width="220px"
+                  :src="require(`~/assets/images/other/logo-ic-branco.png`)"
+                  alt=""
+              /></a>
+            </div>
+          </v-col>
+          <v-col cols="12" sm="8" class="pt-6 text-center text-sm-right">
+            <h6 class="white--text" style="opacity: 0.5">
               &copy; {{ new Date().getFullYear() }} OPORTO COLLECTION - All
               rights reserved
             </h6>

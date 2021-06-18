@@ -1,15 +1,6 @@
 <template>
-  <div style="max-width: 54rem; position: relative" class="mx-auto p-relative">
-    <h2
-      class="mb-8 pl-4"
-      v-html="unity.name"
-      style="
-        font-size: 2.5rem;
-        line-height: 110%;
-        max-width: 20rem;
-        border-left: 2px solid #6f7681;
-      "
-    ></h2>
+  <div style="position: relative" class="mx-auto p-relative outer-container">
+    <h2 class="mb-8 pl-4 unity-title" v-html="unity.name"></h2>
 
     <v-carousel
       style="max-width: 544px; z-index: 1"
@@ -54,13 +45,7 @@
       v-if="unity.cityImage.vertical"
       height="500px"
       width="330px"
-      style="
-        object-fit: cover;
-        position: absolute;
-        right: 0rem;
-        z-index: 0;
-        top: 0;
-      "
+      class="fit-image"
       :src="unity.cityImage.address"
       alt=""
     />
@@ -68,13 +53,7 @@
       v-if="!unity.cityImage.vertical"
       height="330px"
       width="484px"
-      style="
-        object-fit: cover;
-        position: absolute;
-        right: 0rem;
-        z-index: 0;
-        top: 0;
-      "
+      class="fit-image"
       :src="
         unity.cityImage.address.includes('ht')
           ? unity.cityImage.address
@@ -91,11 +70,6 @@ export default {
   methods: {
     /* https://www.youtube.com/watch?v=1dwk_erXAko */
     unityClicked() {
-      let event = [
-        { event: `${this.unity.key}` },
-        { clickUrl: `${this.unity.url}` },
-      ];
-      console.log(event);
       this.$gtm.push({
         event: this.unity.key,
         clickUrl: this.unity.url,
@@ -104,3 +78,19 @@ export default {
   },
 };
 </script>
+<style lang="scss" scoped>
+.unity-title {
+  font-size: 2.5rem;
+  line-height: 110%;
+  max-width: 20rem;
+  border-left: 2px solid #6f7681;
+}
+
+.fit-image {
+  object-fit: cover;
+  position: absolute;
+  right: 0rem;
+  z-index: 0;
+  top: 0;
+}
+</style>

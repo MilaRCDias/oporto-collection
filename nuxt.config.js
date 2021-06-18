@@ -17,7 +17,10 @@ export default {
       { name: "viewport", content: "width=device-width, initial-scale=1" },
       { hid: "description", name: "description", content: "" },
     ],
-    link: [{ rel: "icon", type: "image/jpeg", href: "/favicon.jpg" }],
+    link: [
+      { rel: "icon", type: "image/jpeg", href: "/apple-touch.icon.png" },
+      { rel: "apple-touch-icon", type: "image/png", href: "/favicon.jpg" }
+    ],
   },
 
   // Global CSS: https://go.nuxtjs.dev/config-css
