@@ -63,8 +63,8 @@ const units = [
     },
   },
   {
-    name: "Hotel dos Castelos",
-    fullname: { title: "Hotel dos Castelos", subtitle: "Live . Work . Sports" },
+    name: "Hotel dos Castêlos",
+    fullname: { title: "Hotel dos Castêlos", subtitle: "Live . Work . Sports" },
     key: "castelos",
     fulltext: "descriptions.castelos",
     features: ["co-working", "lounge", "kitchenette", "breakfast"],
@@ -113,7 +113,7 @@ const units = [
   },
   {
     name: "Palácio da Fervença",
-    fullname: { title: "Palácio da Fervença", subtitle: "" },
+    fullname: { title: "Palácio da Fervença", subtitle: "Luxury Apartments" },
     key: "fervenca",
     fulltext: "descriptions.fervenca",
     features: ["breakfast", "furnished", "kitchenette", "clenaning"],

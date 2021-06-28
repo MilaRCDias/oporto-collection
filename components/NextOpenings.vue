@@ -28,7 +28,7 @@
         <div class="pl-3">
           <h3
             class="primary--text font-weight-400 text-uppercase text-left"
-            style="font-size: 22px; line-height: 100%; max-width: 9rem"
+            style="font-size: 22px; line-height: 110%; max-width: 9rem"
           >
             {{ unity.fullname.title }}
           </h3>
@@ -66,7 +66,7 @@
 
       <h3
         class="primary--text font-weight-400 text-uppercase mx-auto"
-        style="font-size: 24px; line-height: 100%; max-width: 12rem"
+        style="font-size: 24px; line-height: 110%; max-width: 12rem"
       >
         {{ unity.fullname.title }}
       </h3>

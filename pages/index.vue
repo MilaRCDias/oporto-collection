@@ -21,7 +21,8 @@
           v-for="(unity, i) in units.filter((e) => e.opening == 'open')"
           :key="unity.name"
         >
-          <template v-if="$vuetify.breakpoint.xsOnly">
+          <NextOpenings :class="i !== 4 ? 'pr-3' : 'pr-0'" :unity="unity" />
+          <!--           <template v-if="$vuetify.breakpoint.xsOnly">
             <v-row no-gutters align="center" class="my-1">
               <v-col cols="6" class="pb-0">
                 <img
@@ -37,9 +38,9 @@
                 <h4>{{ unity.name }}</h4>
               </v-col>
             </v-row>
-          </template>
+          </template> -->
 
-          <template v-if="!$vuetify.breakpoint.xsOnly">
+          <!--           <template v-if="!$vuetify.breakpoint.xsOnly">
             <img
               style="object-fit: cover"
               height="180px"
@@ -48,7 +49,7 @@
               alt=""
             />
             <h4>{{ unity.name }}</h4>
-          </template>
+          </template> -->
         </v-col>
       </v-row>
     </v-container>
