@@ -1,5 +1,4 @@
 export const carousel = [
-
   {
     unity: "mouzinho",
     link: "mouzinho/299328105.jpg",
@@ -63,6 +62,10 @@ export const carousel = [
   {
     unity: "mouzinho",
     link: "mouzinho/300051781.jpg",
+  },
+  {
+    unity: "mouzinho",
+    link: "mouzinho/DSC_1702TRAT.jpg",
   },
 
   {
@@ -128,6 +131,14 @@ export const carousel = [
   {
     unity: "rosario",
     link: "rosario/264642868.jpg",
+  },
+  {
+    unity: "rosario",
+    link: "rosario/DSC_4576_nova.jpg",
+  },
+  {
+    unity: "rosario",
+    link: "rosario/DSC_4487A_nova.jpg",
   },
 
   {
@@ -225,7 +236,7 @@ export const carousel = [
   },
   {
     unity: "stacatarinapool",
-    link: "sta-catarina/DSC_8317a.jpg",
+    link: "sta-catarina/DSC_8317a_opt.jpg",
   },
   {
     unity: "castelos",
@@ -233,7 +244,7 @@ export const carousel = [
   },
   {
     unity: "fervenca",
-    link: "other/fervenca.jpg",
+    link: "other/fervenca_opt.jpg",
   },
   {
     unity: "marechal",
@@ -245,6 +256,6 @@ export const carousel = [
   },
   {
     unity: "marquesa",
-    link: "other/marquesa.jpg",
+    link: "other/marquesa_opt.jpg",
   },
 ];
