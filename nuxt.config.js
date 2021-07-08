@@ -18,8 +18,8 @@ export default {
       { hid: "description", name: "description", content: "" },
     ],
     link: [
-      { rel: "icon", type: "image/jpeg", href: "/apple-touch.icon.png" },
-      { rel: "apple-touch-icon", type: "image/png", href: "/favicon.jpg" }
+      { rel: "icon", type: "image/jpeg", href: "/favicon.jpg" },
+      { rel: "apple-touch-icon", type: "image/png", href: "/apple-touch.icon.png" }
     ],
   },
 
