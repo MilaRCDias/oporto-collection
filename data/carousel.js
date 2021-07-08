@@ -138,7 +138,7 @@ export const carousel = [
   },
   {
     unity: "rosario",
-    link: "rosario/DSC_4487A_nova.jpg",
+    link: "rosario/DSC_4487A-nova.jpg",
   },
 
   {
@@ -244,7 +244,7 @@ export const carousel = [
   },
   {
     unity: "fervenca",
-    link: "other/fervenca_opt.jpg",
+    link: "other/fervenca.jpg",
   },
   {
     unity: "marechal",
@@ -256,6 +256,6 @@ export const carousel = [
   },
   {
     unity: "marquesa",
-    link: "other/marquesa_opt.jpg",
+    link: "other/marquesa.jpg",
   },
 ];
