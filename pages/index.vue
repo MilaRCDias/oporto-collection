@@ -191,7 +191,7 @@
 
     <FormDialog :formDialog="formDialog" @confirm-close="confirmClose()" />
     <BannerOps style="background-color: #595e67" @navigate-to="navigateTo" />
-
+    <ContactForm />
     <!--     <v-row no-gutters class="pt-0">
       <v-col cols="6" class="pt-0">
         <iframe
@@ -213,8 +213,10 @@ import FormDialog from "@/components/FormDialog";
 import MobileCard from "@/components/MobileCard";
 import DesktopCard from "@/components/DesktopCard";
 import NextOpenings from "@/components/NextOpenings";
+import ContactForm from "@/components/ContactForm";
+
 export default {
-  components: { BannerOps, MobileCard, DesktopCard, FormDialog, NextOpenings },
+  components: { BannerOps, MobileCard, DesktopCard, FormDialog, NextOpenings , ContactForm},
 
   computed: {
     sooource() {

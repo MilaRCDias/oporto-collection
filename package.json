@@ -15,10 +15,12 @@
     "@nuxtjs/gtm": "^2.4.0",
     "axios": "^0.21.1",
     "core-js": "^3.9.1",
+    "emailjs-com": "^3.2.0",
     "firebase": "^8.6.5",
     "nuxt": "^2.15.3",
     "nuxt-i18n": "^6.27.0",
-    "sweetalert2": "^11.0.16"
+    "sweetalert2": "^11.0.16",
+    "vuelidate": "^0.7.6"
   },
   "devDependencies": {
     "@nuxtjs/eslint-config": "^6.0.0",
