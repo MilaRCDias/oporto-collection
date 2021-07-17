@@ -44,7 +44,7 @@ export default {
   recaptcha: {
     hideBadge: false, // Hide badge element (v3 & v2 via size=invisible)
     //language: String,   // Recaptcha language (v2)
-    siteKey: "6LdxoJobAAAAAP_I03OgzH9KA-dZUtZeVqyxIyq0", // Site key for requests
+    siteKey: "6LcR2J0bAAAAAKmBG8KhRlx4A1PO7q0Y5tIqHl8H", // Site key for requests
     version: 2, // Version
     size: "normal"
   },

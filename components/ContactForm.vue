@@ -1,14 +1,12 @@
 <template>
   <div class="my-12">
     <h2 class="text-center">Contacto</h2>
-    <form @submit.prevent="sendEmail">
-      <v-row
-        no-gutters
-        style="max-width: 32rem !important"
-        class="text-center mx-auto"
-        justify="center"
-        align="center"
-      >
+    <form
+      class="mx-auto"
+      style="max-width: 32rem !important"
+      @submit.prevent="sendEmail"
+    >
+      <v-row no-gutters justify="center" align="center">
         <v-col cols="12" class="py-2">
           <v-text-field
             outlined
@@ -38,6 +36,7 @@
             v-model="message"
             :error-messages="messageError"
             name="message"
+            @blur="$v.message.$touch()"
           ></v-textarea>
 
           <v-select
@@ -51,16 +50,10 @@
             @change="$v.select.$touch()"
             @blur="$v.select.$touch()"
           ></v-select>
-          <v-btn
-            depressed
-            block
-            large
-            color="primary"
-            class="mr-4"
-            type="submit"
-          >
-            Send
-          </v-btn>
+        </v-col>
+      </v-row>
+      <v-row align="center" class="mt-0">
+        <v-col cols="6">
           <div class="captcha-container">
             <recaptcha
               class="captcha"
@@ -69,6 +62,19 @@
               @expired="onExpired"
             />
           </div>
+        </v-col>
+        <v-col cols="6">
+          <v-btn
+            depressed
+            block
+            large
+            :disabled="disableButton"
+            color="primary"
+            class="mr-4"
+            type="submit"
+          >
+            Send
+          </v-btn>
         </v-col>
       </v-row>
     </form>
@@ -85,10 +91,10 @@ import Swal from "sweetalert2";
 export default {
   mixins: [validationMixin],
   validations: {
-    name: { required, minLength: minLength(1) },
+    name: { required, minLength: minLength(2) },
     email: { required, email },
     select: { required },
-    message: { required, minLength: minLength(1) },
+    message: { required, minLength: minLength(12) },
   },
   mounted() {
     this.select = this.items[0];
@@ -98,6 +104,7 @@ export default {
     email: "",
     message: "",
     select: {},
+    captcha: false,
     units: [
       {
         name: "OPC Santa Catarina Pool & Fitness",
@@ -125,12 +132,21 @@ export default {
     items() {
       return this.units.map((e) => e.name);
     },
+    disableButton() {
+      return (
+        this.messageError.length > 0 ||
+        this.selectErrors.length > 0 ||
+        this.nameErrors.length > 0 ||
+        this.emailErrors.length > 0 ||
+        !this.captcha
+      );
+    },
     messageError() {
       const errors = [];
       if (!this.$v.message.$dirty) return errors;
       !this.$v.message.minLength &&
-        !this.$v.message.required &&
-        errors.push("message is required.");
+        errors.push("Name must be at least 12 characters long");
+      !this.$v.message.required && errors.push("message is required.");
       return errors;
     },
     selectErrors() {
