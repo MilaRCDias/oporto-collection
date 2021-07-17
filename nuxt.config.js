@@ -39,9 +39,15 @@ export default {
   ],
 
   // Modules: https://go.nuxtjs.dev/config-modules
-  modules: ["nuxt-i18n", '@nuxtjs/cloudinary', '@nuxtjs/gtm'],
+  modules: ["nuxt-i18n", '@nuxtjs/cloudinary', '@nuxtjs/gtm', '@nuxtjs/recaptcha'],
 
-
+  recaptcha: {
+    hideBadge: false, // Hide badge element (v3 & v2 via size=invisible)
+    //language: String,   // Recaptcha language (v2)
+    siteKey: "6LdxoJobAAAAAP_I03OgzH9KA-dZUtZeVqyxIyq0", // Site key for requests
+    version: 2, // Version
+    size: "normal"
+  },
 
   gtm: {
     id: 'GTM-TWVZLND',

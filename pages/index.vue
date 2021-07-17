@@ -205,7 +205,6 @@
 </template>
 
 <script>
-import Swal from "sweetalert2";
 import data from "@/data/apartments";
 import { attractions } from "@/data/attractions.js";
 import BannerOps from "@/components/BannerOps";
@@ -216,7 +215,14 @@ import NextOpenings from "@/components/NextOpenings";
 import ContactForm from "@/components/ContactForm";
 
 export default {
-  components: { BannerOps, MobileCard, DesktopCard, FormDialog, NextOpenings , ContactForm},
+  components: {
+    BannerOps,
+    MobileCard,
+    DesktopCard,
+    FormDialog,
+    NextOpenings,
+    ContactForm,
+  },
 
   computed: {
     sooource() {
@@ -238,7 +244,7 @@ export default {
     },
   },
   methods: {
-    confirmClose() {
+    /*     confirmClose() {
       Swal.fire({
         title: "Close form?",
         text: "You will lose the information inputed",
@@ -250,7 +256,7 @@ export default {
           this.formDialog = false;
         }
       });
-    },
+    }, */
 
     readMoreClicked(unity) {
       if (unity.key == this.selectedUnity) {
