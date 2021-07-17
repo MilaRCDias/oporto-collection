@@ -1,6 +1,11 @@
 export default {
 
   book: "reserve",
+  name: 'Nome',
+  message: 'Mensagem',
+  send: 'Enviar',
+  unity: 'Unidade',
+  contact: 'Contacto',
   exploreCollection: "Explore nossa Coleção",
   about: "Sobre",
   soon: "soon",

@@ -1,6 +1,11 @@
 export default {
 
   book: "book now",
+  name: 'Name',
+  message: 'Message',
+  send: 'Send',
+  unity: 'Unity',
+  contact: 'Contact',
   preBook: "pre-book",
   exploreCollection: "explore collection",
   about: "About",

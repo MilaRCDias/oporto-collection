@@ -1,10 +1,10 @@
 <template>
   <div class="my-12">
-    <h2 class="text-center">Contacto</h2>
+    <h2 class="text-center">{{ $t("contact") }}</h2>
     <form
-      class="mx-auto"
+      class="mx-auto px-6"
       style="max-width: 32rem !important"
-      @submit.prevent="sendEmail"
+      @submit.prevent="onSubmit"
     >
       <v-row no-gutters justify="center" align="center">
         <v-col cols="12" class="py-2">
@@ -13,7 +13,7 @@
             v-model="name"
             name="name"
             :error-messages="nameErrors"
-            label="Name"
+            :label="$t('name')"
             required
             @input="$v.name.$touch()"
             @blur="$v.name.$touch()"
@@ -31,7 +31,7 @@
 
           <v-textarea
             outlined
-            label="Message"
+            :label="$t('message')"
             required
             v-model="message"
             :error-messages="messageError"
@@ -45,7 +45,7 @@
             outlined
             :items="items"
             :error-messages="selectErrors"
-            label="Unity"
+            :label="$t('unity')"
             required
             @change="$v.select.$touch()"
             @blur="$v.select.$touch()"
@@ -53,7 +53,7 @@
         </v-col>
       </v-row>
       <v-row align="center" class="mt-0">
-        <v-col cols="6">
+        <v-col cols="12" md="6">
           <div class="captcha-container">
             <recaptcha
               class="captcha"
@@ -63,7 +63,7 @@
             />
           </div>
         </v-col>
-        <v-col cols="6">
+        <v-col cols="12" md="6">
           <v-btn
             depressed
             block
@@ -73,7 +73,7 @@
             class="mr-4"
             type="submit"
           >
-            Send
+            {{ $t("send") }}
           </v-btn>
         </v-col>
       </v-row>
@@ -128,6 +128,7 @@ export default {
       },
     ],
   }),
+
   computed: {
     items() {
       return this.units.map((e) => e.name);
@@ -172,7 +173,22 @@ export default {
     },
   },
   methods: {
+    clearForm() {
+      this.name = "";
+      this.email = "";
+      this.message = "";
+      this.select = {};
+      this.captcha = false;
+      setTimeout(() => {
+        this.$v.$reset();
+      }, 0);
+      this.$nextTick(() => {
+        this.$v.$reset();
+      });
+    },
+
     confirmSuccess() {
+      this.clearForm();
       Swal.fire({
         title: "Sent",
         text: "We will get back to you shortly.",
@@ -184,16 +200,17 @@ export default {
     sendEmail(e) {
       this.$v.$touch();
       console.log("submit", this.select, this.name, this.email, this.message);
+      let unity = this.units.find((e) => e.name === this.select);
       let service =
-        this.select.service === 1 ? "service_amnk2zc" : "service_5ydwtq8-cps";
+        unity.service === 1 ? "service_amnk2zc" : "service_5ydwtq8-cps";
       let user =
-        this.select.service === 1
+        unity.service === 1
           ? "user_tldYcBb4z983aLs4NjWG7"
           : "user_3g610oF0MnxyYzKbOkJIm";
+      console.log(unity);
 
-      //Old Service "service_utrvfiw"
       try {
-        emailjs.sendForm(service, this.select.template, e.target, user, {
+        emailjs.sendForm(service, unity.template, e.target, user, {
           name: this.name,
           email: this.email,
           select: this.select.name,
@@ -209,10 +226,10 @@ export default {
       console.log("Error happened:", error);
       return (this.captcha = false);
     },
-    async onSubmit() {
+    async onSubmit(e) {
       try {
         const token = await this.$recaptcha.getResponse();
-        this.sendForm();
+        this.sendEmail(e);
         this.sent = true;
         this.messageSent = "Sent with success!";
         return (this.captcha = false);
