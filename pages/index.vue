@@ -225,12 +225,6 @@ export default {
   },
 
   computed: {
-    sooource() {
-      return this.$cloudinary.image.url(
-        "Oporto%20Collection/Mouzinho/DSC_0040And8moreTRAT_pk8dqo.jpg"
-      );
-    },
-
     heroHeight() {
       if (this.$vuetify.breakpoint.smOnly) {
         return 360;

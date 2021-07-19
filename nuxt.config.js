@@ -39,7 +39,7 @@ export default {
   ],
 
   // Modules: https://go.nuxtjs.dev/config-modules
-  modules: ["nuxt-i18n", '@nuxtjs/cloudinary', '@nuxtjs/gtm', '@nuxtjs/recaptcha'],
+  modules: ["nuxt-i18n", '@nuxtjs/cloudinary', '@nuxtjs/gtm', '@nuxtjs/recaptcha', '@nuxtjs/axios'],
 
   recaptcha: {
     hideBadge: false, // Hide badge element (v3 & v2 via size=invisible)
@@ -75,6 +75,9 @@ export default {
 
   cloudinary: {
     cloudName: process.env.CLOUDNAME,
+    apiKey: '851786278563421',
+    apiSecret: 'F7-fnVmFoRmi_2Xw_9AHQe-nuqY',
+    useComponent: true,
   },
 
   i18n: {
