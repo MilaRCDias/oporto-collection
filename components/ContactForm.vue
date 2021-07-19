@@ -52,8 +52,8 @@
           ></v-select>
         </v-col>
       </v-row>
-      <v-row align="center" class="mt-0">
-        <v-col cols="12" md="6">
+      <v-row no-gutters align="center" class="mt-0">
+        <v-col cols="12" sm="8">
           <div class="captcha-container">
             <recaptcha
               class="captcha"
@@ -63,7 +63,7 @@
             />
           </div>
         </v-col>
-        <v-col cols="12" md="6">
+        <v-col cols="12" sm="4">
           <v-btn
             depressed
             block
@@ -121,11 +121,11 @@ export default {
         template: "template_mb0cfos-rosa",
         service: 2,
       },
-      {
+      /*      {
         name: "General - OPC Hospitality Management Group",
         template: "template_7htdupr-geral",
         service: 2,
-      },
+      }, */
     ],
   }),
 
