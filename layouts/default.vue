@@ -75,7 +75,9 @@
           <v-col cols="12" sm="4" md="4" class="my-4">
             <h6 class="white--text">{{ $t("footer.contact") }}</h6>
             <h5 class="white--text">geral@oportocollection.com</h5>
-            <h5 class="white--text">+351 224 092 829</h5>
+            <h5 style="color: white !important" class="white--text">
+              +351 224 092 829
+            </h5>
           </v-col>
           <!-- SOCIAL MEDIA -->
           <v-col cols="12" sm="2" md="2" class="my-4">
@@ -123,7 +125,7 @@
         </v-row>
         <v-row
           no-gutters
-          class="text-sm-left"
+          class="text-sm-left mx-auto"
           style="max-width: 54rem !important"
           justify="center"
           align="center"
@@ -131,7 +133,7 @@
           <v-col cols="12" sm="4">
             <div
               style="max-width: 240px"
-              class="mx-auto d-flex pl-6 pl-sm-0 text-center align-center"
+              class="d-flex pl-6 pl-sm-0 text-left align-center"
             >
               <h6 class="white--text">Partner</h6>
               <a target="_blank" href="https://impactocapital.com/">
