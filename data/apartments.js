@@ -97,7 +97,7 @@ const units = [
   },
   {
     name: "Casa da Marechal",
-    fullname: { title: "Casa da Marechal", subtitle: "Boutique Hotel" },
+    fullname: { title: "Casa da Marechal", subtitle: "Boutique Suites" },
     key: "marechal",
     fulltext: "descriptions.marechal",
     features: ["breakfast", "furnished", "kitchenette", "clenaning"],
