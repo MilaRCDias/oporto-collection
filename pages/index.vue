@@ -1,15 +1,11 @@
 <template>
   <div>
     <v-container v-if="$vuetify.breakpoint.mdAndUp" fluid class="hero mb-12">
-      <v-row style="height: 534px" no-gutters align="center" class="mx-auto">
-      </v-row>
+      <v-row style="height: 534px" no-gutters align="center" class="mx-auto"> </v-row>
     </v-container>
     <v-container style="max-width: 54rem" class="my-12">
       <h2>Discover the Unexpected</h2>
-      <div
-        class="mb-6"
-        style="border-top: 2px solid #858e9c; max-width: 5rem"
-      ></div>
+      <div class="mb-6" style="border-top: 2px solid #858e9c; max-width: 5rem"></div>
       <v-row no-gutters class="mx-auto" justify="space-between">
         <v-col
           style="cursor: pointer"
@@ -54,10 +50,7 @@
       </v-row>
     </v-container>
 
-    <v-container
-      v-if="$vuetify.breakpoint.mdAndUp"
-      class="mx-auto outer-container"
-    >
+    <v-container v-if="$vuetify.breakpoint.mdAndUp" class="mx-auto outer-container">
       <div
         :id="unity.key"
         class="mb-12 pb-6"
@@ -95,16 +88,21 @@
 
     <v-container>
       <div>
-        <h2
-          style="font-size: 3rem"
-          class="mt-12 font-weight-light secondary--text"
-        >
+        <h2 style="font-size: 3rem" class="mt-12 font-weight-light secondary--text">
           {{ $t("nextOpenings") }}
         </h2>
-        <div
-          class="mb-6"
-          style="border-top: 2px solid #858e9c; max-width: 5rem"
-        ></div>
+        <div class="mb-6" style="border-top: 2px solid #858e9c; max-width: 5rem"></div>
+      </div>
+      <div class="banner-bfresh text-center align-center mb-4">
+        <h4
+          style="letter-spacing: 4px"
+          class="pt-12 pb-4 white--text text-uppercase font-weight-700"
+        >
+          opening in october 2021
+        </h4>
+        <div class="pb-12">
+          <img height="100" :src="require(`~/assets/images/logo_bfresh.svg`)" />
+        </div>
       </div>
       <v-row no-gutters>
         <v-col
@@ -173,11 +171,7 @@
                 alt=""
               />
               <img
-                @click="
-                  navigateTo(
-                    'https://apps.apple.com/br/app/oporto-collection/id1548928973'
-                  )
-                "
+                @click="navigateTo('https://apps.apple.com/br/app/oporto-collection/id1548928973')"
                 height="44px"
                 class="ml-4 cursor-pointer"
                 src="https://www.greenqueen.com.hk/wp-content/uploads/2020/02/Apple-App-Store-Icon.png"
@@ -306,7 +300,10 @@ export default {
 
 <style lang="scss" scoped>
 /* Chrome, Safari, Edge, Opera */
-
+.banner-bfresh {
+  background: linear-gradient(0deg, rgba(38, 79, 141, 0.8), rgba(38, 79, 141, 0.8)),
+    url("@/assets/images/pool.png");
+}
 ::v-deep input::-webkit-outer-spin-button,
 ::v-deep input::-webkit-inner-spin-button {
   -webkit-appearance: none;

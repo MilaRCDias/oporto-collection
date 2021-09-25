@@ -11,13 +11,7 @@
       app
     >
       <v-list>
-        <v-list-item
-          v-for="(item, i) in items"
-          :key="i"
-          :to="item.to"
-          router
-          exact
-        >
+        <v-list-item v-for="(item, i) in items" :key="i" :to="item.to" router exact>
           <v-list-item-action>
             <v-icon>{{ item.icon }}</v-icon>
           </v-list-item-action>
@@ -30,20 +24,12 @@
     <v-app-bar flat :clipped-left="clipped" height="88" fixed app>
       <v-container class="px-0">
         <v-row no-gutters justify="space-between" align="center">
-          <v-btn
-            @click="drawer = !drawer"
-            v-if="$vuetify.breakpoint.xsOnly"
-            icon
-          >
+          <v-btn @click="drawer = !drawer" v-if="$vuetify.breakpoint.xsOnly" icon>
             <!-- :style="$vuetify.breakpoint.xsOnly ? '' : 'visibility: hidden'" -->
             <v-icon>mdi-menu</v-icon>
           </v-btn>
           <div style="cursor: pointer" @click="$router.push('/')">
-            <Logo
-              :vertical="$vuetify.breakpoint.xsOnly"
-              class="mt-1"
-              :light="false"
-            />
+            <Logo :vertical="$vuetify.breakpoint.xsOnly" class="mt-1" :light="false" />
           </div>
           <v-select
             solo
@@ -51,6 +37,7 @@
             class="my-0 py-0"
             background-color="transparent"
             flat
+            outlined
             style="max-width: 80px"
             :items="$i18n.locales"
             item-text="name"
@@ -75,9 +62,7 @@
           <v-col cols="12" sm="4" md="4" class="my-4">
             <h6 class="white--text">{{ $t("footer.contact") }}</h6>
             <h5 class="white--text">geral@oportocollection.com</h5>
-            <h5 style="color: white !important" class="white--text">
-              +351 224 092 829
-            </h5>
+            <h5 style="color: white !important" class="white--text">+351 224 092 829</h5>
           </v-col>
           <!-- SOCIAL MEDIA -->
           <v-col cols="12" sm="2" md="2" class="my-4">
@@ -98,16 +83,10 @@
 
           <v-col cols="12" sm="3" class="my-4">
             <h6 class="white--text">{{ $t("links") }}</h6>
-            <h5
-              @click="$router.push('/register')"
-              class="white--text cursor-pointer link"
-            >
+            <h5 @click="$router.push('/register')" class="white--text cursor-pointer link">
               {{ $t("footer.registAL") }}
             </h5>
-            <h5
-              @click="$router.push('/about')"
-              class="white--text cursor-pointer link"
-            >
+            <h5 @click="$router.push('/about')" class="white--text cursor-pointer link">
               {{ $t("about") }}
             </h5>
           </v-col>
@@ -131,10 +110,7 @@
           align="center"
         >
           <v-col cols="12" sm="4">
-            <div
-              style="max-width: 240px"
-              class="d-flex pl-6 pl-sm-0 text-left align-center"
-            >
+            <div style="max-width: 240px" class="d-flex pl-6 pl-sm-0 text-left align-center">
               <h6 class="white--text">Partner</h6>
               <a target="_blank" href="https://impactocapital.com/">
                 <img
@@ -148,18 +124,13 @@
           </v-col>
           <v-col cols="12" sm="8" class="pt-6 text-center text-sm-right">
             <h6 class="white--text" style="opacity: 0.5">
-              &copy; {{ new Date().getFullYear() }} OPORTO COLLECTION - All
-              rights reserved
+              &copy; {{ new Date().getFullYear() }} OPORTO COLLECTION - All rights reserved
             </h6>
           </v-col>
         </v-row>
       </v-container>
 
-      <div
-        class="white text-center pt-6"
-        style="width: 100%"
-        v-if="$vuetify.breakpoint.xsOnly"
-      >
+      <div class="white text-center pt-6" style="width: 100%" v-if="$vuetify.breakpoint.xsOnly">
         <h4 class="mb-4">Download our App</h4>
         <div>
           <img
@@ -175,11 +146,7 @@
         </div>
         <div>
           <img
-            @click="
-              navigate(
-                'https://apps.apple.com/br/app/oporto-collection/id1548928973'
-              )
-            "
+            @click="navigate('https://apps.apple.com/br/app/oporto-collection/id1548928973')"
             width="144px"
             src="https://www.greenqueen.com.hk/wp-content/uploads/2020/02/Apple-App-Store-Icon.png"
             alt=""

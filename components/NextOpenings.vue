@@ -21,7 +21,7 @@
                 letter-spacing: 2px !important;
               "
             >
-              {{ unity.opening }}
+              {{ $t(unity.opening) }}
             </h6>
           </div>
         </div>
@@ -59,7 +59,7 @@
               letter-spacing: 2px !important;
             "
           >
-            {{ unity.opening }}
+            {{ $t(unity.opening) }}
           </h6>
         </div>
       </div>

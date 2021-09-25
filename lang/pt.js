@@ -11,6 +11,7 @@ export default {
   soon: "soon",
   home: "Home",
   links: "Links",
+  open: "aberto",
   heading: "Descubra o <span class='font-weight-700'>inesperado</span>",
   subtitle: "Criado por Originais®",
   nextOpenings: "Próximas Inaugurações",
@@ -38,6 +39,8 @@ export default {
     btn: "Veja mais",
   },
   openings: {
+    november21: "Novembro 2021",
+    october21: "October 2021",
     august21: "Agosto 2021",
     june22: "Junho 2022",
     january22: "Janeiro 2022",

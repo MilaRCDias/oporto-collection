@@ -12,6 +12,7 @@ export default {
   soon: "soon",
   home: "Home",
   links: "Links",
+  open: "open",
   heading: "Discover the <span class='font-weight-700'>Unexpected</span>",
   subtitle: "Created By Originais®",
   homeInfo: {
@@ -42,6 +43,8 @@ export default {
     btn: "See more",
   },
   openings: {
+    november21: "November 2021",
+    october21: "October 2021",
     august21: "August 2021",
     june22: "June 2022",
     january22: "January 2022",

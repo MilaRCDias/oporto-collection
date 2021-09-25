@@ -1,15 +1,10 @@
 <template>
-  <v-dialog
-    max-width="700"
-    :value="formDialog"
-    persistent
-    @click:outside="$emit('confirm-close')"
-  >
+  <v-dialog max-width="700" :value="formDialog" persistent @click:outside="$emit('confirm-close')">
     <v-card>
       <v-card-title>
         <h4>
-          Please fill out the form, email us or get in touch by telephone to
-          make your reservation. Wait for our confirmation
+          Please fill out the form, email us or get in touch by telephone to make your reservation.
+          Wait for our confirmation
         </h4>
       </v-card-title>
       <v-card-text>
@@ -57,12 +52,7 @@
                 type="number"
                 label="Number of Guests"
               ></v-text-field>
-              <v-btn
-                v-if="!addMoreInfo"
-                small
-                text
-                color="accent"
-                @click="addMoreInfo = true"
+              <v-btn v-if="!addMoreInfo" small text color="accent" @click="addMoreInfo = true"
                 >+ Add additional information</v-btn
               >
               <v-textarea
