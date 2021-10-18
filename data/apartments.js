@@ -13,7 +13,8 @@ const units = [
     thumbnail: carousel.filter((e) => e.unity == "stacatarinapool")[14],
     photos: carousel.filter((e) => e.unity == "stacatarinapool"),
     url: "https://opc-santacatarinapoolandfitness.com/",
-    bookEngineUrl: "https://app.ynnovbooking.com/booking/?l=en&apikey=M47SgVH8SkXazFFGd2R1x98kankxHXDP",
+    bookEngineUrl:
+      "https://app.ynnovbooking.com/booking/?l=en&apikey=M47SgVH8SkXazFFGd2R1x98kankxHXDP",
     map: "https://goo.gl/maps/ZNARYNg3Xs4rwJjo6",
     address: "Rua Santa Catarina 1219, União de Freguesias do Centro, Porto",
     cityImage: {
@@ -23,9 +24,9 @@ const units = [
     },
   },
   {
-    name: "Mouzinho Apartments",
+    name: "Mouzinho da Silveira Apartments",
     key: "mouzinho",
-    fullname: { title: "Mouzinho", subtitle: "Apartments" },
+    fullname: { title: "Mouzinho da Silveira", subtitle: "Apartments" },
     fulltext: "descriptions.mouzinho",
     amenities: ["kitchenette", "furnished", "cleaning", "breakfast"],
     opening: "open",
@@ -36,7 +37,8 @@ const units = [
     },
     photos: carousel.filter((e) => e.unity == "mouzinho"),
     url: "https://opc-mouzinhodasilveira.com/",
-    bookEngineUrl: "https://app.ynnovbooking.com/booking/?l=en&apikey=2IZ7rHodJ2jKozt471bFD3hhai71VCU6",
+    bookEngineUrl:
+      "https://app.ynnovbooking.com/booking/?l=en&apikey=2IZ7rHodJ2jKozt471bFD3hhai71VCU6",
     map: "https://goo.gl/maps/ZNARYNg3Xs4rwJjo6",
     address:
       "Rua Mouzinho da Silveira, 157 - 167 , União de Freguesias do Centro, Porto",
@@ -57,7 +59,8 @@ const units = [
     thumbnail: carousel.filter((e) => e.unity == "rosario")[8],
     photos: carousel.filter((e) => e.unity == "rosario"),
     url: "https://opc-rosario.com/",
-    bookEngineUrl: "https://app.ynnovbooking.com/booking/?l=en&apikey=0TutZHDQSIiTmJrF5KLW298Ohx0U3Fu2",
+    bookEngineUrl:
+      "https://app.ynnovbooking.com/booking/?l=en&apikey=0TutZHDQSIiTmJrF5KLW298Ohx0U3Fu2",
     map: "https://goo.gl/maps/ZNARYNg3Xs4rwJjo6",
     address: "227 Rua do Rosario, União de Freguesias do Centro, Porto",
     cityImage: {
@@ -83,8 +86,8 @@ const units = [
       },
     }, */
   {
-    name: "Santa Catarina Stylish Apartments",
-    fullname: { title: "Santa Catarina", subtitle: "Stylish Apartments" },
+    name: "Santa Catarina Portrait Apartments",
+    fullname: { title: "Santa Catarina", subtitle: "Portrait Apartments" },
     key: "stacatarinaresidence",
     fulltext: "descriptions.stacatarinaresidence",
     features: ["breakfast", "furnished", "kitchenette", "clenaning"],
