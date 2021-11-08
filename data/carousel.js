@@ -250,4 +250,29 @@ export const carousel = [
     unity: "marquesa",
     link: "other/marquesa.jpg",
   },
+  {
+    unity: "bfreshhotel",
+    link: "bfreshhotel/quarto.jpeg",
+  },
+  {
+    unity: "bfreshhotel",
+    link: "bfreshhotel/sala.jpeg",
+  },
+  {
+    unity: "bfreshhotel",
+    link: "bfreshhotel/gimnasio.jpeg",
+  },
+  {
+    unity: "bfreshhotel",
+    link: "bfreshhotel/suite.jpeg",
+  },
+  {
+    unity: "bfreshhotel",
+    link: "bfreshhotel/padel.jpeg",
+  },
+  {
+    unity: "bfreshhotel",
+    link: "bfreshhotel/pixina.jpeg",
+  },
+
 ];

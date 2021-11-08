@@ -50,6 +50,10 @@ export default {
     subtitle: "Encontre o local ideal para uma experiência perfeita no Porto",
   },
   descriptions: {
+    bfreshhotel: [
+      "BFRESH HOTEL representa um novo conceito de hotelaria que se distingue pela enorme variedade de serviços disponíveis para os nossos hospedes.",
+      "O Hotel conta apenas com 7 quartos, 6 estúdios e 4 suites, espaço gourmet, espaço lounge, amplos pátios exteriores e áreas de jardim.",
+    ],
     santacatarina: [
       "O Oporto Collection - Santa Catarina Pool & Fitness está localizada a uma curta distância a pé das principais atracções turísticas da cidade do Porto, realçando-se a sua piscina exterior, um magnífico jardim, amplos terraços com pátios circundantes e um ginásio.",
       "Cuidadosamente e elegantemente decorados onde o conforto está presente em todos os detalhes, os nossos apartamentos distinguem-se pelas suas áreas generosas e luminosidade.",

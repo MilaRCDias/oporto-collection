@@ -3,6 +3,26 @@ import { carousel } from "./carousel.js";
 
 const units = [
   {
+    name: "BFRESH Hotel",
+    key: "bfreshhotel",
+    fullname: { title: "BFRESH", subtitle: "HOTEL" },
+    fulltext: "descriptions.bfreshhotel",
+    amenities: ["pool", "gym", "cleaning", "breakfast", "kitchenette"],
+    opening: "open",
+    status: "open",
+    thumbnail: carousel.filter((e) => e.unity == "bfreshhotel")[0],
+    photos: carousel.filter((e) => e.unity == "bfreshhotel"),
+    url: "https://opc-bfresh.com/",
+    bookEngineUrl: "https://app.ynnovbooking.com/booking/?l=en&apikey=M47SgVH8SkXazFFGd2R1x98kankxHXDP",
+    map: "https://goo.gl/maps/ZNARYNg3Xs4rwJjo6",
+    address: "Rua dos Castelos n. 96 | 4250-115, Porto",
+    cityImage: {
+      vertical: false,
+      address:
+        "https://images.unsplash.com/photo-1453582910667-13cbcd4479c1?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=75s0&q=80",
+    },
+  },
+  {
     name: "Santa Catarina Pool & Fitness",
     key: "stacatarinapool",
     fullname: { title: "Santa Catarina", subtitle: "Pool & Fitness" },
@@ -65,23 +85,6 @@ const units = [
       address: "city/jardins-palacio-de-cristal.jpg",
     },
   },
-  /*   {
-      name: "Hotel dos Castêlos",
-      fullname: { title: "Hotel dos Castêlos", subtitle: "Live . Work . Sports" },
-      key: "castelos",
-      fulltext: "descriptions.castelos",
-      features: ["co-working", "lounge", "kitchenette", "breakfast"],
-      opening: "openings.august21",
-      status: false,
-      map: "https://goo.gl/maps/ZNARYNg3Xs4rwJjo6",
-      thumbnail: carousel.filter((e) => e.unity == "castelos")[0],
-      photos: carousel.filter((e) => e.unity == "castelos"),
-      cityImage: {
-        vertical: false,
-        address:
-          "https://images.unsplash.com/photo-1581371945115-efd84739c065?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=750&q=80",
-      },
-    }, */
   {
     name: "Santa Catarina Stylish Apartments",
     fullname: { title: "Santa Catarina", subtitle: "Stylish Apartments" },

@@ -14,42 +14,28 @@
           class="main-list"
           cols="12"
           sm="4"
-          v-for="(unity, i) in units.filter((e) => e.opening == 'open')"
+          v-for="(unity, i) in units.filter((e) =>
+            ['stacatarinapool', 'mouzinho', 'rosario'].includes(e.key)
+          )"
           :key="unity.name"
         >
           <NextOpenings :class="i !== 4 ? 'pr-3' : 'pr-0'" :unity="unity" />
-          <!--           <template v-if="$vuetify.breakpoint.xsOnly">
-            <v-row no-gutters align="center" class="my-1">
-              <v-col cols="6" class="pb-0">
-                <img
-                  class="pb-0"
-                  style="object-fit: cover"
-                  height="88px"
-                  width="100%"
-                  :src="require(`~/assets/images/${unity.thumbnail.link}`)"
-                  alt=""
-                />
-              </v-col>
-              <v-col cols="6" class="pl-4">
-                <h4>{{ unity.name }}</h4>
-              </v-col>
-            </v-row>
-          </template> -->
-
-          <!--           <template v-if="!$vuetify.breakpoint.xsOnly">
-            <img
-              style="object-fit: cover"
-              height="180px"
-              width="100%"
-              :src="require(`~/assets/images/${unity.thumbnail.link}`)"
-              alt=""
-            />
-            <h4>{{ unity.name }}</h4>
-          </template> -->
         </v-col>
       </v-row>
     </v-container>
-
+    <v-container>
+      <div class="banner-bfresh text-center align-center mb-4">
+        <h4
+          style="letter-spacing: 4px"
+          class="pt-12 pb-4 white--text text-uppercase font-weight-700"
+        >
+          open
+        </h4>
+        <div class="pb-12">
+          <img height="100" :src="require(`~/assets/images/logo_bfresh.svg`)" />
+        </div>
+      </div>
+    </v-container>
     <v-container v-if="$vuetify.breakpoint.mdAndUp" class="mx-auto outer-container">
       <div
         :id="unity.key"
@@ -93,17 +79,7 @@
         </h2>
         <div class="mb-6" style="border-top: 2px solid #858e9c; max-width: 5rem"></div>
       </div>
-      <div class="banner-bfresh text-center align-center mb-4">
-        <h4
-          style="letter-spacing: 4px"
-          class="pt-12 pb-4 white--text text-uppercase font-weight-700"
-        >
-          opening in october 2021
-        </h4>
-        <div class="pb-12">
-          <img height="100" :src="require(`~/assets/images/logo_bfresh.svg`)" />
-        </div>
-      </div>
+
       <v-row no-gutters>
         <v-col
           :id="unity.key"

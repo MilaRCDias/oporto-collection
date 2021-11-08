@@ -2,12 +2,7 @@
   <div style="position: relative" class="mx-auto p-relative outer-container">
     <h2 class="mb-8 pl-4 unity-title" v-html="unity.name"></h2>
 
-    <v-carousel
-      style="max-width: 544px; z-index: 1"
-      cycle
-      height="350px"
-      hide-delimiters
-    >
+    <v-carousel style="max-width: 544px; z-index: 1" cycle height="350px" hide-delimiters>
       <template v-if="unity.status == 'open'">
         <v-carousel-item
           v-for="(item, i) in unity.photos"

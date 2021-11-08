@@ -51,6 +51,10 @@ export default {
     start2023: "2023",
   },
   descriptions: {
+    bfreshhotel: [
+      "BFRESH HOTEL represents a new concept of hospitality that is distinguished by the variety of services available to our guests.",
+      "The Hotel has only seven rooms, six studios and four suites, Gourmet Space, Lounge Space, green areas, and outdoor terraces where light is present throughout the day.",
+    ],
     santacatarina: [
       "The Oporto Collection - Santa Catarina Pool & Fitness is located within walking distance of the main tourist attractions of the city of Porto, it presents itself as a superior quality unit, which highlights its outdoor pool, a magnificent garden, large terraces, and a gym.",
       "Carefully and elegantly decorated where comfort is present in every detail, our apartments are distinguished by their generous areas and brightness.",
