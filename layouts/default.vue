@@ -96,8 +96,8 @@
                 class="cursor-pointer mt-4 mt-sm-0"
                 @click="navigate('https://www.livroreclamacoes.pt/inicio')"
                 width="150px"
-                src="https://www.livroreclamacoes.pt/image/layout_set_logo?img_id=21079&t=1622658535434"
-                alt=""
+                src="../assets/images/other/livro_reclamacoes-500x-207-w.png"
+                alt="logo livro reclamacao"
               />
             </div>
           </v-col>

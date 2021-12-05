@@ -113,19 +113,19 @@ export default {
       },
       {
         name: "OPC Mouzinho Da Silveira",
-        template: "template_eci75zq-mzin",
+        template: "template_tfebmqm-sta-c",
         service: 1,
       },
       {
         name: "OPC Rosário Luxury Suites",
-        template: "template_mb0cfos-rosa",
-        service: 2,
+        template: "template_tfebmqm-sta-c",
+        service: 1,
       },
-      /*      {
-        name: "General - OPC Hospitality Management Group",
-        template: "template_7htdupr-geral",
-        service: 2,
-      }, */
+      {
+        name: "OPC BFRESH Hotel",
+        template: "template_tfebmqm-sta-c",
+        service: 1,
+      }, 
     ],
   }),
 
